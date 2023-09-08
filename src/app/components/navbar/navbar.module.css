@@ -1,0 +1,12 @@
+.navbarWrap {
+    margin: 0 auto;
+    width: fit-content;
+    display: flex;
+    font-weight: 400;
+    font-size: .9em;
+    gap: 10px;
+}
+.navbarItem {
+    color: var(--base-blue-color);
+    cursor: pointer;
+}
