@@ -33,7 +33,7 @@ class Item {
     }
 }
 
-export const cds = [
+export const cd = [
     new Item('cd1_2023', 'Прописью на стене', 600, 2023, propis, true),
     new Item('cd1_2020', 'Деревья', 500, 2020, derevia, true),
     new Item('cd1_2019', 'Письма из прошлого', 400, 2019, pisma, true),

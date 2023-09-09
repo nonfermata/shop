@@ -3,10 +3,29 @@
     width: fit-content;
     display: flex;
     font-weight: 400;
-    font-size: .9em;
+    font-size: 0.9em;
     gap: 10px;
 }
 .navbarItem {
     color: var(--base-blue-color);
     cursor: pointer;
+    position: relative;
 }
+
+.navbarItemWrap {
+    display: flex;
+    gap: 10px;
+}
+
+.totalPrice {
+    position: absolute;
+    left: calc(100% + 10px);
+    top: 0;
+    width: max-content;
+    background-color: var(--orange-color);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: .9em;
+    color: var(--base-white-color);
+}
+

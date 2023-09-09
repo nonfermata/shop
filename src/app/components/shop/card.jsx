@@ -1,22 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAmountById, modifyItem } from '../../../redux/cartReducer';
 import classes from './shop.module.css';
 
 const Card = ({ id, name, price, year, image, isAvailable }) => {
-    const initialState = localStorage.getItem(id)
-        ? Number(localStorage.getItem(id))
-        : 0;
-    const [amount, setAmount] = useState(initialState);
-    const addItem = () => {
-        setAmount((prevState) => prevState + 1);
-    };
-    const subtractItem = () => {
-        if (amount !== 0) {
-            setAmount((prevState) => prevState - 1);
+    const amount = useSelector(getAmountById(id));
+    const dispatch = useDispatch();
+    const modifyAmount = (method) => {
+        if (!(method === 'subtract' && amount === 0)) {
+            dispatch(modifyItem(id, method));
         }
     };
-    useEffect(() => {
-        localStorage.setItem(id, amount.toString());
-    }, [amount]);
+
     return (
         <div className={classes.cardWrap}>
             <img src={image} alt={name} />
@@ -27,7 +22,13 @@ const Card = ({ id, name, price, year, image, isAvailable }) => {
                 {isAvailable ? (
                     <>
                         <div
-                            onClick={!amount ? addItem : () => {}}
+                            onClick={
+                                !amount
+                                    ? () => {
+                                          modifyAmount('add');
+                                      }
+                                    : () => {}
+                            }
                             className={
                                 classes.offer +
                                 ' ' +
@@ -38,14 +39,18 @@ const Card = ({ id, name, price, year, image, isAvailable }) => {
                         </div>
                         <div className={classes.amountManagerWrap}>
                             <div
-                                onClick={subtractItem}
+                                onClick={() => {
+                                    modifyAmount('subtract');
+                                }}
                                 className={classes.managerButton}
                             >
                                 -
                             </div>
                             <div className={classes.amount}>{amount}</div>
                             <div
-                                onClick={addItem}
+                                onClick={() => {
+                                    modifyAmount('add');
+                                }}
                                 className={classes.managerButton}
                             >
                                 +
