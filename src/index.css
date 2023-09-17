@@ -1,41 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marmelad&display=swap');
 
 :root {
-    --base-color: #111;
-    --base-bg-color: #fffff6;
-    --base-white-color: #fffffc;
-    --base-blue-color: #00758c;
-    --menu-item-color: var(--base-bg-color);
-    --menu-item-active-color: #99eeff;
-    --ex-light-grey-color: hsl(50, 10%, 90%);
-    --light-grey-color: hsl(50, 10%, 75%);
-    --light-semi-grey-color: #aaa;
-    --semi-grey-color: #888;
-    --dark-grey-color: #646464;
-    --ex-light-beige-color: #f5f5e9;
-    --light-beige-color: #e0e0d1;
-    --semi-light-beige-color: #ebebdb;
-    --semi-beige-color: #d4d4c6;
-    --brown-grey-color: #877059;
-    --sand-color: #b99f58;
-    --light-orange-color: #ffd580;
-    --peach-color: #dc8b51;
-    --semi-orange-color: #ffb042;
-    --orange-color: #ee7700;
-    --dark-orange-color: #d92400;
-    --light-beige-border: 1px solid var(--light-beige-color);
-    --semi-light-beige-border: 1px solid var(--semi-light-beige-color);
-    --slider-button-bg: #80808066;
-    --slider-button-bg-hover: #808080b3;
-    --slider-button-text: #f5f5e9b3;
-    --slider-button-border: 1px solid #ccccbe88;
-    --slider-indicators-color: #808080;
-    --green-color: #008c75;
-    --upcoming: #c5ede4;
+    --base: #111;
+    --base-bg: #fffff5;
+    --base-white: #fffffa;
+    --base-blue: #00758c;
+    --ex-light-grey: #e5e2cf;
+    --light-grey: #bfbcac;
+    --semi-grey: #999;
+    --dark-grey: #444;
+    --ex-light-beige: #f5f5e9;
+    --light-beige: #e0e0d1;
+    --semi-beige: #d4d4c6;
+    --ex-light-yellow: #ffffe5;
     --light-yellow: #f7f7d3;
     --light-green: #d5f2cb;
-    --unavailable: #e3e5e5;
-    --admin-cancelled: #e5dcda;
+    --ex-light-green: #f5fff2;
+    --semi-green: #82d982;
+    --green: #008040;
+    --disabled: #f7f7f7;
+    --light-orange: #ffd580;
+    --semi-orange: #ffb042;
+    --orange: #ee7700;
 }
 
 * {
@@ -46,18 +33,12 @@
 
 body {
     font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 300;
-    color: var(--base-color);
-    background-color: var(--base-bg-color);
+    font-weight: 400;
+    color: var(--base);
+    background-color: var(--base-bg);
     font-size: 16px;
     line-height: 20px;
     -webkit-font-smoothing: antialiased;
-}
-
-.container {
-    padding: 50px 0;
-    width: fit-content;
-    margin: 0 auto;
 }
 
 textarea,
@@ -102,4 +83,21 @@ a {
 }
 .fw700 {
     font-weight: 700;
+}
+
+.container {
+    padding: 0 0 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.itemName {
+    font-family: 'Marmelad', sans-serif;
+}
+
+.itemYear {
+    font-style: italic;
+    font-size: 0.8em;
+    color: var(--semi-grey);
+    margin-left: 3px;
 }

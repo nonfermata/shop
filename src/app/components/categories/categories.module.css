@@ -1,0 +1,11 @@
+.cardsWrap {
+    display: flex;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    column-gap: 2.65%;
+    row-gap: 30px;
+}
+
+.booksCardsWrap {
+    flex-direction: column;
+}

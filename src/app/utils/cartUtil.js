@@ -1,18 +1,21 @@
-import { allItems } from '../../redux/cartReducer';
+import { gratis, cd, mp3, flac, wav, books, epub } from '../data/data';
 
-export const getCart = (list) => {
-    const arr = allItems.filter(
-        (item) =>
-            list.find((subItem) => subItem[item.id] !== undefined)[item.id] !==
-            0
-    );
-    return arr.map((item) => ({
-        ...item,
-        amount: list.find((subItem) => subItem[item.id] !== undefined)[item.id]
-    }));
-};
+const allItems = [gratis, ...cd, ...mp3, ...flac, ...wav, ...books, ...epub];
 
-export const getTotalPrice = (cart) =>
+export const getAllCart = (cart) =>
+    cart.length === 0
+        ? []
+        : cart.map((item) => ({
+              ...allItems.find((subItem) => subItem.id === item.id),
+              donations: item.donations
+          }));
+
+export const getAllTotalPrice = (cart) =>
     cart.reduce((acc, item) => {
-        return acc + item.price * item.amount;
+        return (
+            acc +
+            item.donations.reduce((itemAcc, donation) => {
+                return itemAcc + donation;
+            }, 0)
+        );
     }, 0);

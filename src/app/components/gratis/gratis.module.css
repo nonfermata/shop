@@ -1,0 +1,121 @@
+.gratisWrap {
+    margin-top: 100px;
+    width: 100%;
+    background-color: var(--base-white);
+    border: 1px solid var(--semi-orange);
+    border-radius: 5px;
+    line-height: 1.2em;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.inputGroupWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.inputGroupWrap img {
+    height: 40px;
+}
+
+.priceInputWrap {
+    position: relative;
+}
+
+.inputError {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font-size: 0.75em;
+    color: var(--orange);
+    height: 10px;
+    width: max-content;
+}
+
+.addButton {
+    min-height: 35px;
+    min-width: 155px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid var(--light-beige);
+    padding: 0 10px;
+    font-size: 0.85em;
+    user-select: none;
+    background-color: var(--ex-light-yellow);
+    transition: 0.2s all ease;
+}
+
+.addButton:hover {
+    background-color: var(--light-yellow);
+    border: 1px solid var(--light-orange);
+}
+
+.successButton {
+    background-color: var(--light-green);
+    border: 1px solid var(--light-orange);
+    cursor: default;
+}
+
+.successButton:hover {
+    background-color: var(--light-green);
+    border: 1px solid var(--light-beige);
+}
+
+.inactiveButton {
+    background-color: var(--disabled);
+    cursor: default;
+}
+
+.inactiveButton:hover {
+    background-color: var(--disabled);
+    border: 1px solid var(--light-beige);
+}
+
+.donationsInfoWrap {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 20px;
+    min-width: 350px;
+}
+
+.donationsInfo {
+    font-size: 0.9em;
+    color: var(--green);
+    position: relative;
+}
+
+.donationsThanks {
+    position: absolute;
+    left: calc(50% - 62px);
+    top: 115%;
+    font-size: 1.2em;
+    color: var(--semi-green);
+    font-family: 'Marmelad', sans-serif;
+    transform: scale(1, 0.9);
+}
+
+.donationsSum {
+    font-weight: 500;
+}
+
+.undo {
+    color: var(--dark-grey);
+    border-radius: 50%;
+    padding: 4px 5px 0;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.2s all ease;
+}
+
+.undo:hover {
+    opacity: 1;
+}

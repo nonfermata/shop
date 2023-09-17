@@ -1,3 +1,16 @@
+.header {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 28px;
+    background-color: var(--base-bg);
+}
+
 .navbarWrap {
     margin: 0 auto;
     width: fit-content;
@@ -7,9 +20,17 @@
     gap: 10px;
 }
 .navbarItem {
-    color: var(--base-blue-color);
     cursor: pointer;
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--base-blue);
+}
+
+.navbarItemActive {
+    color: var(--orange);
+    font-weight: 500;
 }
 
 .navbarItemWrap {
@@ -17,15 +38,45 @@
     gap: 10px;
 }
 
-.totalPrice {
-    position: absolute;
-    left: calc(100% + 10px);
-    top: 0;
+.totalSumBox {
     width: max-content;
-    background-color: var(--orange-color);
-    padding: 1px 5px;
-    border-radius: 3px;
-    font-size: .9em;
-    color: var(--base-white-color);
+    background-color: var(--orange);
+    padding: 1px 7px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    color: var(--base-white);
 }
 
+.positions {
+    font-weight: 600;
+    color: var(--orange);
+}
+
+.basketInfoWrap {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.basketInfo {
+    margin-top: 0;
+    padding: 10px 10px 7px;
+    min-width: 325px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    background-color: var(--ex-light-yellow);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid var(--light-beige);
+    opacity: 1;
+    transition: 1s all ease;
+}
+
+.basketInfoOutside {
+    margin-top: -45px;
+    opacity: 0;
+}

@@ -1,42 +1,106 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import classes from './navbar.module.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { getCart, getTotalPrice } from '../../utils/cartUtil';
-import { getCartIds } from '../../../redux/cartReducer';
+import { getAllCart, getAllTotalPrice } from '../../utils/cartUtil';
+import { getCart } from '../../../redux/cartReducer';
+import basket from '../../assets/svg/basket';
+import getDeclination from '../../utils/getDeclination';
 
 const Navbar = () => {
+    const prevPositions = useRef();
     const navbarItems = [
         { link: 'cd', name: 'Альбомы на CD' },
         { link: 'mp3', name: 'Альбомы MP3' },
         { link: 'flac', name: 'Альбомы FLAC' },
+        { link: 'wav', name: 'Альбомы WAV' },
         { link: 'books', name: 'Книги' },
-        { link: 'ebooks', name: 'Книги в электронном виде' }
+        { link: 'epub', name: 'Электронные книги EPUB' }
     ];
-    const cart = getCart(useSelector(getCartIds()));
-    const totalPrice = getTotalPrice(cart);
+    const cart = getAllCart(useSelector(getCart()));
+    const positions = cart.reduce(
+        (acc, item) => acc + item.donations.length,
+        0
+    );
+    const [basketInfoStyle, setBasketInfoStyle] = useState(
+        positions ? '' : classes.basketInfoOutside
+    );
+    useEffect(() => {
+        prevPositions.current = positions;
+    }, []);
+    useEffect(() => {
+        if (positions === 0 && prevPositions.current === 1) {
+            setTimeout(() => {
+                setBasketInfoStyle(classes.basketInfoOutside);
+            }, 1500);
+        }
+        if (positions === 1 && prevPositions.current === 0) {
+            setBasketInfoStyle('');
+        }
+        prevPositions.current = positions;
+    }, [positions]);
+    const totalPrice = getAllTotalPrice(cart);
     return (
-        <nav className={classes.navbarWrap}>
-            {/*<a href='//bgvmusic.ru' className={classes.navbarItem}>*/}
-            {/*    Сайт*/}
-            {/*</a>*/}
-            {navbarItems.map(({ link, name }) => (
-                <div className={classes.navbarItemWrap} key={link}>
-                    <Link to={link} className={classes.navbarItem}>
-                        {name}
-                    </Link>
-                    |
-                </div>
-            ))}
-            <Link to='cart' className={classes.navbarItem} title='Перейти в корзину'>
-                Корзина
-                {totalPrice !== 0 && (
-                    <div className={classes.totalPrice}>
-                        Выбрано товаров на <span className='fw500'>{totalPrice}</span> руб.
+        <header className={classes.header}>
+            <div className={classes.basketInfoWrap}>
+                <NavLink
+                    to='cart'
+                    title='Перейти в корзину'
+                    className={classes.basketInfo + ' ' + basketInfoStyle}
+                >
+                    {totalPrice === 0 ? (
+                        'Корзина пуста'
+                    ) : (
+                        <>
+                            В корзине
+                            <span className={classes.positions}>
+                                {positions}
+                            </span>
+                            {getDeclination(positions, 'positions')} на сумму
+                            <div className={classes.totalSumBox}>
+                                <span className='fw500'>{totalPrice}</span> руб.
+                            </div>
+                        </>
+                    )}
+                </NavLink>
+            </div>
+            <nav className={classes.navbarWrap}>
+                {/*<a href='//bgvmusic.ru' className={classes.navbarItem}>*/}
+                {/*    Сайт*/}
+                {/*</a>*/}
+                {navbarItems.map(({ link, name }) => (
+                    <div className={classes.navbarItemWrap} key={link}>
+                        <NavLink
+                            to={link}
+                            className={(link) =>
+                                link.isActive
+                                    ? classes.navbarItem +
+                                      ' ' +
+                                      classes.navbarItemActive
+                                    : classes.navbarItem
+                            }
+                        >
+                            {name}
+                        </NavLink>
+                        |
                     </div>
-                )}
-            </Link>
-        </nav>
+                ))}
+                <NavLink
+                    to='cart'
+                    title='Перейти в корзину'
+                    className={(link) =>
+                        link.isActive
+                            ? classes.navbarItem +
+                              ' ' +
+                              classes.navbarItemActive
+                            : classes.navbarItem
+                    }
+                >
+                    <div className={classes.basketWrap}>{basket}</div>
+                    Корзина
+                </NavLink>
+            </nav>
+        </header>
     );
 };
 
