@@ -146,8 +146,7 @@ class EpubItem extends Item {
 
 export const gratis = {
     id: 'gratis',
-    name: 'Поддержать на любую сумму',
-    subtitle: 'Взносы без награды',
+    name: 'Безвозмездная поддержка',
     price: 100,
     image: freeDonation
 };

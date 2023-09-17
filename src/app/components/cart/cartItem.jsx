@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from './cart.module.css';
 import AmountManager from '../common/amountManager';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,8 +7,8 @@ import {
     getSumById,
     modifyItem
 } from '../../../redux/cartReducer';
-import getDeclination from '../../utils/getDeclination';
 import ManagerButton from '../common/managerButton';
+import PriceField from '../common/priceField';
 
 const CartItem = ({ id, image, name, subtitle, year, price }) => {
     const isElItem =
@@ -16,26 +16,54 @@ const CartItem = ({ id, image, name, subtitle, year, price }) => {
         id.includes('flac') ||
         id.includes('wav') ||
         id.includes('ebub');
+    const [userPrice, setUserPrice] = useState(price);
     const amount = useSelector(getAmountById(id));
     const sum = useSelector(getSumById(id));
     const dispatch = useDispatch();
     const modifyCart = (method) => {
-        dispatch(modifyItem(id, method, price));
+        dispatch(modifyItem(id, method, userPrice));
     };
+    const validate = (value) => {
+        if (!isNaN(value)) {
+            setUserPrice(+value);
+        }
+    };
+    const handleChange = ({ target }) => {
+        validate(target.value);
+    };
+    const addedWrapStyle = id === 'gratis' ? classes.itemWrapGratis : '';
 
     return (
-        <div className={classes.itemWrap}>
+        <div className={classes.itemWrap + ' ' + addedWrapStyle}>
             <img src={image} alt={name} />
-            <div>
-                <p className='itemName'>{name}</p>
-                <p className='itemYear'>{year}</p>
-                <p className={classes.subtitle}>{subtitle}</p>
-                <div className={classes.sumInfo}>
-                    <div>
-                        <span className='fw600'>{amount}</span> шт на общую
-                        сумму <span className='fw600'>{sum}</span>{' '}
-                        {getDeclination(sum, 'rubles')}
+            <div className={classes.itemInfoWrap}>
+                <div className={classes.itemInfo}>
+                    <p className='itemName'>{name}</p>
+                    <p className='itemYear'>{year}</p>
+                    <p className={classes.subtitle}>{subtitle}</p>
+                    <div className={classes.sumInfo}>
+                        {amount > 1 && (
+                            <>
+                                {id !== 'gratis' && <>{price} ₽ x </>}
+                                {amount} шт&nbsp;&nbsp;|&nbsp;&nbsp;
+                            </>
+                        )}
+                        <span className='fw600'>{sum} ₽</span>
                     </div>
+                </div>
+                <div className={classes.itemManagerWrap}>
+                    {id === 'gratis' && (
+                        <div>
+                            <p className={classes.gratisAddPhrase}>Добавить</p>
+                            <div className={classes.donationInputWrap}>
+                                <PriceField
+                                    onChange={handleChange}
+                                    value={userPrice}
+                                />
+                                <p>₽</p>
+                            </div>
+                        </div>
+                    )}
                     {!isElItem ? (
                         <AmountManager onClick={modifyCart} amount={amount} />
                     ) : (

@@ -55,39 +55,45 @@ const Card = ({
     const isElItem = !(type === 'book' || type === 'cd');
     const { cardWrap, itemInfo, forCartWrap } = styles;
     const [error, setError] = useState('');
-    const [prefix, setPrefix] = useState('от');
-    const [userPrice, setUserPrice] = useState(price);
     const amount = useSelector(getAmountById(id)) || 0;
-    const [buttonStyle, setButtonStyle] = useState(
+    const [itemButtonStyle, setItemButtonStyle] = useState(
         amount === 0 ? '' : classes.successButton
     );
+    const [donation, setDonation] = useState(100);
+    const [donationButtonStyle, setDonationButtonStyle] = useState('');
+    const [donationButtonText, setDonationButtonText] = useState('Добавить');
     const dispatch = useDispatch();
-    const modifyCart = (method) => {
-        if (!(method === 'subtract' && amount === 0) && !error) {
+    const modifyCartItem = (method) => {
+        if (!(method === 'subtract' && amount === 0)) {
             if (method === 'subtract' && amount === 1) {
-                setButtonStyle('');
-            } else setButtonStyle(classes.successButton);
-            dispatch(modifyItem(id, method, userPrice));
+                setItemButtonStyle('');
+            } else setItemButtonStyle(classes.successButton);
+            dispatch(modifyItem(id, method, price));
+        }
+    };
+    const modifyCardGratis = () => {
+        if (!error) {
+            setDonationButtonStyle(classes.successButton);
+            setDonationButtonText('Спасибо! Добавлено');
+            setTimeout(() => {
+                setDonationButtonStyle('');
+                setDonationButtonText('Добавить ещё');
+            }, 1500);
+            dispatch(modifyItem('gratis', 'add', donation));
         }
     };
     const validate = (value) => {
-        if (isNaN(value)) {
-            setError('Некорректный ввод!');
-            setUserPrice(value);
-            amount === 0 && setButtonStyle(classes.inactiveButton);
-        } else if (+value < price) {
-            setError(`Сумма не может быть меньше ${price} руб.`);
-            setUserPrice(+value);
-            amount === 0 && setButtonStyle(classes.inactiveButton);
-        } else {
-            setError('');
-            setUserPrice(+value);
-            setButtonStyle(amount === 0 ? '' : classes.successButton);
+        if (!isNaN(value)) {
+            if (value <= 0) {
+                setError('Введите сумму больше нуля!');
+                setDonation(value);
+                setDonationButtonStyle(classes.inactiveButton);
+            } else {
+                setError('');
+                setDonation(+value);
+                setDonationButtonStyle('');
+            }
         }
-        if (+value !== price && prefix === 'от') {
-            setPrefix('');
-        }
-        if (+value === price) setPrefix('от');
     };
     const handleChange = ({ target }) => {
         validate(target.value);
@@ -106,45 +112,36 @@ const Card = ({
                         ))}
                     </div>
                 )}
-                <div className={classes.priceInputWrap}>
-                    <p className={classes.prefix}>{prefix}</p>
-                    <PriceField
-                        onChange={handleChange}
-                        value={userPrice}
-                        disabled={!isAvailable}
-                    />
-                    <p>₽</p>
-                </div>
-                <div className={classes.inputError}>{error}</div>
+                <div className={classes.itemPrice}>{price} ₽</div>
                 <div className={classes.forCartWrap + ' ' + forCartWrap}>
                     {isAvailable ? (
                         <>
-                            <div
+                            <button
                                 onClick={
                                     !amount
                                         ? () => {
-                                              modifyCart('add');
+                                              modifyCartItem('add');
                                           }
                                         : () => {}
                                 }
                                 className={
-                                    classes.addButton + ' ' + buttonStyle
+                                    classes.addButton + ' ' + itemButtonStyle
                                 }
                             >
                                 {amount === 0
                                     ? 'Добавить в корзину'
                                     : 'В корзине'}
-                            </div>
+                            </button>
                             {!isElItem ? (
                                 <AmountManager
-                                    onClick={modifyCart}
+                                    onClick={modifyCartItem}
                                     amount={amount}
                                 />
                             ) : (
                                 amount > 0 && (
                                     <ManagerButton
                                         onClick={() => {
-                                            modifyCart('subtract');
+                                            modifyCartItem('subtract');
                                         }}
                                         title='Убрать'
                                     >
@@ -163,6 +160,33 @@ const Card = ({
                         </div>
                     )}
                 </div>
+                {isAvailable && (
+                    <div className={classes.donationWrap}>
+                        <h3 className={classes.donationTitle}>
+                            Поддержать безвозмездно
+                        </h3>
+                        <div className={classes.donationFormWrap}>
+                            <div className={classes.donationInputWrap}>
+                                <PriceField
+                                    onChange={handleChange}
+                                    value={donation}
+                                />
+                                ₽
+                            </div>
+                            <button
+                                className={
+                                    classes.donationButton +
+                                    ' ' +
+                                    donationButtonStyle
+                                }
+                                onClick={modifyCardGratis}
+                            >
+                                {donationButtonText}
+                            </button>
+                        </div>
+                        <div className={classes.inputError}>{error}</div>
+                    </div>
+                )}
             </div>
         </div>
     );

@@ -16,13 +16,14 @@
 
 .managerButton {
     cursor: pointer;
+    background-color: white;
     width: 25px;
     height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--ex-light-grey);
-    transition: all 0.2s ease;
+    border: 1px solid var(--light-grey);
+    transition: all 0.15s ease;
     user-select: none;
 }
 
@@ -36,6 +37,7 @@
 
 .managerButtonDisabled {
     background-color: var(--disabled);
+    border: 1px solid var(--light-beige);
     cursor: default;
 }
 

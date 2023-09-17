@@ -22,6 +22,14 @@ const cartSlice = createSlice({
                         donations: [action.payload.donation]
                     });
                 }
+                const gratisIndex = state.findIndex(
+                    (item) => item.id === 'gratis'
+                );
+                if (gratisIndex >= 0) {
+                    const gratis = state.splice(gratisIndex, 1)[0];
+                    console.log(gratis);
+                    state.unshift(gratis);
+                }
             } else {
                 item.donations.pop();
                 if (item.donations.length === 0) {

@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './common.module.css';
 import ManagerButton from './managerButton';
 
-const AmountManager = ({ onClick, amount }) => {
+const AmountManager = ({ onClick, amount, error = '' }) => {
     return (
         <div className={classes.amountManagerWrap}>
             <ManagerButton
@@ -10,7 +10,7 @@ const AmountManager = ({ onClick, amount }) => {
                     onClick('subtract');
                 }}
                 title='Убрать'
-                disabled={!(amount > 0 )}
+                disabled={!(amount > 0)}
             >
                 -
             </ManagerButton>
@@ -20,6 +20,7 @@ const AmountManager = ({ onClick, amount }) => {
                     onClick('add');
                 }}
                 title='Добавить'
+                disabled={error}
             >
                 +
             </ManagerButton>

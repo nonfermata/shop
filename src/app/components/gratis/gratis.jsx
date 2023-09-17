@@ -28,7 +28,7 @@ const Gratis = () => {
                 setTimeout(() => {
                     setButtonStyle('');
                     setButtonText('Добавить ещё');
-                }, 1200);
+                }, 1500);
             }
             if (method === 'subtract' && amount === 1) {
                 setButtonText('Добавить в корзину');
@@ -37,14 +37,16 @@ const Gratis = () => {
         }
     };
     const validate = (value) => {
-        if (isNaN(value) || value <= 0) {
-            setError('Некорректный ввод!');
-            setUserPrice(value);
-            setButtonStyle(classes.inactiveButton);
-        } else {
-            setError('');
-            setUserPrice(+value);
-            setButtonStyle('');
+        if (!isNaN(value)) {
+            if (value <= 0) {
+                setError('Введите сумму больше нуля!');
+                setUserPrice(value);
+                setButtonStyle(classes.inactiveButton);
+            } else {
+                setError('');
+                setUserPrice(+value);
+                setButtonStyle('');
+            }
         }
     };
     const handleChange = ({ target }) => {
@@ -53,31 +55,27 @@ const Gratis = () => {
     return (
         <div className={classes.gratisWrap}>
             <div className={classes.inputGroupWrap}>
-                <img src={image} alt={name}/>
-                <p className='itemName'>{name}</p>
-                <div className={classes.priceInputWrap}>
-                    <PriceField
-                        onChange={handleChange}
-                        value={userPrice}
-                        disabled={false}
-                    />
+                <img src={image} alt={name} />
+                <p className='itemName'>Поддержать на любую сумму</p>&nbsp;»&nbsp;
+                <div className={classes.donationInputWrap}>
+                    <PriceField onChange={handleChange} value={userPrice} />
                     <div className={classes.inputError}>{error}</div>
                 </div>
-                <p>₽</p>
+                ₽
             </div>
-            <div
+            <button
                 className={classes.addButton + ' ' + buttonStyle}
                 onClick={() => {
                     modifyCart('add');
                 }}
             >
                 {buttonText}
-            </div>
+            </button>
             <div className={classes.donationsInfoWrap}>
                 {amount !== 0 && (
                     <>
                         <div className={classes.donationsInfo}>
-                            Взносов без награды – на{' '}
+                            Безвозмездной поддержки – на{' '}
                             <span className={classes.donationsSum}>
                                 {totalSum}
                             </span>{' '}

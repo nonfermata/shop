@@ -16,7 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     font-weight: 500;
 }
 
@@ -24,7 +24,7 @@
     height: 40px;
 }
 
-.priceInputWrap {
+.donationInputWrap {
     position: relative;
 }
 
@@ -39,23 +39,23 @@
 }
 
 .addButton {
-    min-height: 35px;
+    min-height: 30px;
     min-width: 155px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border: 1px solid var(--light-beige);
+    border: 1px solid var(--light-grey);
     padding: 0 10px;
     font-size: 0.85em;
     user-select: none;
-    background-color: var(--ex-light-yellow);
-    transition: 0.2s all ease;
+    background-color: var(--ex-light-beige);
+    transition: 0.15s all ease;
 }
 
 .addButton:hover {
-    background-color: var(--light-yellow);
-    border: 1px solid var(--light-orange);
+    background-color: var(--base-white);
+    border: 1px solid var(--semi-orange);
 }
 
 .successButton {
@@ -71,6 +71,7 @@
 
 .inactiveButton {
     background-color: var(--disabled);
+    border: 1px solid var(--light-beige);
     cursor: default;
 }
 
@@ -84,7 +85,7 @@
     align-items: center;
     justify-content: right;
     gap: 20px;
-    min-width: 350px;
+    min-width: 400px;
 }
 
 .donationsInfo {

@@ -6,7 +6,6 @@ import Gratis from '../gratis/gratis';
 import CategoryHeader from '../common/categoryHeader';
 import classes from './cart.module.css';
 import CartItem from './cartItem';
-import getDeclination from '../../utils/getDeclination';
 
 const Cart = () => {
     const cart = getAllCart(useSelector(getCart()));
@@ -24,9 +23,7 @@ const Cart = () => {
                     <div className={classes.totalPrice}>
                         <div>
                             Всего к оплате:&nbsp;&nbsp;
-                            <span className='fw600'>{totalPrice}</span>
-                            &nbsp;
-                            {getDeclination(totalPrice, 'rubles')}
+                            <span className='fw600'>{totalPrice} ₽</span>
                         </div>
                         <button className={classes.payButton}>
                             Перейти к оплате

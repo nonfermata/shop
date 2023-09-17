@@ -3,15 +3,16 @@
 
 :root {
     --base: #111;
-    --base-bg: #fffff5;
+    --base-bg: #fffff3;
     --base-white: #fffffa;
     --base-blue: #00758c;
     --ex-light-grey: #e5e2cf;
-    --light-grey: #bfbcac;
+    --light-grey: #bfbfbf;
     --semi-grey: #999;
     --dark-grey: #444;
     --ex-light-beige: #f5f5e9;
     --light-beige: #e0e0d1;
+    --light-beige2: #ebebdd;
     --semi-beige: #d4d4c6;
     --ex-light-yellow: #ffffe5;
     --light-yellow: #f7f7d3;
@@ -100,4 +101,8 @@ a {
     font-size: 0.8em;
     color: var(--semi-grey);
     margin-left: 3px;
+}
+
+.baseBlue {
+    color: var(--base-blue);
 }
