@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './common.module.css';
+import classes from './categoryHeader.module.css';
 
 const CategoryHeader = ({ title, info = [] }) => {
     return (

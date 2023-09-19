@@ -8,7 +8,6 @@
 }
 
 .itemWrap {
-    line-height: 1.2em;
     border-bottom: 1px solid var(--light-beige2);
     padding: 15px;
     display: flex;
@@ -34,23 +33,19 @@
 
 .itemInfoWrap {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 5fr;
     align-items: end;
     gap: 40px;
     width: 100%;
-    /*background-color: #82d982;*/
 }
 
 .subtitle {
-    font-size: 0.9em;
+    margin-top: 5px;
 }
 
 .sumInfo {
     margin-top: 20px;
-}
-
-.itemInfo {
-    /*width: max-content;*/
+    font-size: 1.1em;
 }
 
 .donationInputWrap {
@@ -62,20 +57,24 @@
 
 .itemManagerWrap {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .gratisAddPhrase {
-    font-size: .9em;
     margin-bottom: 5px;
 }
 
-.totalPrice {
+.inputError {
+    font-size: 0.75em;
+    color: var(--orange);
+    height: 11px;
+}
+
+.totalSum {
     padding: 20px 25px;
     border-top: 1px solid var(--semi-grey);
     border-bottom: 1px solid var(--semi-grey);
-    font-size: 1.05em;
+    font-size: 1.15em;
     display: flex;
     justify-content: space-around;
     align-items: center;

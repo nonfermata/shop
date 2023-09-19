@@ -1,0 +1,10 @@
+.amountManagerWrap {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    width: fit-content;
+}
+
+.amountText {
+    font-weight: 500;
+}

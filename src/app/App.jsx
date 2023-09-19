@@ -8,6 +8,7 @@ import Mp3 from './components/categories/mp3';
 import Flac from './components/categories/flac';
 import Wav from "./components/categories/wav";
 import Epub from "./components/categories/epub";
+import ProductPage from "./components/productPage/productPage";
 
 const App = () => {
     return (
@@ -21,6 +22,7 @@ const App = () => {
                 <Route path='books' element={<Books />} />
                 <Route path='epub' element={<Epub />} />
                 <Route path='cart' element={<Cart />} />
+                <Route path='products/:productId' element={<ProductPage />} />
             </Routes>
         </div>
     );

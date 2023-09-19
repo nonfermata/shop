@@ -4,7 +4,7 @@
     border: 1px solid var(--semi-beige);
     border-radius: 5px;
     line-height: 1.2em;
-    padding: 10px;
+    padding: 10px 10px 15px;
 }
 
 .bookCardWrap {
@@ -26,14 +26,14 @@
 }
 
 .shotDescr {
-    font-size: 0.9em;
     line-height: 1.2em;
     margin: 5px 0;
 }
 
 .itemPrice {
     font-weight: 600;
-    margin-top: 10px;
+    margin-top: 7px;
+    font-size: 1.1em;
 }
 
 .forCartWrap {
@@ -50,15 +50,16 @@
 
 .addButton {
     min-height: 27px;
-    min-width: 150px;
+    min-width: 160px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border: 1px solid var(--light-grey);
-    font-size: 0.85em;
+    background-color: var(--add-button);
+    border: 1px solid var(--add-button-border);
+    font-size: 0.9em;
+    font-weight: 500;
     user-select: none;
-    background-color: var(--ex-light-yellow);
     transition: 0.15s all ease;
 }
 
@@ -68,75 +69,25 @@
 }
 
 .donationWrap {
-    margin-top: 25px;
+    margin-top: 20px;
     border-top: 1px solid var(--semi-beige);
 }
 
 .donationTitle {
     text-align: center;
-    font-size: .9em;
-    margin-top: 10px;
+    color: var(--dark-grey);
+    font-size: 1em;
+    margin: 10px 0;
     font-weight: 500;
-}
-
-.donationFormWrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.donationInputWrap {
-    transform: scale(0.88, 0.88);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-weight: 500;
-}
-
-.donationButton {
-    min-height: 25px;
-    min-width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border: 1px solid var(--light-grey);
-    font-size: 0.8em;
-    user-select: none;
-    background-color: var(--ex-light-beige);
-    transition: 0.15s all ease;
-}
-
-.donationButton:hover {
-    background-color: var(--base-white);
-    border: 1px solid var(--semi-orange);
-}
-
-.inputError {
-    font-size: 0.75em;
-    color: var(--orange);
-    height: 10px;
-    margin-top: -2px;
 }
 
 .successButton {
-    background-color: var(--light-green);
+    background-color: var(--success-button);
+    border: 1px solid var(--success-button-border);
     cursor: default;
 }
 
 .successButton:hover {
-    background-color: var(--light-green);
-    border: 1px solid var(--light-grey);
-}
-
-.inactiveButton {
-    border: 1px solid var(--light-beige);
-    background-color: var(--disabled);
-    cursor: default;
-}
-
-.inactiveButton:hover {
-    background-color: var(--disabled);
-    border: 1px solid var(--light-beige);
+    background-color: var(--success-button);
+    border: 1px solid var(--success-button-border);
 }

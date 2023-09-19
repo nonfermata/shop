@@ -3,7 +3,7 @@ import classes from './categories.module.css';
 import { cd } from '../../data/data';
 import Card from './card/card';
 import Gratis from '../gratis/gratis';
-import CategoryHeader from '../common/categoryHeader';
+import CategoryHeader from '../common/categoryHeader/categoryHeader';
 
 const Cd = () => {
     const title = 'Альбомы на CD';

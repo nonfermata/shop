@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAmountById, modifyItem } from '../../../../redux/cartReducer';
 import classes from './card.module.css';
-import PriceField from '../../common/priceField';
-import AmountManager from '../../common/amountManager';
-import ManagerButton from '../../common/managerButton';
+import AmountManager from '../../common/amountManager/amountManager';
+import ManagerButton from '../../common/managerButton/managerButton';
+import DonationForm from '../../common/donationForm/donationForm';
 
 const Card = ({
     id,
@@ -54,14 +54,10 @@ const Card = ({
             : new Styles('', '', '');
     const isElItem = !(type === 'book' || type === 'cd');
     const { cardWrap, itemInfo, forCartWrap } = styles;
-    const [error, setError] = useState('');
     const amount = useSelector(getAmountById(id)) || 0;
     const [itemButtonStyle, setItemButtonStyle] = useState(
         amount === 0 ? '' : classes.successButton
     );
-    const [donation, setDonation] = useState(100);
-    const [donationButtonStyle, setDonationButtonStyle] = useState('');
-    const [donationButtonText, setDonationButtonText] = useState('Добавить');
     const dispatch = useDispatch();
     const modifyCartItem = (method) => {
         if (!(method === 'subtract' && amount === 0)) {
@@ -71,33 +67,8 @@ const Card = ({
             dispatch(modifyItem(id, method, price));
         }
     };
-    const modifyCardGratis = () => {
-        if (!error) {
-            setDonationButtonStyle(classes.successButton);
-            setDonationButtonText('Спасибо! Добавлено');
-            setTimeout(() => {
-                setDonationButtonStyle('');
-                setDonationButtonText('Добавить ещё');
-            }, 1500);
-            dispatch(modifyItem('gratis', 'add', donation));
-        }
-    };
-    const validate = (value) => {
-        if (!isNaN(value)) {
-            if (value <= 0) {
-                setError('Введите сумму больше нуля!');
-                setDonation(value);
-                setDonationButtonStyle(classes.inactiveButton);
-            } else {
-                setError('');
-                setDonation(+value);
-                setDonationButtonStyle('');
-            }
-        }
-    };
-    const handleChange = ({ target }) => {
-        validate(target.value);
-    };
+
+    const subtractTitle = amount === 1 ? 'Убрать из корзины' : 'Убрать 1 шт';
 
     return (
         <div className={classes.cardWrap + ' ' + cardWrap}>
@@ -127,27 +98,34 @@ const Card = ({
                                 className={
                                     classes.addButton + ' ' + itemButtonStyle
                                 }
+                                title={amount === 0 ? 'Добавить в корзину' : ''}
                             >
                                 {amount === 0
                                     ? 'Добавить в корзину'
                                     : 'В корзине'}
                             </button>
-                            {!isElItem ? (
-                                <AmountManager
-                                    onClick={modifyCartItem}
-                                    amount={amount}
-                                />
-                            ) : (
-                                amount > 0 && (
-                                    <ManagerButton
-                                        onClick={() => {
-                                            modifyCartItem('subtract');
-                                        }}
-                                        title='Убрать'
-                                    >
-                                        -
-                                    </ManagerButton>
-                                )
+                            {amount > 0 && (
+                                <>
+                                    {!isElItem ? (
+                                        <AmountManager
+                                            onClick={modifyCartItem}
+                                            amount={amount}
+                                            buttonsTitles={[
+                                                subtractTitle,
+                                                'Добавить 1 шт'
+                                            ]}
+                                        />
+                                    ) : (
+                                        <ManagerButton
+                                            onClick={() => {
+                                                modifyCartItem('subtract');
+                                            }}
+                                            title='Убрать из корзины'
+                                        >
+                                            -
+                                        </ManagerButton>
+                                    )}
+                                </>
                             )}
                         </>
                     ) : (
@@ -163,28 +141,9 @@ const Card = ({
                 {isAvailable && (
                     <div className={classes.donationWrap}>
                         <h3 className={classes.donationTitle}>
-                            Поддержать безвозмездно
+                            Добавить любую сумму
                         </h3>
-                        <div className={classes.donationFormWrap}>
-                            <div className={classes.donationInputWrap}>
-                                <PriceField
-                                    onChange={handleChange}
-                                    value={donation}
-                                />
-                                ₽
-                            </div>
-                            <button
-                                className={
-                                    classes.donationButton +
-                                    ' ' +
-                                    donationButtonStyle
-                                }
-                                onClick={modifyCardGratis}
-                            >
-                                {donationButtonText}
-                            </button>
-                        </div>
-                        <div className={classes.inputError}>{error}</div>
+                        <DonationForm initialButtonText='Добавить' />
                     </div>
                 )}
             </div>

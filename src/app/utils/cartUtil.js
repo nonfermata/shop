@@ -10,7 +10,7 @@ export const getAllCart = (cart) =>
               donations: item.donations
           }));
 
-export const getAllTotalPrice = (cart) =>
+export const getAllTotalSum = (cart) =>
     cart.reduce((acc, item) => {
         return (
             acc +

@@ -27,7 +27,6 @@ const cartSlice = createSlice({
                 );
                 if (gratisIndex >= 0) {
                     const gratis = state.splice(gratisIndex, 1)[0];
-                    console.log(gratis);
                     state.unshift(gratis);
                 }
             } else {
@@ -51,6 +50,10 @@ export const getAmountById = (id) => (state) => {
     return itemById ? itemById.donations.length : 0;
 };
 export const getCart = () => (state) => state.cart;
+export const getLastDonation = () => (state) => {
+    const gratis = state.cart.find((item) => item.id === 'gratis');
+    return gratis ? gratis.donations[gratis.donations.length - 1] : null;
+};
 export const getSumById = (id) => (state) => {
     const itemById = state.cart.find((item) => item.id === id);
     return itemById

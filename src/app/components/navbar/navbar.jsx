@@ -2,10 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import classes from './navbar.module.css';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { getAllCart, getAllTotalPrice } from '../../utils/cartUtil';
+import { getAllCart, getAllTotalSum } from '../../utils/cartUtil';
 import { getCart } from '../../../redux/cartReducer';
 import basket from '../../assets/svg/basket';
 import getDeclination from '../../utils/getDeclination';
+import formatSum from "../../utils/formatSum";
 
 const Navbar = () => {
     const prevPositions = useRef();
@@ -39,7 +40,7 @@ const Navbar = () => {
         }
         prevPositions.current = positions;
     }, [positions]);
-    const totalPrice = getAllTotalPrice(cart);
+    const totalSum = getAllTotalSum(cart);
     return (
         <header className={classes.header}>
             <div className={classes.basketInfoWrap}>
@@ -48,8 +49,8 @@ const Navbar = () => {
                     title='Перейти в корзину'
                     className={classes.basketInfo + ' ' + basketInfoStyle}
                 >
-                    {totalPrice === 0 ? (
-                        'Корзина пуста'
+                    {totalSum === 0 ? (
+                        'Ваша корзина пуста'
                     ) : (
                         <>
                             В корзине
@@ -58,7 +59,7 @@ const Navbar = () => {
                             </span>
                             {getDeclination(positions, 'positions')} на сумму
                             <div className={classes.totalSumBox}>
-                                <span className='fw500'>{totalPrice}</span> руб.
+                                <span className='fw500'>{formatSum(totalSum)}</span> ₽
                             </div>
                         </>
                     )}

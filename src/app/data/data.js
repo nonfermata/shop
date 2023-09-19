@@ -149,6 +149,7 @@ export const gratis = {
     name: 'Безвозмездная поддержка',
     price: 100,
     image: freeDonation
+    // subtitle: 'на общую сумму'
 };
 
 export const cd = [
@@ -407,3 +408,8 @@ export const epub = [
         ]
     )
 ];
+
+export const getProductById = (id) =>
+    [...cd, ...mp3, ...flac, ...wav, ...books, ...epub].find(
+        (item) => item.id === id
+    );

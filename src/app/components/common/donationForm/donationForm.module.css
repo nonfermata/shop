@@ -1,0 +1,69 @@
+.donationFormWrap {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.donationInputWrap {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+    position: relative;
+}
+
+.priceFieldBack {
+    order: 1;
+}
+
+.donationButton {
+    min-height: 25px;
+    min-width: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--ex-light-yellow);
+    border: 1px solid var(--ex-light-yellow-border);
+    font-size: 0.9em;
+    font-weight: 500;
+    user-select: none;
+    transition: 0.15s all ease;
+}
+
+.donationButton:hover {
+    background-color: var(--base-white);
+    border: 1px solid var(--semi-orange);
+}
+
+.inputError {
+    position: absolute;
+    width: max-content;
+    font-size: 0.8em;
+    color: var(--orange);
+    height: 8px;
+    left: 0;
+    top: 95%;
+}
+
+.successButton {
+    background-color: var(--success-button);
+    border: 1px solid var(--success-button-border);
+    cursor: default;
+}
+
+.successButton:hover {
+    background-color: var(--success-button);
+    border: 1px solid var(--success-button-border);
+}
+
+.inactiveButton {
+    border: 1px solid var(--light-beige);
+    background-color: var(--disabled);
+    cursor: default;
+}
+
+.inactiveButton:hover {
+    background-color: var(--disabled);
+    border: 1px solid var(--light-beige);
+}

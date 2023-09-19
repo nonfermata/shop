@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Marmelad&display=swap');
 
 :root {
     --base: #111;
@@ -14,16 +13,19 @@
     --light-beige: #e0e0d1;
     --light-beige2: #ebebdd;
     --semi-beige: #d4d4c6;
-    --ex-light-yellow: #ffffe5;
+    --ex-light-yellow: #fafae1;
+    --ex-light-yellow-border: #d9d9ad;
     --light-yellow: #f7f7d3;
-    --light-green: #d5f2cb;
     --ex-light-green: #f5fff2;
-    --semi-green: #82d982;
     --green: #008040;
     --disabled: #f7f7f7;
     --light-orange: #ffd580;
     --semi-orange: #ffb042;
     --orange: #ee7700;
+    --success-button: #dcf2d5;
+    --success-button-border: #98d998;
+    --add-button: #ebf7f0;
+    --add-button-border: #add9c2;
 }
 
 * {
@@ -37,8 +39,8 @@ body {
     font-weight: 400;
     color: var(--base);
     background-color: var(--base-bg);
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 14px;
+    line-height: 17px;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -48,6 +50,7 @@ input,
 select {
     font-family: inherit;
     color: inherit;
+    background-color: inherit;
     font-size: inherit;
     border: none;
     outline: none;
@@ -93,14 +96,17 @@ a {
 }
 
 .itemName {
-    font-family: 'Marmelad', sans-serif;
+    font-weight: 500;
+    font-size: 1.12em;
+    line-height: 1.2em;
 }
 
 .itemYear {
     font-style: italic;
-    font-size: 0.8em;
+    font-size: 0.9em;
     color: var(--semi-grey);
     margin-left: 3px;
+    margin-top: 1px;
 }
 
 .baseBlue {

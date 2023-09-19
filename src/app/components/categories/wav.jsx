@@ -3,13 +3,14 @@ import classes from './categories.module.css';
 import { wav } from '../../data/data';
 import Card from './card/card';
 import Gratis from '../gratis/gratis';
-import CategoryHeader from '../common/categoryHeader';
+import CategoryHeader from '../common/categoryHeader/categoryHeader';
 
 const Wav = () => {
     const title = 'Альбомы в цифровом WAV-формате';
     const info = [
         'Все аудиотреки в формате WAV (lossless-качество).',
         'К аудиотрекам также прилагается вся полиграфия к диску в цифровом виде (формат PDF).',
+        'Выбирая цифровую версию альбома, вы получаете уникальную ссылку для скачивания.'
     ];
     return (
         <>

@@ -1,12 +1,13 @@
 import React from 'react';
-import classes from './common.module.css';
+import classes from './priceField.module.css';
 
-const PriceField = ({ onChange, value }) => {
+const PriceField = ({ onChange, onKeyDown, value }) => {
     return (
         <input
             className={classes.priceInputField}
             onChange={onChange}
             value={value}
+            onKeyDown={onKeyDown}
         />
     );
 };
