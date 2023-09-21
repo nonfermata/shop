@@ -2,11 +2,11 @@ import React from 'react';
 import classes from './gratis.module.css';
 import { useSelector } from 'react-redux';
 import { getAmountById, getSumById } from '../../../redux/cartReducer';
-import { gratis } from '../../data/data';
+import { gratis } from '../../data/allItems';
 import undo from '../../assets/svg/undo';
 import formatSum from '../../utils/formatSum';
-import DonationForm from '../common/donationForm/donationForm';
-import UndoDonate from '../common/undoDonate/undoDonate';
+import DonationModifyForm from '../common/cartManagerForm/donationModifyForm/donationModifyForm';
+import UndoDonate from '../common/cartManagerForm/undoDonate/undoDonate';
 
 const Gratis = () => {
     const { id, name, image } = gratis;
@@ -19,7 +19,7 @@ const Gratis = () => {
                 <img src={image} alt={name} />
                 <p className='itemName'>Поддержать на любую сумму</p>
                 &nbsp;»&nbsp;
-                <DonationForm
+                <DonationModifyForm
                     initialButtonText='Добавить в корзину'
                 />
             </div>

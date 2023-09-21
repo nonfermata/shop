@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import classes from './donationForm.module.css';
+import classes from './donationModifyForm.module.css';
 import PriceField from '../priceField/priceField';
 import { useDispatch } from 'react-redux';
-import { modifyItem } from '../../../../redux/cartReducer';
+import { modifyItem } from '../../../../../redux/cartReducer';
 
-const DonationForm = ({ initialButtonText, isCart = false }) => {
+const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
     const dispatch = useDispatch();
     const [donation, setDonation] = useState(100);
     const [buttonText, setButtonText] = useState(initialButtonText);
@@ -67,4 +67,4 @@ const DonationForm = ({ initialButtonText, isCart = false }) => {
     );
 };
 
-export default DonationForm;
+export default DonationModifyForm;

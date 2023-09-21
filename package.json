@@ -4,7 +4,7 @@
     "description": "The shop of books and CDs",
     "author": "Dima Baulin <nonfermata@gmail.com>",
     "main": "index.js",
-    "homepage": "shop/",
+    "homepage": "items/new_book",
     "private": true,
     "dependencies": {
         "@reduxjs/toolkit": "^1.9.1",

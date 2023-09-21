@@ -1,7 +1,7 @@
 .priceInputField {
     font-weight: 500;
     text-align: right;
-    padding: 3px;
+    padding: 2px;
     border-bottom: 1px solid var(--light-grey);
-    width: 75px;
+    width: 65px;
 }

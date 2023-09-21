@@ -2,11 +2,23 @@
     display: flex;
     margin: 20px 0;
     flex-wrap: wrap;
+    justify-content: space-between;
     align-items: flex-start;
-    column-gap: 2.65%;
     row-gap: 30px;
 }
 
 .booksCardsWrap {
     flex-direction: column;
+}
+
+@media screen and (max-width: 1200px) {
+    .cardsWrap {
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .cardsWrap {
+        justify-content: center;
+        column-gap: 6%;
+    }
 }

@@ -1,0 +1,60 @@
+.itemCartManagerWrap {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    gap: 24px;
+}
+
+.addButton {
+    min-height: 27px;
+    min-width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--add-button);
+    border: 1px solid var(--add-button-border);
+    font-size: 0.9em;
+    font-weight: 500;
+    user-select: none;
+    transition: 0.15s all ease;
+}
+
+.addButton:hover {
+    background-color: var(--base-white);
+    border: 1px solid var(--semi-orange);
+}
+
+.successButton {
+    background-color: var(--success-button);
+    border: 1px solid var(--success-button-border);
+    cursor: default;
+}
+
+.successButton:hover {
+    background-color: var(--success-button);
+    border: 1px solid var(--success-button-border);
+}
+
+.inactiveButton {
+    border: 1px solid var(--light-beige);
+    background-color: var(--disabled);
+    cursor: default;
+}
+
+.inactiveButton:hover {
+    background-color: var(--disabled);
+    border: 1px solid var(--light-beige);
+}
+
+.disableItemButton {
+    background-color: var(--disabled);
+    border: none;
+    min-width: 170px;
+    cursor: default;
+}
+
+.disableItemButton:hover {
+    background-color: var(--disabled);
+    border: none;
+}

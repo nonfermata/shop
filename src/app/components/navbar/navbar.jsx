@@ -6,18 +6,12 @@ import { getAllCart, getAllTotalSum } from '../../utils/cartUtil';
 import { getCart } from '../../../redux/cartReducer';
 import basket from '../../assets/svg/basket';
 import getDeclination from '../../utils/getDeclination';
-import formatSum from "../../utils/formatSum";
+import formatSum from '../../utils/formatSum';
+import Burger from '../burger/burger';
+import menu from '../../data/menu';
 
 const Navbar = () => {
     const prevPositions = useRef();
-    const navbarItems = [
-        { link: 'cd', name: 'Альбомы на CD' },
-        { link: 'mp3', name: 'Альбомы MP3' },
-        { link: 'flac', name: 'Альбомы FLAC' },
-        { link: 'wav', name: 'Альбомы WAV' },
-        { link: 'books', name: 'Книги' },
-        { link: 'epub', name: 'Электронные книги EPUB' }
-    ];
     const cart = getAllCart(useSelector(getCart()));
     const positions = cart.reduce(
         (acc, item) => acc + item.donations.length,
@@ -43,6 +37,16 @@ const Navbar = () => {
     const totalSum = getAllTotalSum(cart);
     return (
         <header className={classes.header}>
+            <Burger />
+            <a
+                href='//bgvmusic.ru'
+                target='_blank'
+                rel='noreferrer'
+                className={classes.mainSiteLink}
+                title='Зоя Ященко и "Белая Гвардия". Официальный сайт'
+            >
+                перейти на bgvmusic.ru
+            </a>
             <div className={classes.basketInfoWrap}>
                 <NavLink
                     to='cart'
@@ -59,20 +63,30 @@ const Navbar = () => {
                             </span>
                             {getDeclination(positions, 'positions')} на сумму
                             <div className={classes.totalSumBox}>
-                                <span className='fw500'>{formatSum(totalSum)}</span> ₽
+                                <span className='fw500'>
+                                    {formatSum(totalSum)}
+                                </span>{' '}
+                                ₽
                             </div>
                         </>
                     )}
                 </NavLink>
             </div>
             <nav className={classes.navbarWrap}>
-                {/*<a href='//bgvmusic.ru' className={classes.navbarItem}>*/}
-                {/*    Сайт*/}
-                {/*</a>*/}
-                {navbarItems.map(({ link, name }) => (
+                {menu.map(({ link, name, title }) => (
                     <div className={classes.navbarItemWrap} key={link}>
                         <NavLink
+                            key={name}
                             to={link}
+                            title={title || name}
+                            style={
+                                link === 'items/new_book'
+                                    ? {
+                                          fontWeight: '600',
+                                          color: 'var(--strong-orange)'
+                                      }
+                                    : null
+                            }
                             className={(link) =>
                                 link.isActive
                                     ? classes.navbarItem +

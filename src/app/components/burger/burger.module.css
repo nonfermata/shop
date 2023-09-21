@@ -1,0 +1,68 @@
+.burgerWrap {
+    width: 30px;
+    height: 30px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.burgerLine {
+    height: 2px;
+    width: 90%;
+    background-color: var(--semi-dark-grey);
+}
+
+.inclinedLineOne {
+    width: 2px;
+    background-color: var(--semi-dark-grey);
+    height: 100%;
+    transform: rotate(-45deg);
+}
+
+.inclinedLineTwo {
+    width: 2px;
+    background-color: var(--semi-dark-grey);
+    height: 100%;
+    transform: rotate(45deg);
+    margin-top: -30px;
+}
+
+.burgerMenu {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: -15px;
+    padding: 30px 20px;
+    opacity: 0.9;
+    background-color: var(--ex-light-yellow);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: max-content;
+    font-size: 1.2em;
+    gap: 25px;
+    transition: 0.7s all ease;
+}
+
+.hiddenMenu {
+    right: -300px;
+    opacity: 0;
+}
+
+.burgerLink {
+    color: var(--base-blue);
+    display: flex;
+    gap: 10px;
+}
+
+.burgerLinkActive {
+    color: var(--orange);
+}
+
+@media screen and (max-width: 991px) {
+    .burgerWrap {
+        display: flex;
+    }
+}

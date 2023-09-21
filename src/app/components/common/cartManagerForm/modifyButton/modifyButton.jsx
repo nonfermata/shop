@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './managerButton.module.css';
+import classes from './modifyButton.module.css';
 
-const ManagerButton = ({ onClick, children, title, disabled = false }) => {
+const ModifyButton = ({ onClick, children, title, disabled = false }) => {
     const addedStyle = disabled ? classes.managerButtonDisabled : '';
     return (
         <button
@@ -14,4 +14,4 @@ const ManagerButton = ({ onClick, children, title, disabled = false }) => {
     );
 };
 
-export default ManagerButton;
+export default ModifyButton;

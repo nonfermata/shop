@@ -2,13 +2,26 @@
     position: fixed;
     z-index: 1000;
     top: 0;
-    left: 0;
+    left: calc(50% - 600px);
+    max-width: 1200px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
     padding-bottom: 28px;
     background-color: var(--base-bg);
+}
+
+.mainSiteLink {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 1.1em;
+    color: var(--semi-dark-grey);
+}
+
+.mainSiteLink:hover {
+    color: var(--orange);
 }
 
 .basketInfoWrap {
@@ -67,6 +80,11 @@
     align-items: center;
     gap: 10px;
     color: var(--base-blue);
+    transition: 0.1s all ease;
+}
+
+.navbarItem:hover {
+    color: var(--orange);
 }
 
 .navbarItemActive {
@@ -77,4 +95,26 @@
 .navbarItemWrap {
     display: flex;
     gap: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .header {
+        left: calc(50% - 500px);
+        width: 1000px;
+    }
+    .navbarWrap {
+        font-size: .95em;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .navbarWrap {
+        display: none;
+    }
+
+    .header {
+        width: 100%;
+        left: 0;
+        padding-bottom: 10px;
+    }
 }

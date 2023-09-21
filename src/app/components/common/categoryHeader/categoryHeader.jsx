@@ -1,15 +1,17 @@
 import React from 'react';
 import classes from './categoryHeader.module.css';
 
-const CategoryHeader = ({ title, info = [] }) => {
+const CategoryHeader = ({ title, info }) => {
     return (
         <>
             <h1 className={classes.categoryTitle}>{title}</h1>
-            {info.map((item) => (
-                <p key={item} className={classes.categoryInfo}>
-                    {item}
-                </p>
-            ))}
+            {info && (
+                <div className={classes.infoWrap}>
+                    {info.map((item) => (
+                        <p key={item}>{item}</p>
+                    ))}
+                </div>
+            )}
         </>
     );
 };

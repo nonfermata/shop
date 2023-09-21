@@ -107,3 +107,22 @@
 .donationsSum {
     font-weight: 500;
 }
+
+@media screen and (max-width: 1200px) {
+    .donationsInfoWrap {
+        min-width: 330px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .gratisWrap {
+        margin-top: 70px;
+    }
+    .donationsInfo {
+        display: none;
+    }
+    .donationsInfoWrap {
+        justify-content: left;
+        min-width: 1px;
+    }
+}

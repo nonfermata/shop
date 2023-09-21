@@ -1,0 +1,71 @@
+.cardWrap {
+    width: 23%;
+    background-color: var(--base-white);
+    border: 1px solid var(--semi-beige);
+    border-radius: 5px;
+    line-height: 1.2em;
+    padding: 10px 10px 15px;
+}
+
+.bookCardWrap {
+    width: 70%;
+    display: flex;
+    gap: 30px;
+    margin: 0 auto;
+}
+
+.cardWrap img {
+    user-select: none;
+    cursor: pointer;
+}
+
+.bookItemInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.shotDescr {
+    line-height: 1.2em;
+    margin: 5px 0;
+}
+
+.itemPrice {
+    font-weight: 600;
+    margin-top: 7px;
+    font-size: 1.1em;
+}
+
+.donationWrap {
+    margin-top: 20px;
+    border-top: 1px solid var(--semi-beige);
+}
+
+.donationTitle {
+    text-align: center;
+    color: var(--dark-grey);
+    font-size: 1em;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1200px) {
+    .cardWrap {
+        width: 31%;
+    }
+    .bookCardWrap {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .cardWrap {
+        width: 40%;
+        max-width: 280px;
+    }
+    .bookCardWrap {
+        width: 90%;
+        max-width: 1000px;
+    }
+}

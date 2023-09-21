@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './categories.module.css';
-import { wav } from '../../data/data';
-import Card from './card/card';
+import { wav } from '../../data/allItems';
+import Card from '../card/card';
 import Gratis from '../gratis/gratis';
 import CategoryHeader from '../common/categoryHeader/categoryHeader';
 
@@ -18,7 +18,7 @@ const Wav = () => {
             <CategoryHeader title={title} info={info} />
             <div className={classes.cardsWrap}>
                 {wav.map((item) => (
-                    <Card key={item.id} {...item} type='wav' />
+                    <Card key={item.id} {...item} />
                 ))}
             </div>
         </>

@@ -6,9 +6,9 @@ import Cart from './components/cart/cart';
 import Books from './components/categories/books';
 import Mp3 from './components/categories/mp3';
 import Flac from './components/categories/flac';
-import Wav from "./components/categories/wav";
-import Epub from "./components/categories/epub";
-import ProductPage from "./components/productPage/productPage";
+import Wav from './components/categories/wav';
+import Epub from './components/categories/epub';
+import ItemPage from './components/itemPage/itemPage';
 
 const App = () => {
     return (
@@ -22,7 +22,7 @@ const App = () => {
                 <Route path='books' element={<Books />} />
                 <Route path='epub' element={<Epub />} />
                 <Route path='cart' element={<Cart />} />
-                <Route path='products/:productId' element={<ProductPage />} />
+                <Route path='items/:itemId' element={<ItemPage />} />
             </Routes>
         </div>
     );

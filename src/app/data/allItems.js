@@ -82,6 +82,7 @@ import devochki from '../assets/covers/books/book_devochki.png';
 import accords from '../assets/covers/books/book_vse_akkordy.png';
 import interview from '../assets/covers/books/book_do_nachala.png';
 import fiveStories from '../assets/covers/books/book_five_stories.png';
+import polya from '../assets/covers/books/polya.png'
 
 import epub_devochki from '../assets/covers/epub/book_devochki_epub.png';
 import epub_accords from '../assets/covers/epub/book_vse_akkordy_epub.png';
@@ -99,6 +100,7 @@ class Item {
         this.image = image;
         this.isAvailable = isAvailable;
         this.shotDescr = shotDescr;
+        this.isDigital = true;
     }
 }
 
@@ -106,6 +108,7 @@ class CdItem extends Item {
     constructor(id, name, price, year, image, isAvailable, shotDescr) {
         super(id, name, price, year, image, isAvailable, shotDescr);
         this.subtitle = 'альбом на CD';
+        this.isDigital = false;
     }
 }
 
@@ -134,6 +137,8 @@ class BookItem extends Item {
     constructor(id, name, price, year, image, isAvailable, shotDescr) {
         super(id, name, price, year, image, isAvailable, shotDescr);
         this.subtitle = 'бумажная книга';
+        this.isDigital = false;
+        this.type = 'book';
     }
 }
 
@@ -141,6 +146,7 @@ class EpubItem extends Item {
     constructor(id, name, price, year, image, isAvailable, shotDescr) {
         super(id, name, price, year, image, isAvailable, shotDescr);
         this.subtitle = 'электронная книга в EPUB-формате';
+        this.type = 'book';
     }
 }
 
@@ -148,73 +154,87 @@ export const gratis = {
     id: 'gratis',
     name: 'Безвозмездная поддержка',
     price: 100,
-    image: freeDonation
-    // subtitle: 'на общую сумму'
+    image: freeDonation,
+    subtitle: ''
 };
 
 export const cd = [
-    new CdItem('cd1_2023', 'Прописью на стене', 600, 2023, propis, true),
-    new CdItem('cd1_2020', 'Деревья', 500, 2020, derevia, true),
-    new CdItem('cd1_2019', 'Письма из прошлого', 400, 2019, pisma, true),
-    new CdItem('cd1_2018', 'Вишневое варенье', 500, 2018, varenie, true),
-    new CdItem('cd1_2017', 'Венеция', 500, 2017, venice, true),
-    new CdItem('cd1_2016', 'Ретроспектива', 800, 2016, retro, true),
-    new CdItem('cd1_2015', 'Зазеркалье', 400, 2015, zazerkalie, false),
-    new CdItem('cd1_2013', 'Так восходит луна', 400, 2013, luna, false),
-    new CdItem('cd1_2011', 'Сказки Метерлинка', 400, 2011, skazki, false),
-    new CdItem('cd1_2010', 'Это все Ты"', 400, 2010, eto, false),
-    new CdItem('cd3_2009', 'Один шаг', 400, 2009, shag, false),
-    new CdItem('cd2_2009', 'Ключ из пепла', 400, 2009, kluch, false),
-    new CdItem('cd1_2009', 'Заводной сверчок', 400, 2009, sverchok, false),
-    new CdItem('cd2_2005', 'Питер', 400, 2005, piter, false),
-    new CdItem('cd1_2005', 'Кукла в кармане', 400, 2005, kukla, false),
-    new CdItem('cd1_2002', 'Когда ты вернешься', 400, 2002, kogda, false),
-    new CdItem('cd1_2001', 'Другие острова', 400, 2001, drugie, false),
-    new CdItem('cd1_1997', 'Зной', 400, 1997, znoy, false),
-    new CdItem('cd1_1996', 'Амулет', 400, 1996, amulet, false)
+    new CdItem('propis', 'Прописью на стене', 600, 2023, propis, true),
+    new CdItem('derevia', 'Деревья', 500, 2020, derevia, true),
+    new CdItem('pisma', 'Письма из прошлого', 400, 2019, pisma, true),
+    new CdItem('varenie', 'Вишневое варенье', 500, 2018, varenie, true),
+    new CdItem('venice', 'Венеция', 500, 2017, venice, true),
+    new CdItem('retro', 'Ретроспектива', 800, 2016, retro, true),
+    new CdItem('zazerkalie', 'Зазеркалье', 400, 2015, zazerkalie, false),
+    new CdItem('luna', 'Так восходит луна', 400, 2013, luna, false),
+    new CdItem('skazki', 'Сказки Метерлинка', 400, 2011, skazki, false),
+    new CdItem('eto', 'Это все Ты', 400, 2010, eto, false),
+    new CdItem('shag', 'Один шаг', 400, 2009, shag, false),
+    new CdItem('kluch', 'Ключ из пепла', 400, 2009, kluch, false),
+    new CdItem('sverchok', 'Заводной сверчок', 400, 2009, sverchok, false),
+    new CdItem('piter', 'Питер', 400, 2005, piter, false),
+    new CdItem('kukla', 'Кукла в кармане', 400, 2005, kukla, false),
+    new CdItem('kogda', 'Когда ты вернешься', 400, 2002, kogda, false),
+    new CdItem('drugie', 'Другие острова', 400, 2001, drugie, false),
+    new CdItem('znoy', 'Зной', 400, 1997, znoy, false),
+    new CdItem('amulet', 'Амулет', 400, 1996, amulet, false)
 ];
 
 export const mp3 = [
-    new Mp3Item('mp3_1_2023', 'Прописью на стене', 200, 2023, mp3_propis, true),
-    new Mp3Item('mp3_1_2020', 'Деревья', 200, 2020, mp3_derevia, true),
-    new Mp3Item('mp3_1_2019', 'Письма из прошлого', 200, 2019, mp3_pisma, true),
-    new Mp3Item('mp3_1_2018', 'Вишневое варенье', 200, 2018, mp3_varenie, true),
-    new Mp3Item('mp3_1_2017', 'Венеция', 200, 2017, mp3_venice, true),
-    new Mp3Item('mp3_1_2016', 'Ретроспектива', 400, 2016, mp3_retro, true),
-    new Mp3Item('mp3_1_2015', 'Зазеркалье', 200, 2015, mp3_zazerkalie, true),
-    new Mp3Item('mp3_1_2013', 'Так восходит луна', 200, 2013, mp3_luna, true),
-    new Mp3Item('mp3_1_2011', 'Сказки Метерлинка', 200, 2011, mp3_skazki, true),
-    new Mp3Item('mp3_1_2010', 'Это все Ты"', 200, 2010, mp3_eto, true),
-    new Mp3Item('mp3_3_2009', 'Один шаг', 200, 2009, mp3_shag, true),
-    new Mp3Item('mp3_2_2009', 'Ключ из пепла', 200, 2009, mp3_kluch, true),
+    new Mp3Item('mp3_propis', 'Прописью на стене', 200, 2023, mp3_propis, true),
+    new Mp3Item('mp3_derevia', 'Деревья', 200, 2020, mp3_derevia, true),
+    new Mp3Item('mp3_pisma', 'Письма из прошлого', 200, 2019, mp3_pisma, true),
     new Mp3Item(
-        'mp3_1_2009',
+        'mp3_varenie',
+        'Вишневое варенье',
+        200,
+        2018,
+        mp3_varenie,
+        true
+    ),
+    new Mp3Item('mp3_venice', 'Венеция', 200, 2017, mp3_venice, true),
+    new Mp3Item('mp3_retro', 'Ретроспектива', 400, 2016, mp3_retro, true),
+    new Mp3Item(
+        'mp3_zazerkalie',
+        'Зазеркалье',
+        200,
+        2015,
+        mp3_zazerkalie,
+        true
+    ),
+    new Mp3Item('mp3_luna', 'Так восходит луна', 200, 2013, mp3_luna, true),
+    new Mp3Item('mp3_skazki', 'Сказки Метерлинка', 200, 2011, mp3_skazki, true),
+    new Mp3Item('mp3_eto', 'Это все Ты', 200, 2010, mp3_eto, true),
+    new Mp3Item('mp3_shag', 'Один шаг', 200, 2009, mp3_shag, true),
+    new Mp3Item('mp3_kluch', 'Ключ из пепла', 200, 2009, mp3_kluch, true),
+    new Mp3Item(
+        'mp3_sverchok',
         'Заводной сверчок',
         200,
         2009,
         mp3_sverchok,
         true
     ),
-    new Mp3Item('mp3_2_2005', 'Питер', 200, 2005, mp3_piter, true),
-    new Mp3Item('mp3_1_2005', 'Кукла в кармане', 200, 2005, mp3_kukla, true),
-    new Mp3Item('mp3_1_2002', 'Когда ты вернешься', 200, 2002, mp3_kogda, true),
-    new Mp3Item('mp3_1_2001', 'Другие острова', 200, 2001, mp3_drugie, true),
-    new Mp3Item('mp3_1_1997', 'Зной', 200, 1997, mp3_znoy, true),
-    new Mp3Item('mp3_1_1996', 'Амулет', 200, 1996, mp3_amulet, true)
+    new Mp3Item('mp3_piter', 'Питер', 200, 2005, mp3_piter, true),
+    new Mp3Item('mp3_kukla', 'Кукла в кармане', 200, 2005, mp3_kukla, true),
+    new Mp3Item('mp3_kogda', 'Когда ты вернешься', 200, 2002, mp3_kogda, true),
+    new Mp3Item('mp3_drugie', 'Другие острова', 200, 2001, mp3_drugie, true),
+    new Mp3Item('mp3_znoy', 'Зной', 200, 1997, mp3_znoy, true),
+    new Mp3Item('mp3_amulet', 'Амулет', 200, 1996, mp3_amulet, true)
 ];
 
 export const flac = [
     new FlacItem(
-        'flac_1_2023',
+        'flac_propis',
         'Прописью на стене',
         300,
         2023,
         flac_propis,
         true
     ),
-    new FlacItem('flac_1_2020', 'Деревья', 300, 2020, flac_derevia, true),
+    new FlacItem('flac_derevia', 'Деревья', 300, 2020, flac_derevia, true),
     new FlacItem(
-        'flac_1_2019',
+        'flac_pisma',
         'Письма из прошлого',
         300,
         2019,
@@ -222,90 +242,117 @@ export const flac = [
         true
     ),
     new FlacItem(
-        'flac_1_2018',
+        'flac_varenie',
         'Вишневое варенье',
         300,
         2018,
         flac_varenie,
         true
     ),
-    new FlacItem('flac_1_2017', 'Венеция', 300, 2017, flac_venice, true),
-    new FlacItem('flac_1_2016', 'Ретроспектива', 600, 2016, flac_retro, true),
-    new FlacItem('flac_1_2015', 'Зазеркалье', 300, 2015, flac_zazerkalie, true),
+    new FlacItem('flac_venice', 'Венеция', 300, 2017, flac_venice, true),
+    new FlacItem('flac_retro', 'Ретроспектива', 600, 2016, flac_retro, true),
     new FlacItem(
-        'flac_1_2013',
-        'Так восходит луна',
+        'flac_zazerkalie',
+        'Зазеркалье',
         300,
-        2013,
-        flac_luna,
+        2015,
+        flac_zazerkalie,
         true
     ),
+    new FlacItem('flac_luna', 'Так восходит луна', 300, 2013, flac_luna, true),
     new FlacItem(
-        'flac_1_2011',
+        'flac_skazki',
         'Сказки Метерлинка',
         300,
         2011,
         flac_skazki,
         true
     ),
-    new FlacItem('flac_1_2010', 'Это все Ты"', 300, 2010, flac_eto, true),
-    new FlacItem('flac_3_2009', 'Один шаг', 300, 2009, flac_shag, true),
-    new FlacItem('flac_2_2009', 'Ключ из пепла', 300, 2009, flac_kluch, true),
+    new FlacItem('flac_eto', 'Это все Ты', 300, 2010, flac_eto, true),
+    new FlacItem('flac_shag', 'Один шаг', 300, 2009, flac_shag, true),
+    new FlacItem('flac_kluch', 'Ключ из пепла', 300, 2009, flac_kluch, true),
     new FlacItem(
-        'flac_1_2009',
+        'flac_sverchok',
         'Заводной сверчок',
         300,
         2009,
         flac_sverchok,
         true
     ),
-    new FlacItem('flac_2_2005', 'Питер', 300, 2005, flac_piter, true),
-    new FlacItem('flac_1_2005', 'Кукла в кармане', 300, 2005, flac_kukla, true),
+    new FlacItem('flac_piter', 'Питер', 300, 2005, flac_piter, true),
+    new FlacItem('flac_kukla', 'Кукла в кармане', 300, 2005, flac_kukla, true),
     new FlacItem(
-        'flac_1_2002',
+        'flac_kogda',
         'Когда ты вернешься',
         300,
         2002,
         flac_kogda,
         true
     ),
-    new FlacItem('flac_1_2001', 'Другие острова', 300, 2001, flac_drugie, true),
-    new FlacItem('flac_1_1997', 'Зной', 300, 1997, flac_znoy, true),
-    new FlacItem('flac_1_1996', 'Амулет', 300, 1996, flac_amulet, true)
+    new FlacItem('flac_drugie', 'Другие острова', 300, 2001, flac_drugie, true),
+    new FlacItem('flac_znoy', 'Зной', 300, 1997, flac_znoy, true),
+    new FlacItem('flac_amulet', 'Амулет', 300, 1996, flac_amulet, true)
 ];
 
 export const wav = [
-    new WavItem('wav_1_2023', 'Прописью на стене', 300, 2023, wav_propis, true),
-    new WavItem('wav_1_2020', 'Деревья', 300, 2020, wav_derevia, true),
-    new WavItem('wav_1_2019', 'Письма из прошлого', 300, 2019, wav_pisma, true),
-    new WavItem('wav_1_2018', 'Вишневое варенье', 300, 2018, wav_varenie, true),
-    new WavItem('wav_1_2017', 'Венеция', 300, 2017, wav_venice, true),
-    new WavItem('wav_1_2016', 'Ретроспектива', 600, 2016, wav_retro, true),
-    new WavItem('wav_1_2015', 'Зазеркалье', 300, 2015, wav_zazerkalie, true),
-    new WavItem('wav_1_2013', 'Так восходит луна', 300, 2013, wav_luna, true),
-    new WavItem('wav_1_2011', 'Сказки Метерлинка', 300, 2011, wav_skazki, true),
-    new WavItem('wav_1_2010', 'Это все Ты"', 300, 2010, wav_eto, true),
-    new WavItem('wav_3_2009', 'Один шаг', 300, 2009, wav_shag, true),
-    new WavItem('wav_2_2009', 'Ключ из пепла', 300, 2009, wav_kluch, true),
+    new WavItem('wav_propis', 'Прописью на стене', 300, 2023, wav_propis, true),
+    new WavItem('wav_derevia', 'Деревья', 300, 2020, wav_derevia, true),
+    new WavItem('wav_pisma', 'Письма из прошлого', 300, 2019, wav_pisma, true),
     new WavItem(
-        'wav_1_2009',
+        'wav_varenie',
+        'Вишневое варенье',
+        300,
+        2018,
+        wav_varenie,
+        true
+    ),
+    new WavItem('wav_venice', 'Венеция', 300, 2017, wav_venice, true),
+    new WavItem('wav_retro', 'Ретроспектива', 600, 2016, wav_retro, true),
+    new WavItem(
+        'wav_zazerkalie',
+        'Зазеркалье',
+        300,
+        2015,
+        wav_zazerkalie,
+        true
+    ),
+    new WavItem('wav_luna', 'Так восходит луна', 300, 2013, wav_luna, true),
+    new WavItem('wav_skazki', 'Сказки Метерлинка', 300, 2011, wav_skazki, true),
+    new WavItem('wav_eto', 'Это все Ты', 300, 2010, wav_eto, true),
+    new WavItem('wav_shag', 'Один шаг', 300, 2009, wav_shag, true),
+    new WavItem('wav_kluch', 'Ключ из пепла', 300, 2009, wav_kluch, true),
+    new WavItem(
+        'wav_sverchok',
         'Заводной сверчок',
         300,
         2009,
         wav_sverchok,
         true
     ),
-    new WavItem('wav_2_2005', 'Питер', 300, 2005, wav_piter, true),
-    new WavItem('wav_1_2005', 'Кукла в кармане', 300, 2005, wav_kukla, true),
-    new WavItem('wav_1_2002', 'Когда ты вернешься', 300, 2002, wav_kogda, true),
-    new WavItem('wav_1_2001', 'Другие острова', 300, 2001, wav_drugie, true),
-    new WavItem('wav_1_1997', 'Зной', 300, 1997, wav_znoy, true),
-    new WavItem('wav_1_1996', 'Амулет', 300, 1996, wav_amulet, true)
+    new WavItem('wav_piter', 'Питер', 300, 2005, wav_piter, true),
+    new WavItem('wav_kukla', 'Кукла в кармане', 300, 2005, wav_kukla, true),
+    new WavItem('wav_kogda', 'Когда ты вернешься', 300, 2002, wav_kogda, true),
+    new WavItem('wav_drugie', 'Другие острова', 300, 2001, wav_drugie, true),
+    new WavItem('wav_znoy', 'Зной', 300, 1997, wav_znoy, true),
+    new WavItem('wav_amulet', 'Амулет', 300, 1996, wav_amulet, true)
 ];
 
 export const books = [
     new BookItem(
-        'bk1_2023',
+        'new_book',
+        'Зоя Ященко. "Поля и снеговик"',
+        700,
+        2023,
+        polya,
+        true,
+        [
+            'Формат 120х165мм',
+            'Твердый переплёт, бумага офсетная',
+            'Черно-белая печать, с авторскими иллюстрациями'
+        ]
+    ),
+    new BookItem(
+        'devochki',
         'Зоя Ященко. "Все девочки мечтают о бальных платьях"',
         2200,
         2023,
@@ -318,7 +365,7 @@ export const books = [
         ]
     ),
     new BookItem(
-        'bk1_2018',
+        'accords',
         'Группа "Белая Гвардия". Все песни, все аккорды',
         1000,
         2018,
@@ -327,11 +374,11 @@ export const books = [
         [
             'Формат 145х205мм, 366 стр.',
             'Мягкий переплёт, бумага офсетная',
-            'Печать черно-белая, с фотографиями и рисунками'
+            'Черно-белая печать, с фотографиями и рисунками'
         ]
     ),
     new BookItem(
-        'bk1_2017',
+        'interview',
         'Зоя Ященко. "За два часа до начала лета"',
         800,
         2017,
@@ -340,11 +387,11 @@ export const books = [
         [
             'Формат 145х205мм, 318 стр.',
             'Мягкий переплёт, бумага офсетная',
-            'Печать черно-белая, с фотографиями и рисунками'
+            'Черно-белая печать, с фотографиями и рисунками'
         ]
     ),
     new BookItem(
-        'bk1_2006',
+        'fiveStories',
         'Зоя Ященко. 25 песен и 5 рассказов',
         300,
         2006,
@@ -353,14 +400,14 @@ export const books = [
         [
             'Формат 110х162мм, 152 стр.',
             'Мягкий переплёт, бумага офсетная',
-            'Печать черно-белая, с фотографиями и рисунками'
+            'Черно-белая печать, с фотографиями и рисунками'
         ]
     )
 ];
 
 export const epub = [
     new EpubItem(
-        'epub1_2023',
+        'epub_devochki',
         'Зоя Ященко. "Все девочки мечтают о бальных платьях"',
         500,
         2023,
@@ -372,7 +419,7 @@ export const epub = [
         ]
     ),
     new EpubItem(
-        'epub1_2018',
+        'epub_accords',
         'Группа "Белая Гвардия". Все песни, все аккорды',
         300,
         2018,
@@ -384,7 +431,7 @@ export const epub = [
         ]
     ),
     new EpubItem(
-        'epub1_2017',
+        'epub_interview',
         'Зоя Ященко. "За два часа до начала лета"',
         300,
         2017,
@@ -396,7 +443,7 @@ export const epub = [
         ]
     ),
     new EpubItem(
-        'epub1_2006',
+        'epub_fiveStories',
         'Зоя Ященко. 25 песен и 5 рассказов',
         300,
         2006,
@@ -409,7 +456,7 @@ export const epub = [
     )
 ];
 
-export const getProductById = (id) =>
+export const getItemById = (id) =>
     [...cd, ...mp3, ...flac, ...wav, ...books, ...epub].find(
         (item) => item.id === id
     );

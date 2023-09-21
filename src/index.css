@@ -2,12 +2,13 @@
 
 :root {
     --base: #111;
-    --base-bg: #fffff3;
-    --base-white: #fffffa;
+    --base-bg: #fffff5;
+    --base-white: #fffffc;
     --base-blue: #00758c;
     --ex-light-grey: #e5e2cf;
     --light-grey: #bfbfbf;
     --semi-grey: #999;
+    --semi-dark-grey: #737373;
     --dark-grey: #444;
     --ex-light-beige: #f5f5e9;
     --light-beige: #e0e0d1;
@@ -22,9 +23,10 @@
     --light-orange: #ffd580;
     --semi-orange: #ffb042;
     --orange: #ee7700;
+    --strong-orange: #e54d00;
     --success-button: #dcf2d5;
     --success-button-border: #98d998;
-    --add-button: #ebf7f0;
+    --add-button: #e8faf0;
     --add-button-border: #add9c2;
 }
 
@@ -40,7 +42,7 @@ body {
     color: var(--base);
     background-color: var(--base-bg);
     font-size: 14px;
-    line-height: 17px;
+    line-height: 1.3em;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -93,6 +95,13 @@ a {
     padding: 0 0 50px;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+}
+
+.mainSiteLink {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .itemName {
@@ -111,4 +120,17 @@ a {
 
 .baseBlue {
     color: var(--base-blue);
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: 991px;
+        padding: 0 30px 50px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .container {
+        padding: 0 15px 50px;
+    }
 }

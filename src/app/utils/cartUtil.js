@@ -1,4 +1,4 @@
-import { gratis, cd, mp3, flac, wav, books, epub } from '../data/data';
+import { gratis, cd, mp3, flac, wav, books, epub } from '../data/allItems';
 
 const allItems = [gratis, ...cd, ...mp3, ...flac, ...wav, ...books, ...epub];
 

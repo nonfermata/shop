@@ -1,0 +1,103 @@
+.allItemContentWrap {
+    width: 60%;
+    margin: 40px auto 0;
+}
+
+.newItemWrap {
+    width: 60%;
+    margin: 40px auto 0;
+    border-top: 1px solid var(--light-orange);
+    border-bottom: 1px solid var(--light-orange);
+    padding: 15px;
+    text-align: center;
+}
+
+.itemWrap {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 20px;
+}
+
+.leftColumn {
+    grid-column: 1/3;
+}
+
+.rightColumn {
+    grid-column: 3/6;
+}
+
+.itemTitleWrap {
+    margin-bottom: 15px;
+}
+
+.itemName {
+    font-weight: 500;
+    font-size: 1.3em;
+    line-height: 1.3em;
+}
+
+.cdNumber {
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.itemPrice {
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.subtitle {
+    margin-bottom: 15px;
+}
+
+.trackList {
+    list-style-position: inside;
+    font-size: 1.05em;
+    line-height: 1.4em;
+}
+
+.descriptionList {
+    list-style: none;
+    grid-column: 1/5;
+    margin-top: 30px;
+}
+
+.copyright {
+    margin-top: 20px;
+    grid-column: 1/3;
+}
+
+.backButton {
+    font-size: 1.4em;
+    font-weight: 300;
+    grid-column: 1/3;
+    margin-top: 30px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.backButton:hover {
+    opacity: 1;
+}
+
+@media screen and (max-width: 1200px) {
+    .allItemContentWrap {
+        width: 80%;
+    }
+
+    .newItemWrap {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .allItemContentWrap {
+        width: 90%;
+    }
+    .newItemWrap {
+        width: 90%;
+    }
+}
