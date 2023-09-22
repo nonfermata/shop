@@ -13,3 +13,16 @@
     border-bottom: 1px solid var(--light-grey);
     margin: 0 auto;
 }
+
+.infoString {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .infoArr {
+        display: none;
+    }
+    .infoString {
+        display: block;
+    }
+}

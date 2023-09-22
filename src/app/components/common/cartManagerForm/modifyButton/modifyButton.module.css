@@ -29,3 +29,10 @@
     background-color: var(--disabled);
     cursor: default;
 }
+
+@media screen and (max-width: 768px) {
+    .managerButton {
+        width: 32px;
+        height: 32px;
+    }
+}

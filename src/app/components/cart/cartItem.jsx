@@ -38,7 +38,8 @@ const CartItem = ({
             <img
                 src={image}
                 alt={name}
-                style={id === 'gratis' ? null : { cursor: 'pointer' }}
+                // style={id === 'gratis' ? null : { cursor: 'pointer' }}
+                className={id === 'gratis' ? classes.gratisImage : null}
                 onClick={() =>
                     id === 'gratis' ? null : navigate(`/items/${id}`)
                 }

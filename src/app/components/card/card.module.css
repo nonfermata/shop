@@ -5,6 +5,7 @@
     border-radius: 5px;
     line-height: 1.2em;
     padding: 10px 10px 15px;
+    position: relative;
 }
 
 .bookCardWrap {
@@ -14,9 +15,23 @@
     margin: 0 auto;
 }
 
-.cardWrap img {
+.ordinaryImage {
     user-select: none;
     cursor: pointer;
+    width: 100%;
+}
+.smallBookImage {
+    width: 180px;
+}
+.eBookImage {
+    width: 200px;
+}
+.middleBookImage {
+    width: 225px;
+}
+.largeBookImage {
+    width: 315px;
+    margin-bottom: 0;
 }
 
 .bookItemInfo {
@@ -67,5 +82,46 @@
     .bookCardWrap {
         width: 90%;
         max-width: 1000px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cardWrap {
+        min-width: 340px;
+    }
+    .bookCardWrap {
+        width: 100%;
+        max-width: 1000px;
+    }
+    .itemPrice {
+        font-size: 1.15em;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .bookCardWrap {
+        width: 40%;
+        min-width: 340px;
+        display: block;
+        margin: 0 auto;
+    }
+    .bookItemInfo {
+        display: block;
+    }
+    .ordinaryImage {
+        margin: 0 auto 5px;
+        display: block;
+    }
+    .smallBookImage {
+        width: 70%;
+    }
+    .eBookImage {
+        width: 80%;
+    }
+    .middleBookImage {
+        width: 80%;
+    }
+    .largeBookImage {
+        width: 100%;
     }
 }

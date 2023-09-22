@@ -10,3 +10,9 @@
 .undo:hover {
     opacity: 1;
 }
+
+@media screen and (max-width: 768px) {
+    .undo {
+        transform: scale(1.1, 1.1);
+    }
+}

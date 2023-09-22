@@ -5,11 +5,17 @@
     border: 1px solid var(--semi-orange);
     border-radius: 5px;
     line-height: 1.2em;
-    padding: 20px;
+    padding: 20px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+.itemName {
+    font-weight: 500;
+    font-size: 1.12em;
+    line-height: 1.2em;
 }
 
 .inputGroupWrap {
@@ -125,4 +131,11 @@
         justify-content: left;
         min-width: 1px;
     }
+}
+
+@media screen and (max-width: 660px) {
+    .itemName {
+        font-size: 1.03em;
+    }
+
 }

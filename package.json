@@ -4,7 +4,7 @@
     "description": "The shop of books and CDs",
     "author": "Dima Baulin <nonfermata@gmail.com>",
     "main": "index.js",
-    "homepage": "items/new_book",
+    "homepage": "https://nonfermata.github.io/shop/",
     "private": true,
     "dependencies": {
         "@reduxjs/toolkit": "^1.9.1",
@@ -12,6 +12,7 @@
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
         "axios": "^1.1.3",
+        "gh-pages": "^6.0.0",
         "history": "^4.10.1",
         "json-server": "^0.17.0",
         "lodash": "^4.17.15",

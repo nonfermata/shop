@@ -1,13 +1,10 @@
 .burgerWrap {
     width: 30px;
     height: 30px;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    position: absolute;
-    top: 15px;
-    right: 15px;
 }
 .burgerLine {
     height: 2px;
@@ -59,10 +56,16 @@
 
 .burgerLinkActive {
     color: var(--orange);
+    display: flex;
+    gap: 10px;
+}
+
+.siteLink {
+    display: none;
 }
 
 @media screen and (max-width: 991px) {
-    .burgerWrap {
+    .siteLink {
         display: flex;
     }
 }

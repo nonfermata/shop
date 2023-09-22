@@ -3,6 +3,7 @@ import classes from './card.module.css';
 import { useNavigate } from 'react-router-dom';
 import DonationModifyForm from '../common/cartManagerForm/donationModifyForm/donationModifyForm';
 import ItemModifyForm from '../common/cartManagerForm/itemModifyForm/itemModifyForm';
+import Crowdfunding from '../common/crowdfunding/crowdfunding';
 
 const Card = ({
     id,
@@ -15,27 +16,27 @@ const Card = ({
     type,
     isDigital = true
 }) => {
-    let imageWidth;
+    let bookImageWidth;
     switch (id) {
         case 'devochki':
-            imageWidth = '300px';
+            bookImageWidth = 'largeBookImage';
             break;
         case 'accords':
         case 'interview':
-            imageWidth = '220px';
+            bookImageWidth = 'middleBookImage';
             break;
         case 'epub_devochki':
         case 'epub_accords':
         case 'epub_interview':
         case 'epub_fiveStories':
-            imageWidth = '190px';
+            bookImageWidth = 'eBookImage';
             break;
         case 'fiveStories':
         case 'new_book':
-            imageWidth = '170px';
+            bookImageWidth = 'smallBookImage';
             break;
         default:
-            imageWidth = '100%';
+            bookImageWidth = '';
     }
     class Styles {
         constructor(cardWrap, itemInfo) {
@@ -52,8 +53,11 @@ const Card = ({
 
     return (
         <div className={classes.cardWrap + ' ' + cardWrap}>
+            {id === 'new_book' && <Crowdfunding />}
             <img
-                style={{ width: imageWidth }}
+                className={
+                    classes.ordinaryImage + ' ' + classes[bookImageWidth]
+                }
                 src={image}
                 alt={name}
                 onClick={() => navigate(`/items/${id}`)}

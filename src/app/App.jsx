@@ -1,6 +1,5 @@
 import React from 'react';
-import Navbar from './components/navbar/navbar';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Cd from './components/categories/cd';
 import Cart from './components/cart/cart';
 import Books from './components/categories/books';
@@ -9,11 +8,12 @@ import Flac from './components/categories/flac';
 import Wav from './components/categories/wav';
 import Epub from './components/categories/epub';
 import ItemPage from './components/itemPage/itemPage';
+import Header from './components/header/header';
 
 const App = () => {
     return (
         <div className='container'>
-            <Navbar />
+            <Header />
             <Routes>
                 <Route path='cd' element={<Cd />} />
                 <Route path='mp3' element={<Mp3 />} />
@@ -23,6 +23,7 @@ const App = () => {
                 <Route path='epub' element={<Epub />} />
                 <Route path='cart' element={<Cart />} />
                 <Route path='items/:itemId' element={<ItemPage />} />
+                <Route path='*' element={<Navigate to='items/new_book' />} />
             </Routes>
         </div>
     );

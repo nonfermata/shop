@@ -17,7 +17,7 @@ const Gratis = () => {
         <div className={classes.gratisWrap}>
             <div className={classes.inputGroupWrap}>
                 <img src={image} alt={name} />
-                <p className='itemName'>Поддержать на любую сумму</p>
+                <p className={classes.itemName}>Поддержать на любую сумму</p>
                 &nbsp;»&nbsp;
                 <DonationModifyForm
                     initialButtonText='Добавить в корзину'

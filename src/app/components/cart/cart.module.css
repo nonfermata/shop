@@ -107,3 +107,30 @@
         gap: 20px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .cartWrap {
+        width: 100%;
+    }
+    .cartWrap img.gratisImage {
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .cartWrap img.gratisImage {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .itemWrap {
+        align-items: flex-start;
+    }
+    .itemInfoWrap {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}
