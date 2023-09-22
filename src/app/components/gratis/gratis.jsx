@@ -19,11 +19,9 @@ const Gratis = () => {
                 <img src={image} alt={name} />
                 <p className={classes.itemName}>Поддержать на любую сумму</p>
                 &nbsp;»&nbsp;
-                <DonationModifyForm
-                    initialButtonText='Добавить в корзину'
-                />
             </div>
             <div className={classes.donationsInfoWrap}>
+                <DonationModifyForm initialButtonText='Добавить в корзину' />
                 {amount !== 0 && (
                     <>
                         <div className={classes.donationsInfo}>

@@ -68,11 +68,14 @@
     border: 1px solid var(--light-beige);
 }
 
+@media screen and (max-width: 991px) {
+    .donationInputWrap {
+        font-size: 1.1em;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .donationButton {
         height: 32px;
-    }
-    .donationInputWrap {
-        font-size: 1.1em;
     }
 }

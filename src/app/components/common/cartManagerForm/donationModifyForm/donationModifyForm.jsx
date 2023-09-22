@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './donationModifyForm.module.css';
 import PriceField from '../priceField/priceField';
-import { useDispatch } from 'react-redux';
-import { modifyItem } from '../../../../../redux/cartReducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAmountById, modifyItem } from '../../../../../redux/cartReducer';
 
 const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
+    const amount = useSelector(getAmountById('gratis')) || 0;
     const dispatch = useDispatch();
     const [donation, setDonation] = useState(100);
     const [buttonText, setButtonText] = useState(initialButtonText);
@@ -17,7 +18,7 @@ const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
             setTimeout(() => {
                 setAddedButtonStyle('');
                 setButtonText('Добавить ещё');
-            }, 1500);
+            }, 1700);
             dispatch(modifyItem('gratis', 'add', donation));
         }
     };
@@ -60,7 +61,7 @@ const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
                     onClick={modifyCartGratis}
                     title={error ? '' : 'Добавить ' + donation + ' ₽'}
                 >
-                    {buttonText}
+                    {amount === 0 ? initialButtonText : buttonText}
                 </button>
             </div>
         </>
