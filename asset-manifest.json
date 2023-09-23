@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shop/static/css/main.9aeea04f.css",
-    "main.js": "/shop/static/js/main.1910d654.js",
+    "main.css": "/shop/static/css/main.62a791a8.css",
+    "main.js": "/shop/static/js/main.8dd1bfc9.js",
     "static/media/book_vse_akkordy.png": "/shop/static/media/book_vse_akkordy.4deb21303d186ecbc2c6.png",
     "static/media/2016_retro_back.png": "/shop/static/media/2016_retro_back.ecc06baf4daebcfdf993.png",
     "static/media/book_vse_akkordy_epub.png": "/shop/static/media/book_vse_akkordy_epub.477805cd1f55bf8e0380.png",
@@ -80,21 +80,21 @@
     "static/media/2002_kogda_flac.png": "/shop/static/media/2002_kogda_flac.b8deb4b55a86006ffdae.png",
     "static/media/2002_kogda_wav.png": "/shop/static/media/2002_kogda_wav.00ce51fa192073b1644a.png",
     "static/media/2002_kogda_mp3.png": "/shop/static/media/2002_kogda_mp3.2a367195ab2147b71525.png",
+    "static/media/lotos.png": "/shop/static/media/lotos.44f1db01d89a5afca23a.png",
     "static/media/1996_amulet.png": "/shop/static/media/1996_amulet.aab7db367791f159f303.png",
     "static/media/1996_amulet_mp3.png": "/shop/static/media/1996_amulet_mp3.3974985ae35f637c1637.png",
     "static/media/1996_amulet_wav.png": "/shop/static/media/1996_amulet_wav.cdcc17a2292e5ced6f55.png",
     "static/media/1996_amulet_flac.png": "/shop/static/media/1996_amulet_flac.83b3eef6761fafeab9d3.png",
-    "static/media/free_donation.png": "/shop/static/media/free_donation.37ccde4e8ef08dda4a04.png",
     "static/media/1997_znoy_wav.png": "/shop/static/media/1997_znoy_wav.7b27e61aef0630a497b1.png",
     "static/media/1997_znoy_mp3.png": "/shop/static/media/1997_znoy_mp3.26251d72a0c9273904f4.png",
     "static/media/1997_znoy_flac.png": "/shop/static/media/1997_znoy_flac.592d0d82eddeb7a6a57c.png",
     "static/media/1997_znoy.png": "/shop/static/media/1997_znoy.fafa122e9f02b70deeb8.png",
     "index.html": "/shop/index.html",
-    "main.9aeea04f.css.map": "/shop/static/css/main.9aeea04f.css.map",
-    "main.1910d654.js.map": "/shop/static/js/main.1910d654.js.map"
+    "main.62a791a8.css.map": "/shop/static/css/main.62a791a8.css.map",
+    "main.8dd1bfc9.js.map": "/shop/static/js/main.8dd1bfc9.js.map"
   },
   "entrypoints": [
-    "static/css/main.9aeea04f.css",
-    "static/js/main.1910d654.js"
+    "static/css/main.62a791a8.css",
+    "static/js/main.8dd1bfc9.js"
   ]
 }
