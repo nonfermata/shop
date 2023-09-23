@@ -124,6 +124,13 @@ const ItemPage = () => {
                     <>
                         <EmptyBlock height={30} />
                         <div className={classes.itemWrap}>
+                            <div className={classes.rightColumn}>
+                                <img
+                                    src={backImage}
+                                    alt={name}
+                                    className={classes[imageWidth]}
+                                />
+                            </div>
                             <div className={classes.leftColumn}>
                                 {type === 'book' ? (
                                     ''
@@ -139,13 +146,6 @@ const ItemPage = () => {
                                         ))}
                                     </ol>
                                 )}
-                            </div>
-                            <div className={classes.rightColumn}>
-                                <img
-                                    src={backImage}
-                                    alt={name}
-                                    style={{ width: imageWidth + '%' }}
-                                />
                             </div>
                             <ul className={classes.descriptionList}>
                                 {description.description2.map((item) => (

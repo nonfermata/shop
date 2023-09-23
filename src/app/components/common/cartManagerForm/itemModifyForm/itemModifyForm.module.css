@@ -7,7 +7,7 @@
 
 .addButton {
     height: 27px;
-    min-width: 150px;
+    width: 155px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,5 +62,7 @@
 @media screen and (max-width: 768px) {
     .addButton {
         height: 32px;
+        font-size: 1.03em;
+        width: 165px;
     }
 }

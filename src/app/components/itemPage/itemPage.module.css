@@ -57,7 +57,7 @@
     font-weight: 600;
     margin-top: 15px;
     margin-bottom: 5px;
-    font-size: 1.1em;
+    font-size: 1.15em;
 }
 
 .subtitle {
@@ -128,5 +128,11 @@
     }
     .leftColumn {
         margin-top: 20px;
+    }
+    .smallImage,
+    .middleImage,
+    .largeImage {
+        margin: 0 auto;
+        display: block;
     }
 }

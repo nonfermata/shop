@@ -7,12 +7,14 @@ import { getAmountById, modifyItem } from '../../../../../redux/cartReducer';
 const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
     const amount = useSelector(getAmountById('gratis')) || 0;
     const dispatch = useDispatch();
-    const [donation, setDonation] = useState(100);
+    const [donation, setDonation] = useState('');
     const [buttonText, setButtonText] = useState(initialButtonText);
-    const [addedButtonStyle, setAddedButtonStyle] = useState('');
+    const [addedButtonStyle, setAddedButtonStyle] = useState(
+        classes.inactiveButton
+    );
     const [error, setError] = useState('');
     const modifyCartGratis = () => {
-        if (!error) {
+        if (!error && donation) {
             setAddedButtonStyle(classes.successButton);
             setButtonText('Спасибо! Добавлено');
             setTimeout(() => {
@@ -23,19 +25,19 @@ const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
         }
     };
     const validate = (value) => {
-        if (!isNaN(value)) {
-            if (value <= 0) {
-                setError('Введите сумму больше нуля!');
+        if (isNaN(value) || value <= 0) {
+            setError('Введите сумму больше нуля!');
+            addedButtonStyle !== classes.inactiveButton &&
                 setAddedButtonStyle(classes.inactiveButton);
-                setDonation(value);
-            } else {
-                setError('');
-                setAddedButtonStyle('');
-                setDonation(+value);
-            }
+            !isNaN(value) && setDonation(value);
+        } else {
+            error && setError('');
+            addedButtonStyle !== '' && setAddedButtonStyle('');
+            setDonation(+value);
         }
     };
     const handleChange = ({ target }) => {
+        console.log(target.value);
         validate(target.value);
     };
     const handleKeyDown = ({ keyCode }) => {

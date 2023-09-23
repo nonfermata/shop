@@ -4,6 +4,7 @@ import classes from './priceField.module.css';
 const PriceField = ({ onChange, onKeyDown, value }) => {
     return (
         <input
+            placeholder='сумма'
             className={classes.priceInputField}
             onChange={onChange}
             value={value}

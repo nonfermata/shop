@@ -18,6 +18,7 @@
     --ex-light-yellow-border: #d9d9ad;
     --light-yellow: #f7f7d3;
     --ex-light-green: #f5fff2;
+    --semi-green: #00af57;
     --green: #008040;
     --disabled: #f7f7f7;
     --light-orange: #ffd580;
@@ -89,6 +90,9 @@ a {
 }
 .fw700 {
     font-weight: 700;
+}
+.center {
+    text-align: center;
 }
 
 .container {

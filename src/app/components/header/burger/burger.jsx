@@ -3,14 +3,14 @@ import classes from './burger.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import {
     toggleBurgerMenu,
-    getBurgerMenu
-} from '../../../redux/isBurgerMenuVisibleReducer';
+    getBurgerMenuStatus
+} from '../../../../redux/isBurgerMenuVisibleReducer';
 import BurgerIcon from './burgerIcon';
 import BurgerNavBar from './burgerNavBar';
 
 const Burger = () => {
     const dispatch = useDispatch();
-    const isBurgerMenuActive = useSelector(getBurgerMenu());
+    const isBurgerMenuActive = useSelector(getBurgerMenuStatus());
     const addedMenuStyle = isBurgerMenuActive ? '' : classes.hiddenMenu;
 
     return (

@@ -1,0 +1,99 @@
+.donationCardWrap {
+    width: 23%;
+    background-color: var(--ex-light-green);
+    border: 1px solid var(--semi-beige);
+    border-radius: 3px;
+    line-height: 1.2em;
+    padding: 10px 10px 15px;
+    position: relative;
+}
+
+.donationCardWrap img {
+    width: 100%;
+}
+
+.booksDonationCardWrap {
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.booksDonationCardWrap img {
+    width: 150px;
+}
+
+.donationInfoWrap {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    justify-content: flex-end;
+}
+
+.booksDonationInfoWrap {
+    width: 60%;
+}
+
+.thankYou {
+    color: var(--semi-green);
+    text-align: center;
+    margin: 5px 0 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .donationCardWrap {
+        width: 31%;
+    }
+    .booksDonationCardWrap {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .donationCardWrap {
+        width: 40%;
+        max-width: 280px;
+    }
+    .booksDonationCardWrap {
+        width: 90%;
+        max-width: 1000px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .donationCardWrap {
+        min-width: 340px;
+        max-width: 340px;
+    }
+    .booksDonationCardWrap {
+        width: 100%;
+        max-width: 1000px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .booksDonationCardWrap {
+        min-width: 340px;
+        display: block;
+        margin: 0 auto;
+        width: 40%;
+    }
+    .donationCardWrap img {
+        margin: 0 auto;
+        display: block;
+        width: 150px;
+    }
+    .booksDonationInfoWrap {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .donationCardWrap {
+        min-width: 1px;
+        width: 100%;
+    }
+}

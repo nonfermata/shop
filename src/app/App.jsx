@@ -9,10 +9,22 @@ import Wav from './components/categories/wav';
 import Epub from './components/categories/epub';
 import ItemPage from './components/itemPage/itemPage';
 import Header from './components/header/header';
+import {
+    resetBurgerMenu,
+    getBurgerMenuStatus
+} from '../redux/isBurgerMenuVisibleReducer';
+import { useDispatch, useSelector } from 'react-redux';
 
 const App = () => {
+    const dispatch = useDispatch();
+    const burgerMenuStatus = useSelector(getBurgerMenuStatus());
+    const handleClick = () => {
+        if (burgerMenuStatus) {
+            dispatch(resetBurgerMenu());
+        }
+    };
     return (
-        <div className='container'>
+        <div className='container' onClick={handleClick}>
             <Header />
             <Routes>
                 <Route path='cd' element={<Cd />} />

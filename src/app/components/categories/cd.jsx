@@ -4,6 +4,8 @@ import { cd } from '../../data/allItems';
 import Card from '../card/card';
 import Gratis from '../gratis/gratis';
 import CategoryHeader from '../common/categoryHeader/categoryHeader';
+import DonationModifyForm from '../common/cartManagerForm/donationModifyForm/donationModifyForm';
+import DonationCard from '../common/donationCard/donationCard';
 
 const Cd = () => {
     const title = 'Альбомы на CD';
@@ -17,6 +19,7 @@ const Cd = () => {
             <Gratis />
             <CategoryHeader title={title} info={info} />
             <div className={classes.cardsWrap}>
+                <DonationCard />
                 {cd.map((item) => (
                     <Card key={item.id} {...item} />
                 ))}

@@ -18,6 +18,6 @@ const isBurgerMenuVisibleReducer = isBurgerMenuVisibleSlice.reducer;
 
 export const toggleBurgerMenu = () => toggle();
 export const resetBurgerMenu = () => reset();
-export const getBurgerMenu = () => (state) => state.burgerMenu.isActive;
+export const getBurgerMenuStatus = () => (state) => state.burgerMenu.isActive;
 
 export default isBurgerMenuVisibleReducer;

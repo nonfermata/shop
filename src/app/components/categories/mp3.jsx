@@ -4,6 +4,7 @@ import { mp3 } from '../../data/allItems';
 import Card from '../card/card';
 import Gratis from '../gratis/gratis';
 import CategoryHeader from '../common/categoryHeader/categoryHeader';
+import DonationCard from '../common/donationCard/donationCard';
 
 const Mp3 = () => {
     const title = 'Альбомы в цифровом MP3-формате';
@@ -17,6 +18,7 @@ const Mp3 = () => {
             <Gratis />
             <CategoryHeader title={title} info={info} />
             <div className={classes.cardsWrap}>
+                <DonationCard />
                 {mp3.map((item) => (
                     <Card key={item.id} {...item} />
                 ))}

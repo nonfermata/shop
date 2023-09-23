@@ -48,22 +48,24 @@ const Card = ({
         type === 'book'
             ? new Styles(classes.bookCardWrap, classes.bookItemInfo)
             : new Styles('', '', '');
-    const navigate = useNavigate();
     const { cardWrap, itemInfo } = addedStyles;
+    const navigate = useNavigate();
 
     return (
         <div className={classes.cardWrap + ' ' + cardWrap}>
             {id === 'new_book' && <Crowdfunding />}
-            <img
+            <div
+                onClick={() => navigate(`/items/${id}`)}
                 className={
                     classes.ordinaryImage + ' ' + classes[bookImageWidth]
                 }
-                src={image}
-                alt={name}
-                onClick={() => navigate(`/items/${id}`)}
-            />
+            >
+                <img src={image} alt={name} />
+                <div className={classes.toLookDetails}>смотреть описание</div>
+            </div>
+
             <div className={itemInfo}>
-                <p className='itemName'>{name}</p>
+                <h1 className='itemName'>{name}</h1>
                 <p className='itemYear'>{year}</p>
                 {shotDescr && (
                     <div className={classes.shotDescr}>
@@ -79,14 +81,6 @@ const Card = ({
                     isAvailable={isAvailable}
                     isDigital={isDigital}
                 />
-                {isAvailable && (
-                    <div className={classes.donationWrap}>
-                        <h3 className={classes.donationTitle}>
-                            Добавить любую сумму
-                        </h3>
-                        <DonationModifyForm initialButtonText='Добавить' />
-                    </div>
-                )}
             </div>
         </div>
     );

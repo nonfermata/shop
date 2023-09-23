@@ -4,6 +4,7 @@ import { flac } from '../../data/allItems';
 import Card from '../card/card';
 import Gratis from '../gratis/gratis';
 import CategoryHeader from '../common/categoryHeader/categoryHeader';
+import DonationCard from '../common/donationCard/donationCard';
 
 const Flac = () => {
     const title = 'Альбомы в цифровом FLAC-формате';
@@ -17,6 +18,7 @@ const Flac = () => {
             <Gratis />
             <CategoryHeader title={title} info={info} />
             <div className={classes.cardsWrap}>
+                <DonationCard />
                 {flac.map((item) => (
                     <Card key={item.id} {...item} />
                 ))}

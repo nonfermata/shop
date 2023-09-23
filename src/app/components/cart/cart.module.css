@@ -49,6 +49,10 @@
     font-size: 1.1em;
 }
 
+.fewOnes {
+    display: inline;
+}
+
 .donationInputWrap {
     display: flex;
     align-items: center;
@@ -132,5 +136,31 @@
         flex-direction: column;
         gap: 15px;
         align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .totalSum {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    .itemWrap {
+        padding: 15px 0;
+    }
+    .itemWrap img {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .fewOnes {
+        display: block;
+        width: fit-content;
+        padding-bottom: 1px;
+        border-bottom: 1px solid var(--ex-light-grey);
+    }
+    .separator {
+        display: none;
     }
 }

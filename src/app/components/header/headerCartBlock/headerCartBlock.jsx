@@ -6,6 +6,7 @@ import formatSum from '../../../utils/formatSum';
 import { getAllCart, getAllTotalSum } from '../../../utils/cartUtil';
 import { useSelector } from 'react-redux';
 import { getCart } from '../../../../redux/cartReducer';
+import CartIcon from '../../common/cartIcon/cartIcon';
 
 const HeaderCartBlock = () => {
     const prevPositions = useRef();
@@ -43,9 +44,13 @@ const HeaderCartBlock = () => {
                     'Ваша корзина пуста'
                 ) : (
                     <>
-                        В корзине
+                        <span className={classes.inCartText}>В корзине</span>
+                        <span className={classes.inCartIcon}>
+                            <CartIcon />
+                        </span>
                         <span className={classes.positions}>{positions}</span>
-                        {getDeclination(positions, 'positions')} на сумму
+                        {getDeclination(positions, 'positions')} на{' '}
+                        <span className={classes.onSum}>сумму</span>
                         <div className={classes.totalSumBox}>
                             <span className='fw500'>{formatSum(totalSum)}</span>{' '}
                             ₽

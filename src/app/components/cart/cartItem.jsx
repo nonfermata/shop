@@ -38,7 +38,6 @@ const CartItem = ({
             <img
                 src={image}
                 alt={name}
-                // style={id === 'gratis' ? null : { cursor: 'pointer' }}
                 className={id === 'gratis' ? classes.gratisImage : null}
                 onClick={() =>
                     id === 'gratis' ? null : navigate(`/items/${id}`)
@@ -53,10 +52,13 @@ const CartItem = ({
                     </p>
                     <div className={classes.sumInfo}>
                         {amount > 1 && id !== 'gratis' && (
-                            <>
+                            <div className={classes.fewOnes}>
                                 {id !== 'gratis' && <>{price} ₽ x </>}
-                                {amount} шт&nbsp;&nbsp;|&nbsp;&nbsp;
-                            </>
+                                {amount} шт{' '}
+                                <span className={classes.separator}>
+                                    &nbsp;&nbsp;|&nbsp;&nbsp;
+                                </span>
+                            </div>
                         )}
                         {id === 'gratis' && <>на общую сумму&nbsp;&nbsp;</>}
                         <span className='fw600'>{formatSum(sum)} ₽</span>

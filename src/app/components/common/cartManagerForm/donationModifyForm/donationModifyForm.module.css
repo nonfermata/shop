@@ -2,6 +2,8 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    margin: 0 auto;
+    width: fit-content;
 }
 
 .donationInputWrap {
@@ -9,6 +11,7 @@
     align-items: center;
     gap: 5px;
     font-weight: 500;
+    font-size: 1.14em;
     position: relative;
 }
 
@@ -18,7 +21,7 @@
 
 .donationButton {
     height: 27px;
-    min-width: 140px;
+    width: 140px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,11 +42,11 @@
 .inputError {
     position: absolute;
     width: max-content;
-    font-size: 0.8em;
+    font-size: 0.7em;
     color: var(--orange);
     height: 8px;
     left: 0;
-    top: 95%;
+    top: 102%;
 }
 
 .successButton {
@@ -68,14 +71,10 @@
     border: 1px solid var(--light-beige);
 }
 
-@media screen and (max-width: 991px) {
-    .donationInputWrap {
-        font-size: 1.1em;
-    }
-}
-
 @media screen and (max-width: 768px) {
     .donationButton {
         height: 32px;
+        width: 155px;
+        font-size: 1.03em;
     }
 }

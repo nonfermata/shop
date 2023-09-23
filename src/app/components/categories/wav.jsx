@@ -4,6 +4,7 @@ import { wav } from '../../data/allItems';
 import Card from '../card/card';
 import Gratis from '../gratis/gratis';
 import CategoryHeader from '../common/categoryHeader/categoryHeader';
+import DonationCard from '../common/donationCard/donationCard';
 
 const Wav = () => {
     const title = 'Альбомы в цифровом WAV-формате';
@@ -17,6 +18,7 @@ const Wav = () => {
             <Gratis />
             <CategoryHeader title={title} info={info} />
             <div className={classes.cardsWrap}>
+                <DonationCard />
                 {wav.map((item) => (
                     <Card key={item.id} {...item} />
                 ))}

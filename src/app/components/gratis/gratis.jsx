@@ -2,22 +2,21 @@ import React from 'react';
 import classes from './gratis.module.css';
 import { useSelector } from 'react-redux';
 import { getAmountById, getSumById } from '../../../redux/cartReducer';
-import { gratis } from '../../data/allItems';
-import undo from '../../assets/svg/undo';
 import formatSum from '../../utils/formatSum';
 import DonationModifyForm from '../common/cartManagerForm/donationModifyForm/donationModifyForm';
 import UndoDonate from '../common/cartManagerForm/undoDonate/undoDonate';
+import lotos from '../../assets/lotos.png'
 
 const Gratis = () => {
-    const { id, name, image } = gratis;
-    const amount = useSelector(getAmountById(id)) || 0;
-    const totalSum = useSelector(getSumById(id));
+    const amount = useSelector(getAmountById('gratis')) || 0;
+    const totalSum = useSelector(getSumById('gratis'));
 
     return (
         <div className={classes.gratisWrap}>
             <div className={classes.inputGroupWrap}>
-                <img src={image} alt={name} />
-                <p className={classes.itemName}>Поддержать на любую сумму</p>
+
+                <img src={lotos} alt='Поддержать' />
+                <p className={classes.itemName}>Поддержать любой суммой</p>
                 &nbsp;»&nbsp;
             </div>
             <div className={classes.donationsInfoWrap}>

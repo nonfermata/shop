@@ -2,7 +2,7 @@
     width: 23%;
     background-color: var(--base-white);
     border: 1px solid var(--semi-beige);
-    border-radius: 5px;
+    border-radius: 3px;
     line-height: 1.2em;
     padding: 10px 10px 15px;
     position: relative;
@@ -15,11 +15,17 @@
     margin: 0 auto;
 }
 
+.cardWrap img {
+    width: 100%;
+    display: block;
+}
+
 .ordinaryImage {
     user-select: none;
     cursor: pointer;
     width: 100%;
 }
+
 .smallBookImage {
     width: 180px;
 }
@@ -34,11 +40,20 @@
     margin-bottom: 0;
 }
 
+.toLookDetails {
+    margin: 0 auto 5px;
+    padding: 2px;
+    font-size: 0.8em;
+    text-align: right;
+    margin-right: 5%;
+}
+
 .bookItemInfo {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
+    margin-bottom: 26px;
 }
 
 .shotDescr {
@@ -49,20 +64,7 @@
 .itemPrice {
     font-weight: 600;
     margin-top: 7px;
-    font-size: 1.1em;
-}
-
-.donationWrap {
-    margin-top: 20px;
-    border-top: 1px solid var(--semi-beige);
-}
-
-.donationTitle {
-    text-align: center;
-    color: var(--dark-grey);
-    font-size: 1em;
-    margin: 10px 0;
-    font-weight: 500;
+    font-size: 1.15em;
 }
 
 @media screen and (max-width: 1200px) {
@@ -93,9 +95,6 @@
         width: 100%;
         max-width: 1000px;
     }
-    .itemPrice {
-        font-size: 1.15em;
-    }
 }
 
 @media screen and (max-width: 640px) {
@@ -107,9 +106,10 @@
     }
     .bookItemInfo {
         display: block;
+        margin-bottom: 0;
     }
     .ordinaryImage {
-        margin: 0 auto 5px;
+        margin: 0 auto;
         display: block;
     }
     .smallBookImage {
@@ -123,5 +123,12 @@
     }
     .largeBookImage {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .bookCardWrap {
+        width: 100%;
+        min-width: 1px;
     }
 }

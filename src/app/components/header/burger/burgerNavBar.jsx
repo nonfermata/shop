@@ -1,23 +1,15 @@
 import React from 'react';
 import classes from './burger.module.css';
-import menu from '../../data/menu';
+import menu from '../../../data/menu';
 import { NavLink } from 'react-router-dom';
-import SiteLink from '../common/siteLink/siteLink';
-import { resetBurgerMenu } from '../../../redux/isBurgerMenuVisibleReducer';
-import { useDispatch } from 'react-redux';
+import SiteLink from '../../common/siteLink/siteLink';
 
 const BurgerNavBar = ({ addedMenuStyle }) => {
-    const dispatch = useDispatch();
-    const handleMenuClick = (e) => {
-        e.stopPropagation();
-        dispatch(resetBurgerMenu());
-    };
     return (
         <nav className={classes.burgerMenu + ' ' + addedMenuStyle}>
             {menu.map(({ link, name, title }) => (
                 <NavLink
                     key={name}
-                    onClick={handleMenuClick}
                     to={link}
                     title={title || name}
                     style={
