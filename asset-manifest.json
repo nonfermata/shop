@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shop/static/css/main.060e1f21.css",
-    "main.js": "/shop/static/js/main.03ac24e2.js",
+    "main.css": "/shop/static/css/main.5f2ded5b.css",
+    "main.js": "/shop/static/js/main.51fd9bd9.js",
     "static/media/book_vse_akkordy.png": "/shop/static/media/book_vse_akkordy.4deb21303d186ecbc2c6.png",
     "static/media/2016_retro_back.png": "/shop/static/media/2016_retro_back.ecc06baf4daebcfdf993.png",
     "static/media/book_vse_akkordy_epub.png": "/shop/static/media/book_vse_akkordy_epub.477805cd1f55bf8e0380.png",
@@ -90,11 +90,11 @@
     "static/media/1997_znoy_flac.png": "/shop/static/media/1997_znoy_flac.592d0d82eddeb7a6a57c.png",
     "static/media/1997_znoy.png": "/shop/static/media/1997_znoy.fafa122e9f02b70deeb8.png",
     "index.html": "/shop/index.html",
-    "main.060e1f21.css.map": "/shop/static/css/main.060e1f21.css.map",
-    "main.03ac24e2.js.map": "/shop/static/js/main.03ac24e2.js.map"
+    "main.5f2ded5b.css.map": "/shop/static/css/main.5f2ded5b.css.map",
+    "main.51fd9bd9.js.map": "/shop/static/js/main.51fd9bd9.js.map"
   },
   "entrypoints": [
-    "static/css/main.060e1f21.css",
-    "static/js/main.03ac24e2.js"
+    "static/css/main.5f2ded5b.css",
+    "static/js/main.51fd9bd9.js"
   ]
 }
