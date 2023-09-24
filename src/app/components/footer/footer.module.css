@@ -1,0 +1,68 @@
+.footerWrap {
+    display: none;
+    padding: 20px 0;
+    font-size: 0.95em;
+    position: absolute;
+    width: calc(100% - 30px);
+    bottom: 0;
+}
+
+.footerDesktop {
+    display: block;
+}
+
+.footerMobile {
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footerSubMenuWrap {
+    background-color: var(--blue);
+    color: var(--base-white);
+    width: 180px;
+    padding: 7px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    user-select: none;
+}
+
+.footerSubMenuTitle {
+    font-size: 1.1em;
+}
+
+@media screen and (max-width: 991px) {
+    .footerWrap {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .footerDesktop {
+        display: none;
+    }
+    .footerMobile {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .footerSubMenuWrap {
+        width: 148px;
+    }
+    .footerMobile {
+        /*justify-content: space-between;*/
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footerNewBookLink {
+        display: none;
+    }
+
+    .footerSubMenuWrap {
+        width: 150px;
+    }
+}

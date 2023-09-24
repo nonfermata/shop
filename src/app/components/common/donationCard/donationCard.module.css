@@ -95,5 +95,6 @@
     .donationCardWrap {
         min-width: 1px;
         width: 100%;
+        max-width: fit-content;
     }
 }

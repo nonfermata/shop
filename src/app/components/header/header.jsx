@@ -17,7 +17,9 @@ const Header = () => {
                 <HeaderCartIconLink />
                 <Burger />
             </div>
-            <Navbar />
+            <div className={classes.navbarWrap}>
+                <Navbar />
+            </div>
         </header>
     );
 };

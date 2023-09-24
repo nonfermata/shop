@@ -89,7 +89,7 @@ import epub_accords from '../assets/covers/epub/book_vse_akkordy_epub.png';
 import epub_interview from '../assets/covers/epub/book_do_nachala_epub.png';
 import epub_fiveStories from '../assets/covers/epub/book_five_stories_epub.png';
 
-import lotos from '../assets/lotos.png';
+import lotos from '../assets/images/lotos.png';
 
 class Item {
     constructor(id, name, price, year, image, isAvailable, shotDescr) {
@@ -179,6 +179,10 @@ export const cd = [
     new CdItem('znoy', 'Зной', 500, 1997, znoy, false),
     new CdItem('amulet', 'Амулет', 500, 1996, amulet, false)
 ];
+cd[0].subtitle = 'альбом на CD, с буклетом'
+cd[1].subtitle = 'альбом на CD, с буклетом'
+cd[3].subtitle = 'альбом на CD, с буклетом'
+cd[4].subtitle = 'альбом на CD, с буклетом'
 
 export const mp3 = [
     new Mp3Item('mp3_propis', 'Прописью на стене', 300, 2023, mp3_propis, true),

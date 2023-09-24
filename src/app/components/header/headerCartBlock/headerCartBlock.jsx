@@ -7,6 +7,7 @@ import { getAllCart, getAllTotalSum } from '../../../utils/cartUtil';
 import { useSelector } from 'react-redux';
 import { getCart } from '../../../../redux/cartReducer';
 import CartIcon from '../../common/cartIcon/cartIcon';
+import scrollToTop from '../../../utils/scrollToTop';
 
 const HeaderCartBlock = () => {
     const prevPositions = useRef();
@@ -39,6 +40,7 @@ const HeaderCartBlock = () => {
                 to='cart'
                 title='Перейти в корзину'
                 className={classes.basketInfo + ' ' + basketInfoStyle}
+                onClick={scrollToTop}
             >
                 {totalSum === 0 ? (
                     'Ваша корзина пуста'

@@ -50,7 +50,7 @@
 .disableItemButton {
     background-color: var(--disabled);
     border: none;
-    min-width: 170px;
+    width: 170px;
     cursor: default;
 }
 
@@ -63,6 +63,6 @@
     .addButton {
         height: 32px;
         font-size: 1.03em;
-        width: 165px;
+        width: 180px;
     }
 }

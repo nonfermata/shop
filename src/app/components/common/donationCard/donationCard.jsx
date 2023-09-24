@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './donationCard.module.css';
 import DonationModifyForm from '../cartManagerForm/donationModifyForm/donationModifyForm';
-import lotos from '../../../assets/lotos.png';
+import lotos from '../../../assets/images/lotos.png';
 
 const DonationCard = ({ category }) => {
     class Styles {

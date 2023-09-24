@@ -1,10 +1,10 @@
 .allItemContentWrap {
-    width: 60%;
+    width: 70%;
     margin: 40px auto 0;
 }
 
 .newItemInfoWrap {
-    width: 60%;
+    width: 65%;
     margin: 40px auto 0;
     border-top: 1px solid var(--light-orange);
     border-bottom: 1px solid var(--light-orange);
@@ -72,7 +72,7 @@
 
 .descriptionList {
     list-style: none;
-    grid-column: 1/5;
+    grid-column: 1/4;
     margin-top: 30px;
 }
 
@@ -96,11 +96,11 @@
 
 @media screen and (max-width: 1200px) {
     .allItemContentWrap {
-        width: 80%;
+        width: 85%;
     }
 
     .newItemInfoWrap {
-        width: 80%;
+        width: 85%;
     }
 }
 

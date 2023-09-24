@@ -15,7 +15,7 @@
 .navbarItem {
     display: flex;
     gap: 10px;
-    color: var(--base-blue);
+    color: var(--blue);
     transition: 0.1s all ease;
 }
 
@@ -37,7 +37,11 @@
 }
 
 @media screen and (max-width: 991px) {
-    .navbarWrap {
+    .navbarWrap,
+    .navbarItemWrap {
+        gap: 5px;
+    }
+    .navbarCartLink {
         display: none;
     }
 }

@@ -25,15 +25,17 @@ const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
         }
     };
     const validate = (value) => {
-        if (isNaN(value) || value <= 0) {
-            setError('Введите сумму больше нуля!');
-            addedButtonStyle !== classes.inactiveButton &&
-                setAddedButtonStyle(classes.inactiveButton);
-            !isNaN(value) && setDonation(value);
-        } else {
-            error && setError('');
-            addedButtonStyle !== '' && setAddedButtonStyle('');
-            setDonation(+value);
+        if (!isNaN(value)) {
+            if (value <= 0) {
+                setError('Введите сумму больше нуля!');
+                addedButtonStyle !== classes.inactiveButton &&
+                    setAddedButtonStyle(classes.inactiveButton);
+                setDonation(value);
+            } else {
+                error && setError('');
+                addedButtonStyle !== '' && setAddedButtonStyle('');
+                setDonation(+value);
+            }
         }
     };
     const handleChange = ({ target }) => {

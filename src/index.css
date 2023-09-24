@@ -4,7 +4,8 @@
     --base: #111;
     --base-bg: #fffff5;
     --base-white: #fffffc;
-    --base-blue: #00758c;
+    --blue: #00758c;
+    --semi-blue: #2492a6;
     --ex-light-grey: #e5e2cf;
     --light-grey: #bfbfbf;
     --semi-grey: #999;
@@ -98,6 +99,7 @@ a {
 .container {
     padding: 0 0 50px;
     max-width: 1200px;
+    min-height: 100vh;
     margin: 0 auto;
     position: relative;
 }
@@ -123,7 +125,7 @@ a {
 }
 
 .baseBlue {
-    color: var(--base-blue);
+    color: var(--blue);
 }
 
 @media screen and (max-width: 1200px) {
@@ -135,6 +137,6 @@ a {
 
 @media screen and (max-width: 991px) {
     .container {
-        padding: 0 15px 50px;
+        padding: 0 15px 80px;
     }
 }

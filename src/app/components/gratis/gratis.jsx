@@ -5,7 +5,7 @@ import { getAmountById, getSumById } from '../../../redux/cartReducer';
 import formatSum from '../../utils/formatSum';
 import DonationModifyForm from '../common/cartManagerForm/donationModifyForm/donationModifyForm';
 import UndoDonate from '../common/cartManagerForm/undoDonate/undoDonate';
-import lotos from '../../assets/lotos.png'
+import lotos from '../../assets/images/lotos.png'
 
 const Gratis = () => {
     const amount = useSelector(getAmountById('gratis')) || 0;

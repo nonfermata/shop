@@ -10,17 +10,20 @@ import Epub from './components/categories/epub';
 import ItemPage from './components/itemPage/itemPage';
 import Header from './components/header/header';
 import {
-    resetBurgerMenu,
-    getBurgerMenuStatus
-} from '../redux/isBurgerMenuVisibleReducer';
+    closeMenu,
+    getAllMenusStatus
+} from '../redux/isMenuVisibleReducer';
 import { useDispatch, useSelector } from 'react-redux';
+import Footer from './components/footer/footer';
 
 const App = () => {
     const dispatch = useDispatch();
-    const burgerMenuStatus = useSelector(getBurgerMenuStatus());
+    const allMenusStatus = useSelector(getAllMenusStatus());
     const handleClick = () => {
-        if (burgerMenuStatus) {
-            dispatch(resetBurgerMenu());
+        for (let key in allMenusStatus) {
+            if (allMenusStatus[key]) {
+                dispatch(closeMenu(key));
+            }
         }
     };
     return (
@@ -37,6 +40,7 @@ const App = () => {
                 <Route path='items/:itemId' element={<ItemPage />} />
                 <Route path='*' element={<Navigate to='items/new_book' />} />
             </Routes>
+            <Footer />
         </div>
     );
 };

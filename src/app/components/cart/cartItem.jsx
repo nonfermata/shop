@@ -11,7 +11,8 @@ import ModifyButton from '../common/cartManagerForm/modifyButton/modifyButton';
 import formatSum from '../../utils/formatSum';
 import DonationModifyForm from '../common/cartManagerForm/donationModifyForm/donationModifyForm';
 import UndoDonate from '../common/cartManagerForm/undoDonate/undoDonate';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import scrollToTop from '../../utils/scrollToTop';
 
 const CartItem = ({
     id,
@@ -32,16 +33,19 @@ const CartItem = ({
     const navigate = useNavigate();
     const addedWrapStyle = id === 'gratis' ? classes.itemWrapGratis : '';
     const subtractTitle = amount === 1 ? 'Убрать из корзины' : 'Убрать 1 шт';
-
+    const handleImageClick = () => {
+        if (id !== 'gratis') {
+            scrollToTop();
+            navigate(`/items/${id}`);
+        }
+    };
     return (
         <div className={classes.itemWrap + ' ' + addedWrapStyle}>
             <img
                 src={image}
                 alt={name}
                 className={id === 'gratis' ? classes.gratisImage : null}
-                onClick={() =>
-                    id === 'gratis' ? null : navigate(`/items/${id}`)
-                }
+                onClick={handleImageClick}
             />
             <div className={classes.itemInfoWrap}>
                 <div>

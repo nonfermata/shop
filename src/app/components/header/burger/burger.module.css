@@ -48,15 +48,13 @@
 }
 
 .burgerLink {
-    color: var(--base-blue);
+    color: var(--blue);
     display: flex;
     gap: 10px;
 }
 
-.burgerLinkActive {
+.burgerLink:hover {
     color: var(--orange);
-    display: flex;
-    gap: 10px;
 }
 
 .siteLink {

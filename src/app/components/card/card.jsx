@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import DonationModifyForm from '../common/cartManagerForm/donationModifyForm/donationModifyForm';
 import ItemModifyForm from '../common/cartManagerForm/itemModifyForm/itemModifyForm';
 import Crowdfunding from '../common/crowdfunding/crowdfunding';
+import scrollToTop from '../../utils/scrollToTop';
 
 const Card = ({
     id,
@@ -50,12 +51,15 @@ const Card = ({
             : new Styles('', '', '');
     const { cardWrap, itemInfo } = addedStyles;
     const navigate = useNavigate();
-
+    const handleImageClick = () => {
+        scrollToTop();
+        navigate(`/items/${id}`);
+    };
     return (
         <div className={classes.cardWrap + ' ' + cardWrap}>
             {id === 'new_book' && <Crowdfunding />}
             <div
-                onClick={() => navigate(`/items/${id}`)}
+                onClick={handleImageClick}
                 className={
                     classes.ordinaryImage + ' ' + classes[bookImageWidth]
                 }

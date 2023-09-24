@@ -127,8 +127,9 @@
 }
 
 @media screen and (max-width: 480px) {
-    .bookCardWrap {
+    .bookCardWrap, .cardWrap {
         width: 100%;
         min-width: 1px;
+        max-width: fit-content;
     }
 }

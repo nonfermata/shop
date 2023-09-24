@@ -1,0 +1,39 @@
+.sumMenuWrap {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    background-color: var(--semi-blue);
+    height: auto;
+    opacity: 0;
+    transition: .3s all ease;
+}
+
+.subMenuVisible {
+    opacity: 1;
+}
+
+.subMenuHidden {
+    display: none;
+}
+
+.subMenuLink {
+    display: block;
+}
+
+.subMenuLink:hover {
+    font-weight: 500;
+}
+
+
+@media screen and (max-width: 640px) {
+    .sumMenuWrap {
+        padding: 20px 10px;
+    }
+}

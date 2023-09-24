@@ -84,7 +84,7 @@
     margin: 0 auto;
 }
 .payButton {
-    background-color: var(--base-blue);
+    background-color: var(--blue);
     opacity: 0.75;
     padding: 7px 12px;
     color: var(--base-white);

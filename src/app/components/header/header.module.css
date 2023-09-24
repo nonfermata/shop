@@ -68,4 +68,7 @@
     .rightMobileBlock {
         display: flex;
     }
+    .navbarWrap {
+        display: none;
+    }
 }
