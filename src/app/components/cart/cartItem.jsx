@@ -50,10 +50,14 @@ const CartItem = ({
             <div className={classes.itemInfoWrap}>
                 <div>
                     <p className='itemName'>{name}</p>
-                    <p className='itemYear'>{year}</p>
-                    <p className={classes.subtitle}>
-                        {doublePrefix + subtitle}
-                    </p>
+                    {id !== 'gratis' && (
+                        <>
+                            <p className='itemYear'>{year}</p>
+                            <p className={classes.subtitle}>
+                                {doublePrefix + subtitle}
+                            </p>
+                        </>
+                    )}
                     <div className={classes.sumInfo}>
                         {amount > 1 && id !== 'gratis' && (
                             <div className={classes.fewOnes}>
@@ -67,6 +71,7 @@ const CartItem = ({
                         {id === 'gratis' && <>на общую сумму&nbsp;&nbsp;</>}
                         <span className='fw600'>{formatSum(sum)} ₽</span>
                     </div>
+                    {id === 'gratis' && <div className={classes.thankYou}>С П А С И Б О !</div>}
                 </div>
                 <div className={classes.itemManagerWrap}>
                     {id === 'gratis' ? (

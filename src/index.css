@@ -26,6 +26,7 @@
     --semi-orange: #ffb042;
     --orange: #ee7700;
     --strong-orange: #e54d00;
+    --submit-button: #ed9418;
     --success-button: #dcf2d5;
     --success-button-border: #98d998;
     --add-button: #e8faf0;
@@ -73,10 +74,6 @@ a {
     text-decoration: none;
 }
 
-.no_wrap {
-    white-space: nowrap;
-}
-
 .fw300 {
     font-weight: 300;
 }
@@ -95,11 +92,14 @@ a {
 .center {
     text-align: center;
 }
+.orange {
+    color: var(--orange);
+}
 
 .container {
     padding: 0 0 50px;
     max-width: 1200px;
-    min-height: 100vh;
+    min-height: calc(100vh - 100px);
     margin: 0 auto;
     position: relative;
 }
@@ -126,6 +126,10 @@ a {
 
 .baseBlue {
     color: var(--blue);
+}
+
+.noHyph {
+    white-space: nowrap;
 }
 
 @media screen and (max-width: 1200px) {

@@ -3,15 +3,6 @@
     margin: 40px auto 0;
 }
 
-.newItemInfoWrap {
-    width: 65%;
-    margin: 40px auto 0;
-    border-top: 1px solid var(--light-orange);
-    border-bottom: 1px solid var(--light-orange);
-    padding: 15px;
-    text-align: center;
-}
-
 .itemWrap {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -98,26 +89,16 @@
     .allItemContentWrap {
         width: 85%;
     }
-
-    .newItemInfoWrap {
-        width: 85%;
-    }
 }
 
 @media screen and (max-width: 991px) {
     .allItemContentWrap {
         width: 90%;
     }
-    .newItemInfoWrap {
-        width: 90%;
-    }
 }
 
 @media screen and (max-width: 768px) {
     .allItemContentWrap {
-        width: 100%;
-    }
-    .newItemInfoWrap {
         width: 100%;
     }
 }

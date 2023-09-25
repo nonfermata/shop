@@ -2,22 +2,22 @@ import React from 'react';
 import classes from './burger.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-    toggleMenuStatus,
-    getAllMenusStatus
-} from '../../../../redux/isMenuVisibleReducer';
+    togglePopStatus,
+    getAllPopsStatus
+} from '../../../../redux/isPopVisibleReducer';
 import BurgerIcon from './burgerIcon';
 import BurgerNavBar from './burgerNavBar';
 
 const Burger = () => {
     const dispatch = useDispatch();
-    const isBurgerMenuActive = useSelector(getAllMenusStatus()).burger;
+    const isBurgerMenuActive = useSelector(getAllPopsStatus()).burger;
     const addedMenuStyle = isBurgerMenuActive ? '' : classes.hiddenMenu;
 
     return (
         <div
             className={classes.burgerWrap}
             onClick={() => {
-                dispatch(toggleMenuStatus('burger'));
+                dispatch(togglePopStatus('burger'));
             }}
         >
             <BurgerIcon isActive={isBurgerMenuActive} />

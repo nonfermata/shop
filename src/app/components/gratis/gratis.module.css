@@ -47,6 +47,7 @@
 .addButton {
     min-height: 30px;
     min-width: 155px;
+    border-radius: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,9 +105,9 @@
     left: calc(50% - 62px);
     top: 115%;
     font-size: 1.2em;
+    font-weight: 500;
     color: var(--success-button-border);
-    font-family: 'Marmelad', sans-serif;
-    transform: scale(1, 0.9);
+    transform: scale(1, 0.95);
 }
 
 .donationsSum {

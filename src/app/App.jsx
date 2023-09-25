@@ -9,20 +9,18 @@ import Wav from './components/categories/wav';
 import Epub from './components/categories/epub';
 import ItemPage from './components/itemPage/itemPage';
 import Header from './components/header/header';
-import {
-    closeMenu,
-    getAllMenusStatus
-} from '../redux/isMenuVisibleReducer';
+import { closePop, getAllPopsStatus } from '../redux/isPopVisibleReducer';
 import { useDispatch, useSelector } from 'react-redux';
 import Footer from './components/footer/footer';
+import ForeignUsersStart from './components/foreignUsersStart/foreignUsersStart';
 
 const App = () => {
     const dispatch = useDispatch();
-    const allMenusStatus = useSelector(getAllMenusStatus());
+    const allMenusStatus = useSelector(getAllPopsStatus());
     const handleClick = () => {
         for (let key in allMenusStatus) {
             if (allMenusStatus[key]) {
-                dispatch(closeMenu(key));
+                dispatch(closePop(key));
             }
         }
     };
@@ -41,6 +39,7 @@ const App = () => {
                 <Route path='*' element={<Navigate to='items/new_book' />} />
             </Routes>
             <Footer />
+            <ForeignUsersStart />
         </div>
     );
 };

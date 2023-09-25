@@ -1,0 +1,14 @@
+.inclinedLineOne {
+    width: 2px;
+    background-color: var(--semi-dark-grey);
+    height: 100%;
+    transform: rotate(-45deg);
+}
+
+.inclinedLineTwo {
+    width: 2px;
+    background-color: var(--semi-dark-grey);
+    height: 100%;
+    transform: rotate(45deg);
+    margin-top: -30px;
+}

@@ -3,6 +3,7 @@ import classes from './donationModifyForm.module.css';
 import PriceField from '../priceField/priceField';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAmountById, modifyItem } from '../../../../../redux/cartReducer';
+import ModifyButton from '../modifyButton/modifyButton';
 
 const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
     const amount = useSelector(getAmountById('gratis')) || 0;
@@ -39,7 +40,6 @@ const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
         }
     };
     const handleChange = ({ target }) => {
-        console.log(target.value);
         validate(target.value);
     };
     const handleKeyDown = ({ keyCode }) => {
@@ -47,11 +47,11 @@ const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
             modifyCartGratis();
         }
     };
-    const order = isCart ? classes.priceFieldBack : '';
     return (
         <>
             <div className={classes.donationFormWrap}>
-                <div className={classes.donationInputWrap + ' ' + order}>
+                {isCart&&'Добавить ещё'}
+                <div className={classes.donationInputWrap}>
                     <div className={classes.inputError}>{error}</div>
                     <PriceField
                         onChange={handleChange}
@@ -60,13 +60,19 @@ const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
                     />
                     ₽
                 </div>
-                <button
-                    className={classes.donationButton + ' ' + addedButtonStyle}
-                    onClick={modifyCartGratis}
-                    title={error ? '' : 'Добавить ' + donation + ' ₽'}
-                >
-                    {amount === 0 ? initialButtonText : buttonText}
-                </button>
+                {isCart ? (
+                    <ModifyButton>+</ModifyButton>
+                ) : (
+                    <button
+                        className={
+                            classes.donationButton + ' ' + addedButtonStyle
+                        }
+                        onClick={modifyCartGratis}
+                        title={error ? '' : 'Добавить ' + donation + ' ₽'}
+                    >
+                        {amount === 0 ? initialButtonText : buttonText}
+                    </button>
+                )}
             </div>
         </>
     );

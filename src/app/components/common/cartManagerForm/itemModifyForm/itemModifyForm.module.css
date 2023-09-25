@@ -7,6 +7,7 @@
 
 .addButton {
     height: 27px;
+    border-radius: 3px;
     width: 155px;
     display: flex;
     justify-content: center;

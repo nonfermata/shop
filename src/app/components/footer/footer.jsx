@@ -6,14 +6,14 @@ import menu from '../../data/menu';
 import SubMenu from '../common/subMenu/subMenu';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-    getAllMenusStatus,
-    toggleMenuStatus
-} from '../../../redux/isMenuVisibleReducer';
+    getAllPopsStatus,
+    togglePopStatus
+} from '../../../redux/isPopVisibleReducer';
 import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
     const dispatch = useDispatch();
-    const allMenusStatus = useSelector(getAllMenusStatus());
+    const allMenusStatus = useSelector(getAllPopsStatus());
     const alboms = [menu[1], menu[3], menu[4], menu[5]];
     const books = [{ ...menu[2] }, { ...menu[6] }];
     books[0].name = 'Бумажные книги';
@@ -34,7 +34,7 @@ const Footer = () => {
                 <div
                     className={classes.footerSubMenuWrap}
                     onClick={() => {
-                        dispatch(toggleMenuStatus('alboms'));
+                        dispatch(togglePopStatus('alboms'));
                     }}
                 >
                     <p className={classes.footerSubMenuTitle}>Альбомы</p>
@@ -44,7 +44,7 @@ const Footer = () => {
                 <div
                     className={classes.footerSubMenuWrap}
                     onClick={() => {
-                        dispatch(toggleMenuStatus('books'));
+                        dispatch(togglePopStatus('books'));
                     }}
                 >
                     <p className={classes.footerSubMenuTitle}>Книги</p>

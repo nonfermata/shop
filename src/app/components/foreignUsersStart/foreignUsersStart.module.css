@@ -1,0 +1,82 @@
+.messageWrap {
+    position: fixed;
+    width: 1200px;
+    bottom: -25vh;
+    transition: 1s ease all;
+}
+
+.message {
+    font-size: 0.9rem;
+    line-height: 1.4em;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px;
+    background-color: var(--base-white);
+    border: 1px solid var(--light-grey);
+    font-weight: 500;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.message a {
+    text-decoration: underline;
+}
+
+.message a:hover {
+    text-decoration: none;
+    color: var(--orange);
+}
+
+.messageWrapShown {
+    bottom: 0;
+}
+
+.okButton {
+    width: 100px;
+    height: 30px;
+    margin: 15px auto 0;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--add-button);
+    border: 1px solid var(--add-button-border);
+    font-weight: 500;
+    user-select: none;
+    transition: 0.15s all ease;
+}
+
+.okButton:hover {
+    background-color: var(--base-white);
+    border: 1px solid var(--semi-orange);
+}
+
+@media screen and (max-width: 1200px) {
+    .messageWrap {
+        width: 931px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .messageWrap {
+        width: calc(100% - 30px);
+    }
+    .message {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .messageWrap {
+        margin-left: -15px;
+        width: 100%;
+    }
+    .message {
+        border-radius: 0;
+        border: none;
+        border-top: 1px solid var(--light-grey);
+        font-size: 0.9em;
+    }
+}

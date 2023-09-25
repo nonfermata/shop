@@ -7,6 +7,7 @@ import CategoryHeader from '../common/categoryHeader/categoryHeader';
 import classes from './cart.module.css';
 import CartItem from './cartItem';
 import formatSum from '../../utils/formatSum';
+import ForeignUsersCart from '../foreignUsersCart/foreignUsersCart';
 
 const Cart = () => {
     const cart = getAllCart(useSelector(getCart()));
@@ -36,6 +37,7 @@ const Cart = () => {
                     </div>
                 </>
             )}
+            <ForeignUsersCart />
         </>
     );
 };

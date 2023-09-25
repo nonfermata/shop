@@ -1,14 +1,12 @@
 import React from 'react';
 import classes from './burger.module.css';
+import CrossIcon from '../../common/crossIcon/crossIcon';
 
 const BurgerIcon = ({ isActive }) => {
     return (
         <>
             {isActive ? (
-                <>
-                    <div className={classes.inclinedLineOne}></div>
-                    <div className={classes.inclinedLineTwo}></div>
-                </>
+                <CrossIcon />
             ) : (
                 <>
                     <div className={classes.burgerLine}></div>

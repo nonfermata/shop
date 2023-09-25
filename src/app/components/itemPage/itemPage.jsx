@@ -9,6 +9,7 @@ import { getItemInfoByName } from '../../data/itemsInfo';
 import ItemModifyForm from '../common/cartManagerForm/itemModifyForm/itemModifyForm';
 import EmptyBlock from '../common/emptyBlock/emptyBlock';
 import ItemTrackList from './itemTrackList';
+import NewBookPrologue from '../newBookPrologue/newBookPrologue';
 
 const ItemPage = () => {
     const navigate = useNavigate();
@@ -58,25 +59,7 @@ const ItemPage = () => {
     return (
         <>
             <Gratis />
-            {itemId === 'new_book' && (
-                <div className={classes.newItemInfoWrap}>
-                    Дорогие друзья!
-                    <br />
-                    <br />
-                    Готовим к выходу новую детскую книгу... Открываем сбор!
-                    <br />
-                    Весной этого года вы нас поддержали, молодцы, поддержите
-                    ещё!..
-                    <br />
-                    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-                    . . . . . . . . . . .<br />
-                    . . . . . . . . . . и всё такое прочее . . . . . . . . . . .
-                    . . .<br />
-                    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-                    . . . . . . . . . . .<br />
-                    Мы верим, что вы нас поддержите, как и раньше!..
-                </div>
-            )}
+            {itemId === 'new_book' && <NewBookPrologue />}
             <div className={classes.allItemContentWrap}>
                 <div className={classes.itemWrap}>
                     <div className={classes.rightColumn}>
@@ -161,14 +144,14 @@ const ItemPage = () => {
                         ©&nbsp;&nbsp;{year}&nbsp;&nbsp;{copyright}
                     </p>
                 )}
-                <div
+                <button
                     onClick={() => {
                         navigate(-1);
                     }}
                     className={classes.backButton}
                 >
                     ‹ НАЗАД
-                </div>
+                </button>
             </div>
         </>
     );

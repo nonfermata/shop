@@ -7,9 +7,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-bottom: 28px;
     background-color: var(--base-bg);
+    padding-bottom: 28px;
 }
 
 .siteLink {

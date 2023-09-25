@@ -1,9 +1,9 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import cartReducer from './cartReducer';
-import isMenuVisibleReducer from "./isMenuVisibleReducer";
+import isPopVisibleReducer from './isPopVisibleReducer';
 const reducer = combineReducers({
     cart: cartReducer,
-    mobileMenu: isMenuVisibleReducer
+    popWindows: isPopVisibleReducer
 });
 
 const store = configureStore({ reducer });

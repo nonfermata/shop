@@ -16,10 +16,6 @@
     gap: 20px;
 }
 
-/*.itemWrap:nth-child(odd) {*/
-/*    background-color: white;*/
-/*}*/
-
 .itemWrap:last-child {
     border-bottom: none;
 }
@@ -45,7 +41,7 @@
 }
 
 .sumInfo {
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 1.1em;
 }
 
@@ -69,6 +65,14 @@
     margin-bottom: 5px;
 }
 
+.thankYou {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-top: 15px;
+    color: var(--success-button-border);
+    transform: scale(1, 0.95);
+}
+
 .inputError {
     font-size: 0.75em;
     color: var(--orange);
@@ -79,13 +83,17 @@
     padding: 20px 25px;
     font-size: 1.15em;
     display: flex;
-    justify-content: space-around;
+    gap: 10%;
+    justify-content: center;
     align-items: center;
     margin: 0 auto;
+    border-bottom: 1px solid var(--light-grey);
+    width: 70%;
 }
 .payButton {
-    background-color: var(--blue);
-    opacity: 0.75;
+    background-color: var(--submit-button);
+    border-radius: 3px;
+    opacity: 0.85;
     padding: 7px 12px;
     color: var(--base-white);
     transition: 0.15s all ease;
@@ -97,13 +105,15 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .cartWrap {
+    .cartWrap,
+    .totalSum {
         width: 85%;
     }
 }
 
 @media screen and (max-width: 991px) {
-    .cartWrap {
+    .cartWrap,
+    .totalSum {
         width: 95%;
     }
     .itemInfoWrap {
@@ -113,7 +123,8 @@
 }
 
 @media screen and (max-width: 768px) {
-    .cartWrap {
+    .cartWrap,
+    .totalSum {
         width: 100%;
     }
     .cartWrap img.gratisImage {
