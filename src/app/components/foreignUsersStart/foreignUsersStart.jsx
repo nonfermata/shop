@@ -23,16 +23,21 @@ const ForeignUsersStart = () => {
         return (
             <div className={classes.messageWrap + ' ' + addedMessageStyle}>
                 <div className={classes.message}>
-                    В настоящее время оформление заказов на этом сайте{' '}
+                    В настоящее время оплата на этом сайте
                     <span className='noHyph'>
-                        доступно только для жителей РФ.
+                        доступна только для жителей РФ.
                     </span>
                     <br />
-                    Если вы не из России, напишите нам на:{' '}
+                    Если вы не из России,{' '}
+                    <span className='noHyph'>
+                        мы можем принять оплату по PayPal.
+                    </span>
+                    <br />
+                    Напишите нам на:{' '}
                     <a href='mailto:bgv@bgvmusic.ru'>bgv@bgvmusic.ru</a>
                     <br />
                     <span className='noHyph'>
-                        Мы рассмотрим вашу заявку индивидуально.
+                        Мы всё обсудим индивидуально.
                     </span>
                     <button className={classes.okButton} onClick={handleClick}>
                         ОК

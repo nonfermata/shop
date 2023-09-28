@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './foreignUsersCart.module.css';
+import classes from './foreignUsers.module.css';
 import CrossIcon from '../common/crossIcon/crossIcon';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -7,7 +7,7 @@ import {
     togglePopStatus
 } from '../../../redux/isPopVisibleReducer';
 
-const ForeignUsersCart = () => {
+const ForeignUsers = () => {
     const dispatch = useDispatch();
     const isMessageVisible = useSelector(getAllPopsStatus()).foreignMessage;
     const addedMessageStyle = isMessageVisible ? classes.messageVisible : '';
@@ -20,7 +20,7 @@ const ForeignUsersCart = () => {
                         dispatch(togglePopStatus('foreignMessage'));
                     }}
                 >
-                    Я не из России. Что мне делать?
+                    Я не из России. Как оплатить?
                 </span>
                 <div
                     className={
@@ -30,11 +30,15 @@ const ForeignUsersCart = () => {
                     <div className={classes.crossWrap}>
                         <CrossIcon />
                     </div>
-                    Если вы не из России, напишите нам на:{' '}
+                    Если вы не из России,
+                    <br />
+                    мы можем принять оплату по PayPal.
+                    <br />
+                    Напишите нам на:{' '}
                     <a href='mailto:bgv@bgvmusic.ru'>bgv@bgvmusic.ru</a>
                     <br />
                     <span className='noHyph'>
-                        Мы рассмотрим вашу заявку индивидуально.
+                        Мы всё обсудим индивидуально.
                     </span>
                 </div>
             </div>
@@ -42,4 +46,4 @@ const ForeignUsersCart = () => {
     );
 };
 
-export default ForeignUsersCart;
+export default ForeignUsers;

@@ -1,0 +1,40 @@
+.info {
+    width: 280px;
+    height: 77px;
+    position: absolute;
+    background-color: #fff;
+    left: calc(50% - 140px);
+    bottom: 190px;
+}
+
+.youmoney {
+    color: #7f2bfd;
+    font-weight: 600;
+}
+
+.block {
+    position: absolute;
+    left: 0;
+    bottom: 140px;
+    padding: 23px 50%;
+    /*background-color: #00758c;*/
+    opacity: 0.2;
+}
+
+@media screen and (max-width: 991px) {
+    .block {
+        bottom: 180px;
+    }
+    .info {
+        bottom: 230px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .block {
+        bottom: 190px;
+    }
+    .info {
+        bottom: 240px;
+    }
+}

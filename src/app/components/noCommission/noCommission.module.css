@@ -1,12 +1,5 @@
-.messageWrap {
-    margin-top: 20px;
-}
-
 .message {
-    text-align: center;
-    width: fit-content;
-    margin: 0 auto;
-    font-size: 0.95em;
+    width: 100%;
     line-height: 1.5em;
     position: relative;
 }
@@ -19,12 +12,14 @@
 
 .messageDetailed {
     display: none;
+    min-width: 300px;
+    width: 100%;
     position: absolute;
-    bottom: 100%;
-    right: 0;
+    bottom: 0;
+    right: -10px;
     background-color: var(--base-white);
-    border: 1px solid var(--light-grey);
-    padding: 20px 10px 10px;
+    padding: 15px 10px 10px;
+    box-shadow: 0 0 10px 2px var(--ex-light-grey);
 }
 
 .notFromRussia:hover {
@@ -56,16 +51,11 @@
     align-items: center;
     transform: scale(0.6, 0.6);
     cursor: pointer;
-    transition: .15s all ease;
+    transition: 0.15s all ease;
 }
 
 .crossWrap:hover {
     background-color: var(--ex-light-beige);
 }
 
-@media screen and (max-width: 480px) {
-    .message,
-    .messageDetailed {
-        width: 100%;
-    }
-}
+

@@ -179,10 +179,6 @@ export const cd = [
     new CdItem('znoy', 'Зной', 500, 1997, znoy, false),
     new CdItem('amulet', 'Амулет', 500, 1996, amulet, false)
 ];
-cd[0].subtitle = 'альбом на CD, с буклетом'
-cd[1].subtitle = 'альбом на CD, с буклетом'
-cd[3].subtitle = 'альбом на CD, с буклетом'
-cd[4].subtitle = 'альбом на CD, с буклетом'
 
 export const mp3 = [
     new Mp3Item('mp3_propis', 'Прописью на стене', 300, 2023, mp3_propis, true),
@@ -459,6 +455,15 @@ export const epub = [
         ]
     )
 ];
+
+cd[0].subtitle = 'альбом на CD, с буклетом'
+cd[1].subtitle = 'альбом на CD, с буклетом'
+cd[3].subtitle = 'альбом на CD, с буклетом'
+cd[4].subtitle = 'альбом на CD, с буклетом'
+cd[5].subtitle = 'двойной альбом на CD'
+mp3[5].subtitle = 'двойной альбом в MP3-формате'
+flac[5].subtitle = 'двойной альбом в FLAC-формате'
+wav[5].subtitle = 'двойной альбом в WAV-формате'
 
 export const getItemById = (id) =>
     [...cd, ...mp3, ...flac, ...wav, ...books, ...epub].find(

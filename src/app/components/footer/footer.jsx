@@ -9,9 +9,11 @@ import {
     getAllPopsStatus,
     togglePopStatus
 } from '../../../redux/isPopVisibleReducer';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
+import ForeignUsers from '../foreignUsers/foreignUsers';
 
 const Footer = () => {
+    const pageName = useLocation().pathname;
     const dispatch = useDispatch();
     const allMenusStatus = useSelector(getAllPopsStatus());
     const alboms = [menu[1], menu[3], menu[4], menu[5]];
@@ -21,37 +23,55 @@ const Footer = () => {
 
     return (
         <footer className={classes.footerWrap}>
-            <div className={classes.footerDesktop}>
-                <Navbar />
-            </div>
-            <div className={classes.footerMobile}>
-                <NavLink to='items/new_book' className={classes.footerNewBookLink}>
-                    <div className={classes.footerSubMenuWrap}>
-                        <p className={classes.footerSubMenuTitle}>Новая книга</p>
-                        <ArrowForMenu />
+            <ForeignUsers />
+            {pageName !== '/payment' && (
+                <>
+                    <div className={classes.footerDesktop}>
+                        <Navbar isFooter={true} />
                     </div>
-                </NavLink>
-                <div
-                    className={classes.footerSubMenuWrap}
-                    onClick={() => {
-                        dispatch(togglePopStatus('alboms'));
-                    }}
-                >
-                    <p className={classes.footerSubMenuTitle}>Альбомы</p>
-                    <ArrowForMenu isActive={allMenusStatus.alboms} />
-                    <SubMenu menu={alboms} isActive={allMenusStatus.alboms} />
-                </div>
-                <div
-                    className={classes.footerSubMenuWrap}
-                    onClick={() => {
-                        dispatch(togglePopStatus('books'));
-                    }}
-                >
-                    <p className={classes.footerSubMenuTitle}>Книги</p>
-                    <ArrowForMenu isActive={allMenusStatus.books} />
-                    <SubMenu menu={books} isActive={allMenusStatus.books} />
-                </div>
-            </div>
+                    <div className={classes.footerMobile}>
+                        <NavLink
+                            to='items/new_book'
+                            className={classes.footerNewBookLink}
+                        >
+                            <div className={classes.footerSubMenuWrap}>
+                                <p className={classes.footerSubMenuTitle}>
+                                    Новая книга
+                                </p>
+                                <ArrowForMenu />
+                            </div>
+                        </NavLink>
+                        <div
+                            className={classes.footerSubMenuWrap}
+                            onClick={() => {
+                                dispatch(togglePopStatus('alboms'));
+                            }}
+                        >
+                            <p className={classes.footerSubMenuTitle}>
+                                Альбомы
+                            </p>
+                            <ArrowForMenu isActive={allMenusStatus.alboms} />
+                            <SubMenu
+                                menu={alboms}
+                                isActive={allMenusStatus.alboms}
+                            />
+                        </div>
+                        <div
+                            className={classes.footerSubMenuWrap}
+                            onClick={() => {
+                                dispatch(togglePopStatus('books'));
+                            }}
+                        >
+                            <p className={classes.footerSubMenuTitle}>Книги</p>
+                            <ArrowForMenu isActive={allMenusStatus.books} />
+                            <SubMenu
+                                menu={books}
+                                isActive={allMenusStatus.books}
+                            />
+                        </div>
+                    </div>
+                </>
+            )}
         </footer>
     );
 };

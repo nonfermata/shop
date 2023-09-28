@@ -4,7 +4,8 @@ const initialState = {
     burger: false,
     alboms: false,
     books: false,
-    foreignMessage: false
+    foreignMessage: false,
+    noCommission: false
 };
 
 const isPopVisibleSlice = createSlice({

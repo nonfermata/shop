@@ -80,17 +80,17 @@
 }
 
 .totalSum {
-    padding: 20px 25px;
-    font-size: 1.15em;
+    padding: 25px;
+    font-size: 1.2em;
     display: flex;
     gap: 10%;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: 0 auto 30px;
     border-bottom: 1px solid var(--light-grey);
     width: 70%;
 }
-.payButton {
+.confirmButton {
     background-color: var(--submit-button);
     border-radius: 3px;
     opacity: 0.85;
@@ -100,7 +100,7 @@
     cursor: pointer;
 }
 
-.payButton:hover {
+.confirmButton:hover {
     opacity: 1;
 }
 

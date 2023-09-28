@@ -1,0 +1,33 @@
+.listTitle {
+    font-weight: 500;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.listWrap {
+    margin: 30px auto 0;
+    width: fit-content;
+    border-bottom: 1px solid var(--success-button-border);
+    border-top: 1px solid var(--success-button-border);
+    font-size: 0.9em;
+}
+
+.listItem {
+    padding: 7px 10px;
+    background-color: var(--ex-light-green);
+}
+
+.listItem:nth-child(even) {
+    background-color: var(--ex-light-green2);
+}
+
+.listTotalSum {
+    margin-top: 10px;
+    text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+    .listWrap {
+        width: 100%;
+    }
+}

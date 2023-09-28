@@ -50,7 +50,7 @@ const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
     return (
         <>
             <div className={classes.donationFormWrap}>
-                {isCart&&'Добавить ещё'}
+                {isCart && 'Добавить ещё'}
                 <div className={classes.donationInputWrap}>
                     <div className={classes.inputError}>{error}</div>
                     <PriceField
@@ -61,7 +61,17 @@ const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
                     ₽
                 </div>
                 {isCart ? (
-                    <ModifyButton>+</ModifyButton>
+                    <ModifyButton
+                        onClick={modifyCartGratis}
+                        disabled={error || !donation}
+                        title={
+                            error || !donation
+                                ? ''
+                                : 'Добавить ' + donation + ' ₽'
+                        }
+                    >
+                        +
+                    </ModifyButton>
                 ) : (
                     <button
                         className={

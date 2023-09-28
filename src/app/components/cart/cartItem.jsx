@@ -23,7 +23,6 @@ const CartItem = ({
     price,
     isDigital = true
 }) => {
-    const doublePrefix = name === 'Ретроспектива' ? 'двойной ' : '';
     const amount = useSelector(getAmountById(id));
     const sum = useSelector(getSumById(id));
     const dispatch = useDispatch();
@@ -54,7 +53,7 @@ const CartItem = ({
                         <>
                             <p className='itemYear'>{year}</p>
                             <p className={classes.subtitle}>
-                                {doublePrefix + subtitle}
+                                {subtitle}
                             </p>
                         </>
                     )}

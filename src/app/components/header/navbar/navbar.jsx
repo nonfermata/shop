@@ -3,9 +3,9 @@ import classes from './navbar.module.css';
 import { NavLink } from 'react-router-dom';
 import menu from '../../../data/menu';
 import CartLink from '../../common/cartLink/cartLink';
-import scrollToTop from "../../../utils/scrollToTop";
+import scrollToTop from '../../../utils/scrollToTop';
 
-const Navbar = () => {
+const Navbar = ({ isFooter = false }) => {
     return (
         <nav className={classes.navbarWrap}>
             {menu.map(({ link, name, title }, index) => (
@@ -15,7 +15,7 @@ const Navbar = () => {
                     </span>
                     <NavLink
                         key={name}
-                        to={link}
+                        to={isFooter ? 'main/' + link : link}
                         title={title || name}
                         onClick={scrollToTop}
                         style={

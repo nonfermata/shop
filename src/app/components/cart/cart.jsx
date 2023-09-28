@@ -7,7 +7,7 @@ import CategoryHeader from '../common/categoryHeader/categoryHeader';
 import classes from './cart.module.css';
 import CartItem from './cartItem';
 import formatSum from '../../utils/formatSum';
-import ForeignUsersCart from '../foreignUsersCart/foreignUsersCart';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
     const cart = getAllCart(useSelector(getCart()));
@@ -27,17 +27,16 @@ const Cart = () => {
                     <div className={classes.totalSum}>
                         <div>
                             Всего к оплате:&nbsp;&nbsp;
-                            <span className='fw600'>
+                            <span className='fw500'>
                                 {formatSum(totalSum)} ₽
                             </span>
                         </div>
-                        <button className={classes.payButton}>
-                            Перейти к оплате
+                        <button className={classes.confirmButton}>
+                            <Link to='../../payment'>Оформить покупку</Link>
                         </button>
                     </div>
                 </>
             )}
-            <ForeignUsersCart />
         </>
     );
 };

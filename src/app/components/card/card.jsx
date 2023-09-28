@@ -53,7 +53,7 @@ const Card = ({
     const navigate = useNavigate();
     const handleImageClick = () => {
         scrollToTop();
-        navigate(`/items/${id}`);
+        navigate(`../items/${id}`);
     };
     return (
         <div className={classes.cardWrap + ' ' + cardWrap}>
@@ -85,6 +85,11 @@ const Card = ({
                     isAvailable={isAvailable}
                     isDigital={isDigital}
                 />
+                {!isAvailable && (
+                    <div className={classes.getEVersion}>
+                        Вы можете приобрести электронную версию
+                    </div>
+                )}
             </div>
         </div>
     );

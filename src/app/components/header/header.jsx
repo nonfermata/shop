@@ -4,8 +4,6 @@ import Burger from './burger/burger';
 import Navbar from './navbar/navbar';
 import HeaderCartBlock from './headerCartBlock/headerCartBlock';
 import SiteLink from '../common/siteLink/siteLink';
-import CartIcon from '../common/cartIcon/cartIcon';
-import { NavLink } from 'react-router-dom';
 import HeaderCartIconLink from './headerCartIconLink/headerCartIconLink';
 
 const Header = () => {

@@ -43,7 +43,6 @@ const ItemPage = () => {
         default:
             imageWidth = 'middleImage';
     }
-    const doublePrefix = name === 'Ретроспектива' ? 'двойной ' : '';
     const { trackList, description, copyright, backImage } =
         getItemInfoByName(name);
 
@@ -75,6 +74,11 @@ const ItemPage = () => {
                             isAvailable={isAvailable}
                             isDigital={isDigital}
                         />
+                        {!isAvailable && (
+                            <div className={classes.getEVersion}>
+                                Вы можете приобрести электронную версию
+                            </div>
+                        )}
                     </div>
                     <div className={classes.leftColumn}>
                         <div className={classes.itemTitleWrap}>
@@ -84,9 +88,7 @@ const ItemPage = () => {
                             )}
                         </div>
 
-                        <p className={classes.subtitle}>
-                            {doublePrefix + subtitle}
-                        </p>
+                        <p className={classes.subtitle}>{subtitle}</p>
                         <ItemTrackList isOrderedList={type !== 'book'}>
                             {!Array.isArray(trackList) && (
                                 <p className={classes.cdNumber}>CD1</p>
