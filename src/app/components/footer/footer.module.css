@@ -16,6 +16,22 @@
     justify-content: space-evenly;
 }
 
+.otherItems {
+    width: 100%;
+    background-color: var(--blue);
+    color: var(--base-white);
+    padding: 7px 10px;
+    font-size: 1.1em;
+    user-select: none;
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
 .footerSubMenuWrap {
     background-color: var(--blue);
     color: var(--base-white);
@@ -30,6 +46,11 @@
 
 .footerSubMenuTitle {
     font-size: 1.1em;
+}
+
+.aboutPaymentWrap {
+    margin: 0 auto 15px;
+    text-align: center;
 }
 
 @media screen and (max-width: 1200px) {

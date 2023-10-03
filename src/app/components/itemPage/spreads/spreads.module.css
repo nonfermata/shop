@@ -1,0 +1,34 @@
+.spreadsWrap {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.spreadWrap {
+    cursor: pointer;
+    width: 60%;
+    border: 1px solid var(--light-beige);
+}
+.spreadWrap img {
+    width: 100%;
+}
+
+.imageOnlyWrap {
+    max-width: calc(100vw - 100px);
+    position: relative;
+    margin-top: 50px;
+}
+
+.imageOnlyWrap img {
+    width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+    .spreadsWrap {
+        justify-content: center;
+    }
+    .spreadWrap {
+        width: 45%;
+    }
+}

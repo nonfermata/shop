@@ -3,7 +3,7 @@ import classes from './headerCartBlock.module.css';
 import { NavLink } from 'react-router-dom';
 import getDeclination from '../../../utils/getDeclination';
 import formatSum from '../../../utils/formatSum';
-import { getAllCart, getAllTotalSum } from '../../../utils/cartUtil';
+import { getAllCart, getItemsSum } from '../../../utils/cartUtil';
 import { useSelector } from 'react-redux';
 import { getCart } from '../../../../redux/cartReducer';
 import CartIcon from '../../common/cartIcon/cartIcon';
@@ -33,7 +33,7 @@ const HeaderCartBlock = () => {
         }
         prevPositions.current = positions;
     }, [positions]);
-    const totalSum = getAllTotalSum(cart);
+    const itemsSum = getItemsSum(cart);
     return (
         <div className={classes.basketInfoWrap}>
             <NavLink
@@ -42,7 +42,7 @@ const HeaderCartBlock = () => {
                 className={classes.basketInfo + ' ' + basketInfoStyle}
                 onClick={scrollToTop}
             >
-                {totalSum === 0 ? (
+                {itemsSum === 0 ? (
                     'Ваша корзина пуста'
                 ) : (
                     <>
@@ -53,8 +53,8 @@ const HeaderCartBlock = () => {
                         <span className={classes.positions}>{positions}</span>
                         {getDeclination(positions, 'positions')} на{' '}
                         <span className={classes.onSum}>сумму</span>
-                        <div className={classes.totalSumBox}>
-                            <span className='fw500'>{formatSum(totalSum)}</span>{' '}
+                        <div className={classes.itemsSumBox}>
+                            <span className='fw500'>{formatSum(itemsSum)}</span>{' '}
                             ₽
                         </div>
                     </>

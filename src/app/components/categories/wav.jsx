@@ -18,7 +18,7 @@ const Wav = () => {
             <Gratis />
             <CategoryHeader title={title} info={info} />
             <div className={classes.cardsWrap}>
-                <DonationCard />
+                {/*<DonationCard />*/}
                 {wav.map((item) => (
                     <Card key={item.id} {...item} />
                 ))}

@@ -2,10 +2,12 @@
     width: 2px;
     background-color: var(--semi-dark-grey);
     height: 100%;
+    margin: 0 auto;
     transform: rotate(-45deg);
 }
 
 .inclinedLineTwo {
+    margin: 0 auto;
     width: 2px;
     background-color: var(--semi-dark-grey);
     height: 100%;

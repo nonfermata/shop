@@ -3,7 +3,7 @@
     text-align: right;
     padding: 2px;
     border-bottom: 1px solid var(--light-grey);
-    width: 75px;
+    width: 60px;
 }
 ::-webkit-input-placeholder {
     font-size: 0.8em;

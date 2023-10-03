@@ -1,0 +1,170 @@
+.formWrap {
+    position: relative;
+    margin-bottom: 120px;
+}
+
+.form {
+    margin: 0 auto 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weNeedYourData {
+    margin: 20px auto 10px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.inputWrap {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.error {
+    position: absolute;
+    font-weight: 300;
+    top: calc(100% - 2px);
+    left: calc(50% - 170px);
+    font-size: 0.75rem;
+    color: var(--orange);
+    user-select: none;
+}
+
+.selectWrap {
+    margin: 0 auto;
+    max-width: 500px;
+    text-align: center;
+    padding: 10px;
+    /*border-top: 1px solid var(--light-grey);*/
+}
+.selectLabel {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.input,
+.select {
+    width: 340px;
+    padding: 7px 10px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid var(--semi-dark-grey);
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.select {
+    width: 100%;
+    font-weight: 400;
+    font-size: 1em;
+    padding: 5px;
+}
+
+.deliveryResult {
+    font-size: .9em;
+}
+
+.input:focus,
+.select:focus {
+    border: 1px solid var(--light-orange);
+    background-color: white;
+}
+
+.input::placeholder {
+    color: var(--semi-grey);
+    font-weight: 300;
+    font-size: 0.9em;
+}
+
+.selectDefault {
+    color: var(--semi-grey);
+}
+
+.selectNorm {
+    color: var(--base);
+}
+
+.finalSum {
+    padding: 15px 0 0;
+    font-size: 1.05em;
+}
+
+.btn {
+    background-color: var(--submit-button);
+    border-radius: 3px;
+    opacity: 0.85;
+    padding: 7px 12px;
+    color: var(--base-white);
+    transition: 0.15s all ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+.btnDisabled {
+    background-color: var(--disabled);
+    border: 1px solid var(--light-beige);
+    color: var(--light-grey);
+    cursor: default;
+}
+
+.btnDisabled:hover {
+    background-color: var(--disabled);
+    border: 1px solid var(--light-beige);
+}
+
+.submittedItem {
+    width: 340px;
+    padding: 7px 10px;
+    font-weight: 400;
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.renewCaptchaBtn {
+    position: absolute;
+    left: calc(50% + 100px);
+    bottom: 115px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    color: var(--base);
+    border: 1px solid var(--base);
+    background-color: var(--base-white);
+    /*padding: 3px 4px 0;*/
+    padding: 3px;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: all ease 0.15s;
+}
+
+.renewCaptchaBtn:hover {
+    background-color: var(--light-beige2);
+}
+
+.btnRotated {
+    transform: rotate(-180deg);
+    transition: none;
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 640px) {
+}
+
+@media screen and (max-width: 480px) {
+    .input,
+    .submittedItem {
+        width: 80%;
+    }
+    .error {
+        left: 10%;
+    }
+}

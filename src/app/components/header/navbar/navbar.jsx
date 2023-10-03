@@ -5,7 +5,7 @@ import menu from '../../../data/menu';
 import CartLink from '../../common/cartLink/cartLink';
 import scrollToTop from '../../../utils/scrollToTop';
 
-const Navbar = ({ isFooter = false }) => {
+const Navbar = () => {
     return (
         <nav className={classes.navbarWrap}>
             {menu.map(({ link, name, title }, index) => (
@@ -15,7 +15,7 @@ const Navbar = ({ isFooter = false }) => {
                     </span>
                     <NavLink
                         key={name}
-                        to={isFooter ? 'main/' + link : link}
+                        to={link}
                         title={title || name}
                         onClick={scrollToTop}
                         style={

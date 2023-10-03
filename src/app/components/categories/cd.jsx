@@ -12,14 +12,14 @@ const Cd = () => {
     const info = [
         'Если вы выбираете материальные лоты,',
         'к цене заказа также добавляется стоимость почтовой пересылки,',
-        'которая составляет от 300 до 500 руб. в зависимости от веса посылки и региона получателя.'
+        'которая зависит от веса посылки и региона получателя.'
     ];
     return (
         <>
             <Gratis />
             <CategoryHeader title={title} info={info} />
             <div className={classes.cardsWrap}>
-                <DonationCard />
+                {/*<DonationCard />*/}
                 {cd.map((item) => (
                     <Card key={item.id} {...item} />
                 ))}

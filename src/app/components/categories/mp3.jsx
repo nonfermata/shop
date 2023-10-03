@@ -18,7 +18,7 @@ const Mp3 = () => {
             <Gratis />
             <CategoryHeader title={title} info={info} />
             <div className={classes.cardsWrap}>
-                <DonationCard />
+                {/*<DonationCard />*/}
                 {mp3.map((item) => (
                     <Card key={item.id} {...item} />
                 ))}

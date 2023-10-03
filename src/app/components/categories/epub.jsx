@@ -16,7 +16,7 @@ const Epub = () => {
             <Gratis />
             <CategoryHeader title={title} info={info} />
             <div className={classes.cardsWrap + ' ' + classes.booksCardsWrap}>
-                <DonationCard category='books' />
+                {/*<DonationCard category='books' />*/}
                 {epub.map((item) => (
                     <Card key={item.id} {...item} />
                 ))}

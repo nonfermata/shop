@@ -8,7 +8,6 @@ const formatSum = (sum) => {
             newArr.push(' ');
         }
     }
-
     return newArr.reverse().join('');
 };
 

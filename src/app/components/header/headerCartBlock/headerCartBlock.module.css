@@ -31,7 +31,7 @@
     color: var(--orange);
 }
 
-.totalSumBox {
+.capitalSumBox {
     width: max-content;
     background-color: var(--orange);
     padding: 1px 7px;

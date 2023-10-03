@@ -18,7 +18,7 @@ const Flac = () => {
             <Gratis />
             <CategoryHeader title={title} info={info} />
             <div className={classes.cardsWrap}>
-                <DonationCard />
+                {/*<DonationCard />*/}
                 {flac.map((item) => (
                     <Card key={item.id} {...item} />
                 ))}

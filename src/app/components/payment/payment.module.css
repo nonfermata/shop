@@ -1,9 +1,0 @@
-.paymentWrap {
-    margin-top: 100px;
-}
-
-@media screen and (max-width: 991px) {
-    .paymentWrap {
-        margin-top: 70px;
-    }
-}

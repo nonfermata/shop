@@ -1,0 +1,50 @@
+.frame {
+    height: 225px;
+    width: 300px;
+    user-select: none;
+    position: absolute;
+    bottom: 110px;
+    left: calc(50% - 150px);
+}
+
+.info {
+    width: 280px;
+    height: 77px;
+    position: absolute;
+    background-color: #fff;
+    left: calc(50% - 140px);
+    bottom: 250px;
+}
+
+.block {
+    position: absolute;
+    left: 0;
+    bottom: 200px;
+    padding: 23px 50%;
+    /*background-color: #00758c;*/
+    opacity: 0.2;
+}
+
+@media screen and (max-width: 991px) {
+    .frame {
+        bottom: 90px;
+    }
+    .block {
+        bottom: 180px;
+    }
+    .info {
+        bottom: 230px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .frame {
+        bottom: 100px;
+    }
+    .block {
+        bottom: 190px;
+    }
+    .info {
+        bottom: 240px;
+    }
+}

@@ -9,65 +9,33 @@ import {
     getAllPopsStatus,
     togglePopStatus
 } from '../../../redux/isPopVisibleReducer';
-import { NavLink, useLocation } from 'react-router-dom';
-import ForeignUsers from '../foreignUsers/foreignUsers';
+import { useLocation } from 'react-router-dom';
+import ForeignUsers from '../payment/foreignUsers/foreignUsers';
+import AboutPayment from './aboutPayment';
 
 const Footer = () => {
     const pageName = useLocation().pathname;
     const dispatch = useDispatch();
-    const allMenusStatus = useSelector(getAllPopsStatus());
-    const alboms = [menu[1], menu[3], menu[4], menu[5]];
-    const books = [{ ...menu[2] }, { ...menu[6] }];
-    books[0].name = 'Бумажные книги';
-    books[1].name = 'Электронные книги';
+    const burgerMenuStatus = useSelector(getAllPopsStatus()).burger;
 
     return (
         <footer className={classes.footerWrap}>
+            {pageName === '/confirmation' && <AboutPayment />}
             <ForeignUsers />
-            {pageName !== '/payment' && (
+            {pageName !== '/payment' && pageName !== '/confirmation' && (
                 <>
                     <div className={classes.footerDesktop}>
-                        <Navbar isFooter={true} />
+                        <Navbar />
                     </div>
                     <div className={classes.footerMobile}>
-                        <NavLink
-                            to='items/new_book'
-                            className={classes.footerNewBookLink}
-                        >
-                            <div className={classes.footerSubMenuWrap}>
-                                <p className={classes.footerSubMenuTitle}>
-                                    Новая книга
-                                </p>
-                                <ArrowForMenu />
-                            </div>
-                        </NavLink>
                         <div
-                            className={classes.footerSubMenuWrap}
+                            className={classes.otherItems}
                             onClick={() => {
-                                dispatch(togglePopStatus('alboms'));
+                                dispatch(togglePopStatus('burger'));
                             }}
                         >
-                            <p className={classes.footerSubMenuTitle}>
-                                Альбомы
-                            </p>
-                            <ArrowForMenu isActive={allMenusStatus.alboms} />
-                            <SubMenu
-                                menu={alboms}
-                                isActive={allMenusStatus.alboms}
-                            />
-                        </div>
-                        <div
-                            className={classes.footerSubMenuWrap}
-                            onClick={() => {
-                                dispatch(togglePopStatus('books'));
-                            }}
-                        >
-                            <p className={classes.footerSubMenuTitle}>Книги</p>
-                            <ArrowForMenu isActive={allMenusStatus.books} />
-                            <SubMenu
-                                menu={books}
-                                isActive={allMenusStatus.books}
-                            />
+                            Другие альбомы и книги группы
+                            <ArrowForMenu isActive={burgerMenuStatus} />
                         </div>
                     </div>
                 </>

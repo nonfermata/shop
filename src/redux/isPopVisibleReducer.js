@@ -5,7 +5,8 @@ const initialState = {
     alboms: false,
     books: false,
     foreignMessage: false,
-    noCommission: false
+    noCommission: false,
+    darkWindow: false
 };
 
 const isPopVisibleSlice = createSlice({
@@ -24,8 +25,8 @@ const isPopVisibleSlice = createSlice({
 const { toggle, close } = isPopVisibleSlice.actions;
 const isPopVisibleReducer = isPopVisibleSlice.reducer;
 
-export const togglePopStatus = (menuName) => toggle(menuName);
-export const closePop = (menuName) => close(menuName);
+export const togglePopStatus = (windowName) => toggle(windowName);
+export const closePop = (windowName) => close(windowName);
 export const getAllPopsStatus = () => (state) => state.popWindows;
 
 export default isPopVisibleReducer;

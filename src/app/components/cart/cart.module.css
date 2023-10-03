@@ -8,6 +8,22 @@
     width: 70%;
 }
 
+.cartWrap img.gratisImage {
+    width: 80px;
+}
+
+.warningMessage {
+    width: calc(100vw - 100px);
+    max-width: 700px;
+    padding: 20px;
+    position: relative;
+    margin-top: 50px;
+    font-size: 1.1em;
+    line-height: 1.6em;
+    background-color: var(--warning);
+    border-radius: 3px;
+}
+
 .itemWrap {
     border-bottom: 1px solid var(--light-beige2);
     padding: 15px;
@@ -79,17 +95,21 @@
     height: 11px;
 }
 
-.totalSum {
-    padding: 25px;
+.itemsSumWrap {
+    padding: 25px 0;
+    border-bottom: 1px solid var(--light-grey);
+    width: 70%;
+    margin: 0 auto 30px;
+}
+
+.itemsSum {
     font-size: 1.2em;
     display: flex;
     gap: 10%;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 30px;
-    border-bottom: 1px solid var(--light-grey);
-    width: 70%;
 }
+
 .confirmButton {
     background-color: var(--submit-button);
     border-radius: 3px;
@@ -105,15 +125,14 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .cartWrap,
-    .totalSum {
+    .cartWrap, .itemsSumWrap {
         width: 85%;
     }
 }
 
 @media screen and (max-width: 991px) {
     .cartWrap,
-    .totalSum {
+    .itemsSumWrap {
         width: 95%;
     }
     .itemInfoWrap {
@@ -124,11 +143,8 @@
 
 @media screen and (max-width: 768px) {
     .cartWrap,
-    .totalSum {
+    .itemsSumWrap {
         width: 100%;
-    }
-    .cartWrap img.gratisImage {
-        width: 80px;
     }
 }
 
@@ -148,10 +164,15 @@
         gap: 15px;
         align-items: flex-start;
     }
+    .itemsSum {
+        justify-content: space-between;
+        gap: 0;
+        padding: 25px 0;
+    }
 }
 
 @media screen and (max-width: 480px) {
-    .totalSum {
+    .itemsSum {
         flex-direction: column;
         gap: 15px;
         align-items: flex-start;

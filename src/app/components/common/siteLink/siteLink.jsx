@@ -11,7 +11,7 @@ const SiteLink = ({className}) => {
             title='Зоя Ященко и "Белая Гвардия". Официальный сайт'
         >
             {home}
-            на сайт bgvmusic.ru
+            на bgvmusic.ru
         </a>
     );
 };

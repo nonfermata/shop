@@ -36,15 +36,20 @@ const cartSlice = createSlice({
                 }
             }
             localStorage.setItem('cart', JSON.stringify(state));
+        },
+        empty(state) {
+            state = [];
+            localStorage.setItem('cart', JSON.stringify(state));
         }
     }
 });
 
-const { modify } = cartSlice.actions;
+const { modify, empty } = cartSlice.actions;
 const cartReducer = cartSlice.reducer;
 
 export const modifyItem = (id, method, donation) =>
     modify({ id, method, donation });
+export const emptyCart = () => empty();
 export const getAmountById = (id) => (state) => {
     const itemById = state.cart.find((item) => item.id === id);
     return itemById ? itemById.donations.length : 0;

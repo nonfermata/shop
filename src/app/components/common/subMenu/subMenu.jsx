@@ -23,7 +23,7 @@ const SubMenu = ({ menu, isActive }) => {
             {menu.map(({ link, name }) => (
                 <NavLink
                     key={name}
-                    to={'main/' + link}
+                    to={link}
                     className={classes.subMenuLink}
                     onClick={scrollToTop}
                 >

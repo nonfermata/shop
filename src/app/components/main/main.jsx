@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../header/header';
-import { Route, Routes } from 'react-router-dom';
+import {Navigate, Route, Routes} from 'react-router-dom';
 import Cd from '../categories/cd';
 import Mp3 from '../categories/mp3';
 import Flac from '../categories/flac';
@@ -23,6 +23,7 @@ const Main = () => {
                 <Route path='epub' element={<Epub />} />
                 <Route path='cart' element={<Cart />} />
                 <Route path='items/:itemId' element={<ItemPage />} />
+                <Route path='*' element={<Navigate to='items/new_book' />} />
             </Routes>
         </>
     );

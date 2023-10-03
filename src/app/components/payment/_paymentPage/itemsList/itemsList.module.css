@@ -1,0 +1,60 @@
+.listTitle {
+    font-weight: 500;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.listWrap {
+    margin: 30px auto 0;
+    width: fit-content;
+    border-bottom: 1px solid var(--semi-grey);
+    border-top: 1px solid var(--semi-grey);
+    font-size: 0.9em;
+}
+
+.listItem {
+    padding: 7px 10px;
+    background-color: var(--ex-light-green);
+}
+
+.listItem:nth-child(even) {
+    background-color: var(--ex-light-green2);
+}
+
+.listItemsSum {
+    padding: 10px 0 15px;
+    text-align: center;
+}
+.totalSum {
+    text-align: center;
+    background-color: var(--ex-light-green2);
+    padding: 7px 15px;
+    width: fit-content;
+    margin: 0 auto;
+    min-width: 250px;
+}
+
+.aboutDelivery {
+    margin: 0 auto;
+    color: var(--dark-grey);
+    max-width: 500px;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid var(--light-grey);
+    border-bottom: 1px solid var(--light-grey);
+    background-color: var(--disabled);
+}
+
+.nowJustPay {
+    margin: 20px 0 300px;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 640px) {
+    .listWrap {
+        width: 100%;
+    }
+}

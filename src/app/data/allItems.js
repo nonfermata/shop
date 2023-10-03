@@ -109,6 +109,7 @@ class CdItem extends Item {
         super(id, name, price, year, image, isAvailable, shotDescr);
         this.subtitle = 'альбом на CD';
         this.isDigital = false;
+        this.weight = 120;
     }
 }
 
@@ -138,7 +139,7 @@ class BookItem extends Item {
         super(id, name, price, year, image, isAvailable, shotDescr);
         this.subtitle = 'бумажная книга';
         this.isDigital = false;
-        this.type = 'book';
+        this.type = 'book'
     }
 }
 
@@ -155,7 +156,8 @@ export const gratis = {
     name: 'Безвозмездная поддержка',
     price: null,
     image: lotos,
-    subtitle: ''
+    subtitle: '',
+    isDigital: true
 };
 
 export const cd = [
@@ -456,14 +458,29 @@ export const epub = [
     )
 ];
 
-cd[0].subtitle = 'альбом на CD, с буклетом'
-cd[1].subtitle = 'альбом на CD, с буклетом'
-cd[3].subtitle = 'альбом на CD, с буклетом'
-cd[4].subtitle = 'альбом на CD, с буклетом'
-cd[5].subtitle = 'двойной альбом на CD'
-mp3[5].subtitle = 'двойной альбом в MP3-формате'
-flac[5].subtitle = 'двойной альбом в FLAC-формате'
-wav[5].subtitle = 'двойной альбом в WAV-формате'
+cd[0].subtitle = 'альбом на CD, с буклетом';
+cd[1].subtitle = 'альбом на CD, с буклетом';
+cd[3].subtitle = 'альбом на CD, с буклетом';
+cd[4].subtitle = 'альбом на CD, с буклетом';
+cd[5].subtitle = 'двойной альбом на CD';
+cd[0].weight = 100;
+cd[1].weight = 100;
+cd[2].weight = 100;
+cd[3].weight = 100;
+cd[4].weight = 100;
+cd[5].weight = 150;
+cd[6].weight = 100;
+cd[7].weight = 100;
+cd[8].weight = 100;
+cd[9].weight = 100;
+books[0].weight = 300;
+books[1].weight = 750;
+books[2].weight = 500;
+books[3].weight = 450;
+books[4].weight = 150;
+mp3[5].subtitle = 'двойной альбом в MP3-формате';
+flac[5].subtitle = 'двойной альбом в FLAC-формате';
+wav[5].subtitle = 'двойной альбом в WAV-формате';
 
 export const getItemById = (id) =>
     [...cd, ...mp3, ...flac, ...wav, ...books, ...epub].find(

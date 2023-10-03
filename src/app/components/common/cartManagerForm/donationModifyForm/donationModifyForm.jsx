@@ -20,7 +20,7 @@ const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
             setButtonText('Спасибо! Добавлено');
             setTimeout(() => {
                 setAddedButtonStyle('');
-                setButtonText('Добавить ещё');
+                setButtonText(initialButtonText);
             }, 1700);
             dispatch(modifyItem('gratis', 'add', donation));
         }

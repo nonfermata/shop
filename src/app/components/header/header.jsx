@@ -5,12 +5,13 @@ import Navbar from './navbar/navbar';
 import HeaderCartBlock from './headerCartBlock/headerCartBlock';
 import SiteLink from '../common/siteLink/siteLink';
 import HeaderCartIconLink from './headerCartIconLink/headerCartIconLink';
+import TopNotice from './topNotice/topNotice';
 
 const Header = () => {
     return (
         <header className={classes.header}>
+            <TopNotice />
             <SiteLink className={classes.siteLink} />
-            <HeaderCartBlock />
             <div className={classes.rightMobileBlock}>
                 <HeaderCartIconLink />
                 <Burger />

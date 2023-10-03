@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
@@ -10,8 +10,24 @@ import ItemModifyForm from '../common/cartManagerForm/itemModifyForm/itemModifyF
 import EmptyBlock from '../common/emptyBlock/emptyBlock';
 import ItemTrackList from './itemTrackList';
 import NewBookPrologue from '../newBookPrologue/newBookPrologue';
+import Spreads from './spreads/spreads';
+import withInnerWindow from '../hoc/withInnerWindow';
+import ImageOnly from './spreads/imageOnly';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+    getAllPopsStatus,
+    togglePopStatus
+} from '../../../redux/isPopVisibleReducer';
 
 const ItemPage = () => {
+    const dispatch = useDispatch();
+    const isDarkWindow = useSelector(getAllPopsStatus()).darkWindow;
+    const [spreadImage, setSpreadImage] = useState();
+    const HOCImage = withInnerWindow(ImageOnly);
+    const handleImage = (spreadImage) => {
+        setSpreadImage(spreadImage);
+        dispatch(togglePopStatus('darkWindow'));
+    };
     const navigate = useNavigate();
     const { itemId } = useParams();
     const _item = getItemById(itemId);
@@ -55,8 +71,10 @@ const ItemPage = () => {
             ? description
             : description.description1
         : shotDescr;
+
     return (
         <>
+            {isDarkWindow && <HOCImage image={spreadImage} />}
             <Gratis />
             {itemId === 'new_book' && <NewBookPrologue />}
             <div className={classes.allItemContentWrap}>
@@ -97,6 +115,9 @@ const ItemPage = () => {
                                 <li key={track}>{track}</li>
                             ))}
                         </ItemTrackList>
+                        {type === 'book' && (
+                            <Spreads name={name} onClick={handleImage} />
+                        )}
                     </div>
 
                     <ul className={classes.descriptionList}>
