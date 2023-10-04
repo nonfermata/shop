@@ -1,10 +1,12 @@
 import React from 'react';
-import classes from "./captcha.module.css";
+import classes from './captcha.module.css';
 
-const CaptchaInput = ({onChange,
+const CaptchaInput = ({
+    onChange,
 
-                          name,
-                          value,}) => {
+    name,
+    value
+}) => {
     const handleChange = ({ target }) => {
         onChange(name, target.value);
     };

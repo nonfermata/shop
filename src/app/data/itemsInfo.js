@@ -1,4 +1,4 @@
-import retro_back from '../assets/covers/cd/2016_retro_back.png';
+import retroBack from '../assets/covers/cd/2016_retro_back.png';
 
 const itemsInfo = [
     {
@@ -216,7 +216,7 @@ const itemsInfo = [
             ]
         },
         copyright: 'З. Ященко, Д. Баулин',
-        backImage: retro_back
+        backImage: retroBack
     },
     {
         name: 'Зазеркалье',

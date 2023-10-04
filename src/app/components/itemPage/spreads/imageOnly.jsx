@@ -1,12 +1,14 @@
 import React from 'react';
 import classes from './spreads.module.css';
-import CrossIconCircle from '../../common/crossIconCircle/crossIconCircle';
+import CrossIcon from '../../common/crossIcon/crossIcon';
 
 const ImageOnly = ({ image }) => {
     return (
         <div className={classes.imageOnlyWrap}>
             <img src={image} alt='Разворот из книги' />
-            <CrossIconCircle />
+            <div className={classes.crossWrap}>
+                <CrossIcon />
+            </div>
         </div>
     );
 };

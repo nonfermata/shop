@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../header/header';
-import {Navigate, Route, Routes} from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Cd from '../categories/cd';
 import Mp3 from '../categories/mp3';
 import Flac from '../categories/flac';

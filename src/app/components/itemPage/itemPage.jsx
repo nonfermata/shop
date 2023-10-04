@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
+import React from 'react';
+import { useNavigate, Navigate, useParams } from 'react-router-dom';
 import classes from './itemPage.module.css';
 import Gratis from '../gratis/gratis';
 import { getItemById } from '../../data/allItems';
@@ -11,23 +9,9 @@ import EmptyBlock from '../common/emptyBlock/emptyBlock';
 import ItemTrackList from './itemTrackList';
 import NewBookPrologue from '../newBookPrologue/newBookPrologue';
 import Spreads from './spreads/spreads';
-import withInnerWindow from '../hoc/withInnerWindow';
-import ImageOnly from './spreads/imageOnly';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-    getAllPopsStatus,
-    togglePopStatus
-} from '../../../redux/isPopVisibleReducer';
+import Tales from './tales/tales';
 
 const ItemPage = () => {
-    const dispatch = useDispatch();
-    const isDarkWindow = useSelector(getAllPopsStatus()).darkWindow;
-    const [spreadImage, setSpreadImage] = useState();
-    const HOCImage = withInnerWindow(ImageOnly);
-    const handleImage = (spreadImage) => {
-        setSpreadImage(spreadImage);
-        dispatch(togglePopStatus('darkWindow'));
-    };
     const navigate = useNavigate();
     const { itemId } = useParams();
     const _item = getItemById(itemId);
@@ -74,7 +58,6 @@ const ItemPage = () => {
 
     return (
         <>
-            {isDarkWindow && <HOCImage image={spreadImage} />}
             <Gratis />
             {itemId === 'new_book' && <NewBookPrologue />}
             <div className={classes.allItemContentWrap}>
@@ -115,9 +98,10 @@ const ItemPage = () => {
                                 <li key={track}>{track}</li>
                             ))}
                         </ItemTrackList>
-                        {type === 'book' && (
-                            <Spreads name={name} onClick={handleImage} />
+                        {type === 'book' && itemId !== 'new_book' && (
+                            <Spreads name={name} />
                         )}
+                        {itemId === 'new_book' && <Tales />}
                     </div>
 
                     <ul className={classes.descriptionList}>
@@ -155,7 +139,7 @@ const ItemPage = () => {
                             </div>
                             <ul className={classes.descriptionList}>
                                 {description.description2.map((item) => (
-                                    <li>{item}</li>
+                                    <li key={item}>{item}</li>
                                 ))}
                             </ul>
                         </div>

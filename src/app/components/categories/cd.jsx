@@ -4,22 +4,14 @@ import { cd } from '../../data/allItems';
 import Card from '../card/card';
 import Gratis from '../gratis/gratis';
 import CategoryHeader from '../common/categoryHeader/categoryHeader';
-import DonationModifyForm from '../common/cartManagerForm/donationModifyForm/donationModifyForm';
-import DonationCard from '../common/donationCard/donationCard';
+import aboutDeliveryPaying from '../../data/aboutDeliveryPaying';
 
 const Cd = () => {
-    const title = 'Альбомы на CD';
-    const info = [
-        'Если вы выбираете материальные лоты,',
-        'к цене заказа также добавляется стоимость почтовой пересылки,',
-        'которая зависит от веса посылки и региона получателя.'
-    ];
     return (
         <>
             <Gratis />
-            <CategoryHeader title={title} info={info} />
+            <CategoryHeader title='Альбомы на CD' info={aboutDeliveryPaying} />
             <div className={classes.cardsWrap}>
-                {/*<DonationCard />*/}
                 {cd.map((item) => (
                     <Card key={item.id} {...item} />
                 ))}

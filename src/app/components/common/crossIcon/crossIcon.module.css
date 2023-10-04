@@ -1,16 +1,24 @@
-.inclinedLineOne {
-    width: 2px;
-    background-color: var(--semi-dark-grey);
-    height: 100%;
+.crossWrap {
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.crossWrap:hover {
+    opacity: 1;
+}
+
+.inclinedLineOne,
+.inclinedLineTwo {
     margin: 0 auto;
+    width: 2px;
+    height: 100%;
+    background-color: var(--semi-dark-grey);
     transform: rotate(-45deg);
 }
 
 .inclinedLineTwo {
-    margin: 0 auto;
-    width: 2px;
-    background-color: var(--semi-dark-grey);
-    height: 100%;
     transform: rotate(45deg);
     margin-top: -30px;
 }

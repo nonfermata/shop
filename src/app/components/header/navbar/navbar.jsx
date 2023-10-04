@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React from 'react';
 import classes from './navbar.module.css';
 import { NavLink } from 'react-router-dom';

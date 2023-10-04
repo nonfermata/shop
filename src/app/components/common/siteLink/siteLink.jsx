@@ -1,7 +1,7 @@
 import React from 'react';
-import home from "../../../assets/svg/home";
+import home from '../../../assets/svg/home';
 
-const SiteLink = ({className}) => {
+const SiteLink = ({ className }) => {
     return (
         <a
             href='//bgvmusic.ru'

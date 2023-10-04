@@ -2,8 +2,6 @@ import React from 'react';
 import classes from './footer.module.css';
 import Navbar from '../header/navbar/navbar';
 import ArrowForMenu from '../common/arrowForMenu/arrowForMenu';
-import menu from '../../data/menu';
-import SubMenu from '../common/subMenu/subMenu';
 import { useDispatch, useSelector } from 'react-redux';
 import {
     getAllPopsStatus,

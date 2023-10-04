@@ -1,8 +1,8 @@
 import React from 'react';
-import classes from "../header.module.css";
-import CartIcon from "../../common/cartIcon/cartIcon";
-import {NavLink} from "react-router-dom";
-import scrollToTop from "../../../utils/scrollToTop";
+import classes from '../header.module.css';
+import CartIcon from '../../common/cartIcon/cartIcon';
+import { NavLink } from 'react-router-dom';
+import scrollToTop from '../../../utils/scrollToTop';
 
 const HeaderCartIconLink = () => {
     return (
@@ -11,9 +11,7 @@ const HeaderCartIconLink = () => {
             title='Перейти в корзину'
             onClick={scrollToTop}
             className={(link) =>
-                link.isActive
-                    ? classes.cartIconActive
-                    : classes.cartIcon
+                link.isActive ? classes.cartIconActive : classes.cartIcon
             }
         >
             <CartIcon />

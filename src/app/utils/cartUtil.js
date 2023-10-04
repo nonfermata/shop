@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { gratis, cd, mp3, flac, wav, books, epub } from '../data/allItems';
 import areas from '../data/areas';
 

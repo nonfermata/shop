@@ -1,34 +1,42 @@
 .spreadsWrap {
     margin-top: 20px;
     display: flex;
+    justify-content: center;
+    gap: 10px;
     flex-wrap: wrap;
-    gap: 20px;
 }
 
 .spreadWrap {
     cursor: pointer;
-    width: 60%;
-    border: 1px solid var(--light-beige);
 }
 .spreadWrap img {
+    border: 1px solid var(--light-beige);
     width: 100%;
+}
+
+.spreadTitle {
+    font-size: 0.85em;
 }
 
 .imageOnlyWrap {
-    max-width: calc(100vw - 100px);
+    max-width: 100vw;
+    max-height: calc(100vh - 70px);
     position: relative;
-    margin-top: 50px;
 }
 
 .imageOnlyWrap img {
-    width: 100%;
+    max-width: 100vw;
+    max-height: calc(100vh - 70px);
+}
+
+.crossWrap {
+    position: absolute;
+    top: -33px;
+    right: 0;
 }
 
 @media screen and (max-width: 640px) {
-    .spreadsWrap {
-        justify-content: center;
-    }
     .spreadWrap {
-        width: 45%;
+        width: 80%;
     }
 }

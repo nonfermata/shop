@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import getUpperFirst from '../../../../utils/getUpperFirst';
 import { getItemSum } from '../../../../utils/cartUtil';
 

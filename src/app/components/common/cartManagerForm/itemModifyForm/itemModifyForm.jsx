@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React, { useState } from 'react';
 import classes from './itemModifyForm.module.css';
 import AmountManager from '../amountManager/amountManager';
@@ -66,7 +67,9 @@ const ItemModifyForm = ({ id, price, isAvailable, isDigital }) => {
                 </>
             ) : (
                 <div
-                    className={classes.addButton + ' ' + classes.disableItemButton}
+                    className={
+                        classes.addButton + ' ' + classes.disableItemButton
+                    }
                 >
                     Временно нет в наличии
                 </div>

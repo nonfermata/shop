@@ -4,6 +4,8 @@ import classes from './withInnerWindow.module.css';
 import { closePop } from '../../../redux/isPopVisibleReducer';
 
 const withInnerWindow = (Component) => (props) => {
+    // const location = Navigator();
+    // console.log(location);
     const dispatch = useDispatch();
     const [addedStyle, setAddedStyle] = useState('');
     useEffect(() => {

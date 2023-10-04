@@ -43,21 +43,10 @@
 
 .crossWrap {
     position: absolute;
-    right: -2px;
-    top: -2px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    top: -27px;
+    right: -5px;
     transform: scale(0.6, 0.6);
-    cursor: pointer;
-    transition: 0.15s all ease;
 }
 
-.crossWrap:hover {
-    background-color: var(--ex-light-beige);
-}
 
 

@@ -10,16 +10,19 @@ import formatSum from '../../utils/formatSum';
 import { Link } from 'react-router-dom';
 import scrollToTop from '../../utils/scrollToTop';
 import WarningMessage from './warningMessage';
-import {getAllPopsStatus, togglePopStatus} from '../../../redux/isPopVisibleReducer';
-import withInnerWindow from "../hoc/withInnerWindow";
+import {
+    getAllPopsStatus,
+    togglePopStatus
+} from '../../../redux/isPopVisibleReducer';
+import withInnerWindow from '../hoc/withInnerWindow';
 
 const Cart = () => {
     const dispatch = useDispatch();
-    const isDarkWindow = useSelector(getAllPopsStatus()).darkWindow
+    const isDarkWindow = useSelector(getAllPopsStatus()).darkWindow;
     const cart = getAllCart(useSelector(getCart()));
     const itemsSum = getItemsSum(cart);
     const title = itemsSum === 0 ? 'Ваша корзина пуста :(' : 'Ваша корзина';
-    const HOCWarning = withInnerWindow(WarningMessage)
+    const HOCWarning = withInnerWindow(WarningMessage);
     useEffect(() => {
         if (
             cart.filter((item) => !item.isDigital).length > 1 &&
@@ -30,7 +33,7 @@ const Cart = () => {
     }, []);
     return (
         <>
-            {isDarkWindow && <HOCWarning/>}
+            {isDarkWindow && <HOCWarning />}
             <Gratis />
             <CategoryHeader title={title} />
             {itemsSum !== 0 && (

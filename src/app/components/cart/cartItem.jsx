@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classes from './cart.module.css';
 import AmountManager from '../common/cartManagerForm/amountManager/amountManager';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,7 +11,7 @@ import ModifyButton from '../common/cartManagerForm/modifyButton/modifyButton';
 import formatSum from '../../utils/formatSum';
 import DonationModifyForm from '../common/cartManagerForm/donationModifyForm/donationModifyForm';
 import UndoDonate from '../common/cartManagerForm/undoDonate/undoDonate';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import scrollToTop from '../../utils/scrollToTop';
 
 const CartItem = ({

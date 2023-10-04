@@ -13,8 +13,8 @@ const FinalPayment = () => {
         dispatch(emptyCart());
     }, []);
     return (
-            Number(sum) !==0 && (
-                <>
+        Number(sum) !== 0 && (
+            <>
                 <div className={classes.paymentWrap}>
                     <ListAfter />
                 </div>

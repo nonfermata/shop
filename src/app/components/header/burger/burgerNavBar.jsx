@@ -1,9 +1,10 @@
+/* eslint-disable indent */
 import React from 'react';
 import classes from './burger.module.css';
 import menu from '../../../data/menu';
 import { NavLink } from 'react-router-dom';
 import SiteLink from '../../common/siteLink/siteLink';
-import scrollToTop from "../../../utils/scrollToTop";
+import scrollToTop from '../../../utils/scrollToTop';
 
 const BurgerNavBar = ({ addedMenuStyle }) => {
     return (

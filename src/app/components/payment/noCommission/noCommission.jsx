@@ -11,6 +11,11 @@ const NoCommission = () => {
     const dispatch = useDispatch();
     const isMessageVisible = useSelector(getAllPopsStatus()).noCommission;
     const addedMessageStyle = isMessageVisible ? classes.messageVisible : '';
+    const handleClick = (e) => {
+        if (!e.target.className.includes('cross')) {
+            e.stopPropagation();
+        }
+    };
     return (
         <div className={classes.message}>
             <span
@@ -21,7 +26,10 @@ const NoCommission = () => {
             >
                 Как оплатить без комиссии?
             </span>
-            <div className={classes.messageDetailed + ' ' + addedMessageStyle}>
+            <div
+                className={classes.messageDetailed + ' ' + addedMessageStyle}
+                onClick={handleClick}
+            >
                 <div className={classes.crossWrap}>
                     <CrossIcon />
                 </div>
@@ -36,7 +44,6 @@ const NoCommission = () => {
                 <br />
                 Все детали обсудим в дальнейшей переписке.
                 <br />
-                <span className='noHyph'></span>
             </div>
         </div>
     );

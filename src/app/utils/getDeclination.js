@@ -8,7 +8,7 @@ const categories = {
     divisors: ['делителей', 'делитель', 'делителя'],
     positions: ['позиций', 'позиция', 'позиции'],
     rubles: ['рублей', 'рубль', 'рубля'],
-    pieces: ['штук','штука','штуки']
+    pieces: ['штук', 'штука', 'штуки']
 };
 
 const getDeclination = (number, category) => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import classes from './card.module.css';
-import {Link, useNavigate} from 'react-router-dom';
-import DonationModifyForm from '../common/cartManagerForm/donationModifyForm/donationModifyForm';
+import { Link, useNavigate } from 'react-router-dom';
 import ItemModifyForm from '../common/cartManagerForm/itemModifyForm/itemModifyForm';
 import Crowdfunding from '../common/crowdfunding/crowdfunding';
 import scrollToTop from '../../utils/scrollToTop';
@@ -89,9 +88,17 @@ const Card = ({
                     <div className={classes.getEVersion}>
                         Вы можете приобрести электронную версию:
                         <div className={classes.eVersionsGroup}>
-                            <Link to='../mp3' title='MP3-версия'>MP3</Link>|
-                            <Link to='../flac' title='FLAC-версия'>FLAC</Link>|
-                            <Link to='../wav' title='WAV-версия'>WAV</Link>
+                            <Link to='../mp3' title='MP3-версия'>
+                                MP3
+                            </Link>
+                            |
+                            <Link to='../flac' title='FLAC-версия'>
+                                FLAC
+                            </Link>
+                            |
+                            <Link to='../wav' title='WAV-версия'>
+                                WAV
+                            </Link>
                         </div>
                     </div>
                 )}
