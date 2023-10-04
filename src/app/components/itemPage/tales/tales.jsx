@@ -1,52 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import polyaTales from '../../../data/polyaTales';
 import classes from './tales.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-    getAllPopsStatus,
-    togglePopStatus
-} from '../../../../redux/isPopVisibleReducer';
-import withInnerWindow from '../../hoc/withInnerWindow';
-import CrossIcon from '../../common/crossIcon/crossIcon';
-const Text = ({ tale }) => {
-    const handleClick = (e) => {
-        e.stopPropagation();
-    };
-    return (
-        <div className={classes.taleTextWrap}>
-            <div className={classes.taleText} onClick={handleClick}>
-                <p className={classes.taleName}>{tale.name}</p>
-                {tale.text}
-            </div>
-            <div className={classes.crossWrap}>
-                <CrossIcon />
-            </div>
-        </div>
-    );
-};
+import { Link } from 'react-router-dom';
+import scrollToTop from '../../../utils/scrollToTop';
+
 const Tales = () => {
-    const dispatch = useDispatch();
-    const isPop = useSelector(getAllPopsStatus()).darkWindow;
-    const HOCTale = withInnerWindow(Text);
-    const [tale, setTale] = useState();
-    const handleClick = (tale) => {
-        setTale(tale);
-        dispatch(togglePopStatus('darkWindow'));
-    };
     return (
         <div className={classes.talesWrap}>
-            {polyaTales.map(({ id, name, text }) => (
-                <div
+            {polyaTales.map(({ id, name }) => (
+                <Link
+                    to={id}
                     key={id}
                     className={classes.taleTitle}
-                    onClick={() => {
-                        handleClick({ name, text });
-                    }}
+                    onClick={scrollToTop}
                 >
                     {name}
-                </div>
+                </Link>
             ))}
-            {isPop && <HOCTale tale={tale} />}
         </div>
     );
 };

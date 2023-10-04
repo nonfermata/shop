@@ -9,6 +9,7 @@ import Books from '../categories/books';
 import Epub from '../categories/epub';
 import Cart from '../cart/cart';
 import ItemPage from '../itemPage/itemPage';
+import Tale from '../itemPage/tales/tale';
 
 const Main = () => {
     return (
@@ -22,7 +23,8 @@ const Main = () => {
                 <Route path='books' element={<Books />} />
                 <Route path='epub' element={<Epub />} />
                 <Route path='cart' element={<Cart />} />
-                <Route path='items/:itemId' element={<ItemPage />} />
+                <Route path='items/:itemId/' element={<ItemPage />} />
+                <Route path='items/:itemId/:taleId' element={<Tale />} />
                 <Route path='*' element={<Navigate to='items/new_book' />} />
             </Routes>
         </>

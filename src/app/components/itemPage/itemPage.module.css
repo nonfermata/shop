@@ -65,6 +65,9 @@
     font-size: 1.05em;
     line-height: 1.4em;
 }
+.trackList li {
+    white-space: pre-wrap;
+}
 
 .descriptionList {
     list-style: none;

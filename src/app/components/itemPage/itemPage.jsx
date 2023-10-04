@@ -7,7 +7,7 @@ import { getItemInfoByName } from '../../data/itemsInfo';
 import ItemModifyForm from '../common/cartManagerForm/itemModifyForm/itemModifyForm';
 import EmptyBlock from '../common/emptyBlock/emptyBlock';
 import ItemTrackList from './itemTrackList';
-import NewBookPrologue from '../newBookPrologue/newBookPrologue';
+import NewBookPrologue from './newBookPrologue/newBookPrologue';
 import Spreads from './spreads/spreads';
 import Tales from './tales/tales';
 

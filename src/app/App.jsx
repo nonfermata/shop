@@ -12,7 +12,7 @@ const App = () => {
     const dispatch = useDispatch();
     const allMenusStatus = useSelector(getAllPopsStatus());
     const handleClick = () => {
-        for (key in allMenusStatus) {
+        for (const key in allMenusStatus) {
             if (allMenusStatus[key]) {
                 dispatch(closePop(key));
             }
