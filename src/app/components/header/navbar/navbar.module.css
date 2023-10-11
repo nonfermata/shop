@@ -31,9 +31,9 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .navbarWrap {
-        font-size: 0.95em;
-    }
+    /*.navbarWrap {*/
+    /*    font-size: 0.95em;*/
+    /*}*/
 }
 
 @media screen and (max-width: 991px) {

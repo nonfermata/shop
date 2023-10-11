@@ -9,7 +9,7 @@ import {
 } from '../../../redux/isPopVisibleReducer';
 import { useLocation } from 'react-router-dom';
 import ForeignUsers from '../payment/foreignUsers/foreignUsers';
-import AboutPayment from './aboutPayment';
+// import AboutPayment from './aboutPayment';
 
 const Footer = () => {
     const pageName = useLocation().pathname;
@@ -18,7 +18,7 @@ const Footer = () => {
 
     return (
         <footer className={classes.footerWrap}>
-            {pageName === '/confirmation' && <AboutPayment />}
+            {/*{pageName === '/confirmation' && <AboutPayment />}*/}
             <ForeignUsers />
             {pageName !== '/payment' && pageName !== '/confirmation' && (
                 <>

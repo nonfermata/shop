@@ -2,9 +2,9 @@ import React from 'react';
 import classes from './cart.module.css';
 import CrossIcon from '../common/crossIcon/crossIcon';
 
-const WarningMessage = () => {
+const WarningPopWindow = () => {
     return (
-        <div className={classes.warningMessage}>
+        <div className={classes.warningPopWindow}>
             <span className='noHyph fw600'>Обращаем ваше внимание,</span> что в
             вашей корзине наряду с другими материальными покупками есть также
             новая книга <span className='noHyph fw600'>&ldquo;Поля и снеговик&rdquo;.</span><br />
@@ -31,4 +31,4 @@ const WarningMessage = () => {
     );
 };
 
-export default WarningMessage;
+export default WarningPopWindow;

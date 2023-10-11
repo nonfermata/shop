@@ -10,6 +10,7 @@ import ItemTrackList from './itemTrackList';
 import NewBookPrologue from './newBookPrologue/newBookPrologue';
 import Spreads from './spreads/spreads';
 import Tales from './tales/tales';
+import EVersionsGroup from '../common/eVersionsGroup/eVersionsGroup';
 
 const ItemPage = () => {
     const navigate = useNavigate();
@@ -75,11 +76,7 @@ const ItemPage = () => {
                             isAvailable={isAvailable}
                             isDigital={isDigital}
                         />
-                        {!isAvailable && (
-                            <div className={classes.getEVersion}>
-                                Вы можете приобрести электронную версию
-                            </div>
-                        )}
+                        {!isAvailable && <EVersionsGroup />}
                     </div>
                     <div className={classes.leftColumn}>
                         <div className={classes.itemTitleWrap}>

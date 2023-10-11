@@ -25,7 +25,7 @@ const ForeignUsers = () => {
                         dispatch(togglePopStatus('foreignMessage'));
                     }}
                 >
-                    Я не из России. Как оплатить?
+                    Я не из России. Как можно оплатить?
                 </span>
                 <div
                     className={

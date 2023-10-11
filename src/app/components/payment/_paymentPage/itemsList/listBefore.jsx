@@ -11,7 +11,7 @@ const ListBefore = ({ cart }) => {
             <div className={classes.listTitle}>У вас в корзине:</div>
             <ItemsListHTML cart={cart} />
             <div className={classes.listItemsSum}>
-                Всего: <span className='fw600'>{formatSum(itemsSum)} ₽</span>
+                Всего на сумму: <span className='fw600'>{formatSum(itemsSum)} ₽</span>
             </div>
         </>
     );

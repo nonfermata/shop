@@ -20,9 +20,11 @@ import {
 import SelectField from './selectField';
 import regions from '../../../../data/regions';
 import formatSum from '../../../../utils/formatSum';
+import RadioField from './radioField';
 
 const UserForm = ({ cart }) => {
     const [btnAddedStyle, setBtnAddedStyle] = useState('');
+    const [captchaError, setCaptchaError] = useState('');
     const isDelivery = cart.filter((item) => !item.isDigital).length !== 0;
     const itemsSumOnly = getItemsSum(cart);
     const [totalSum, setTotalSum] = useState(itemsSumOnly);
@@ -33,9 +35,11 @@ const UserForm = ({ cart }) => {
         name: '',
         email: '',
         captcha: '',
-        region: { name: '' }
+        region: { name: '' },
+        agreement: ''
     };
     const [data, setData] = useState(initialState);
+    const isCorrectCaptcha = data.captcha === captchaString;
     const handleRerenderCaptcha = () => {
         const addedClass = btnAddedStyle === '' ? classes.btnRotated : '';
         setBtnAddedStyle(addedClass);
@@ -44,11 +48,11 @@ const UserForm = ({ cart }) => {
         }, 1);
         setRerender((prevState) => !prevState);
     };
-    const cartString = getItemsListForEmail(cart)
+    const mailItems = getItemsListForEmail(cart)
         .map((item) => Object.values(item).join(' | '))
         .join('\n\n');
     const weight = formatSum(getTotalWeight(cart));
-    const deliveryString = isDelivery
+    const mailDelivery = isDelivery
         ? getDeliveryStringForEmail(
               data.region.name,
               weight,
@@ -62,7 +66,25 @@ const UserForm = ({ cart }) => {
     }, []);
     useEffect(() => {
         localStorage.setItem('totalSum', totalSum.toString());
-    }, [data.region]);
+        if (isDelivery || (!isDelivery && isPublicName)) {
+            localStorage.setItem('region', data.region.name);
+        } else if (localStorage.getItem('region')) {
+            localStorage.removeItem('region', data.region.name);
+        }
+    }, [data.region, data.agreement]);
+    useEffect(() => {
+        localStorage.setItem('name', data.name);
+    }, [data.name]);
+    useEffect(() => {
+        localStorage.setItem('email', data.email);
+    }, [data.email]);
+    useEffect(() => {
+        if (data.captcha.length >= 5 && !isCorrectCaptcha && !captchaError) {
+            setCaptchaError('Вы неверно ввели символы!');
+        } else if (data.captcha.length < 5 && captchaError) {
+            setCaptchaError('');
+        }
+    }, [data.captcha]);
     const [errors, setErrors] = useState({});
     const handleChangeData = (name, value) => {
         setData((prevState) => ({
@@ -77,8 +99,10 @@ const UserForm = ({ cart }) => {
             ...prevState,
             region
         }));
-        setTotalSum(itemsSumOnly + deliverySum);
-        setDeliverySum(deliverySum);
+        if (isDelivery) {
+            setTotalSum(itemsSumOnly + deliverySum);
+            setDeliverySum(deliverySum);
+        }
     };
     const validatorConfig = {
         name: {
@@ -104,15 +128,46 @@ const UserForm = ({ cart }) => {
         return Object.keys(errors).length === 0;
     };
 
+    const isDonationOnly = cart.length === 1 && cart[0].id === 'gratis';
+    const mailSubj = isDonationOnly
+        ? 'Поддержка на сайте shop.bgvmusic.ru'
+        : 'Заказ на сайте shop.bgvmusic.ru';
+    const mailTitle = isDonationOnly
+        ? 'Поддержка на сайте shop.bgvmusic.ru'
+        : 'На сайте shop.bgvmusic.ru был оформлен новый заказ.';
+    const mailOrder = isDonationOnly ? '' : 'Состав заказа:\n';
+    const mailItemsSum = isDonationOnly
+        ? ''
+        : `Всего на сумму: ${itemsSumOnly} ₽`;
+    const mailAgreement =
+        data.agreement === 'fullName'
+            ? 'Откуда : ' + data.region.name + '\n'
+            : data.agreement === 'nameOnly'
+            ? 'Откуда: ' + data.region.name + '\n'
+            : '';
+    const hiddenFields = Object.entries({
+        mailSubj,
+        mailTitle,
+        mailOrder,
+        mailItemsSum,
+        mailAgreement,
+        mailDelivery
+    });
+
+    const isPublicName =
+        data.agreement === 'fullName' || data.agreement === 'nameOnly';
+
     const isValid =
         Object.keys(errors).length === 0 &&
-        data.captcha === captchaString &&
-        ((isDelivery && data.region.name) || !isDelivery);
+        isCorrectCaptcha &&
+        data.agreement &&
+        ((isDelivery && data.region.name) ||
+            (!isDelivery &&
+                ((data.region.name && isPublicName) || !isPublicName)));
     return (
         <div className={classes.formWrap}>
             <form
                 className={classes.form}
-                // action='https://meddenta-klin.ru/sending_bgv/'
                 action='https://shop.bgvmusic.ru/sending/'
                 method='POST'
             >
@@ -127,7 +182,6 @@ const UserForm = ({ cart }) => {
                             value={data.region.name}
                             onChange={handleChangeRegion}
                             defaultOption='Выберите город или регион'
-                            // error={errors.region}
                             label='Выберите, пожалуйста, регион доставки или его столицу'
                             options={regions}
                         />
@@ -139,7 +193,7 @@ const UserForm = ({ cart }) => {
                                         {deliverySum + ' ₽'}
                                     </span>
                                 </div>
-                                <div className={classes.finalSum}>
+                                <div className={classes.totalSum}>
                                     Итого с доставкой:{' '}
                                     <span className='fw600'>
                                         {formatSum(totalSum) + ' ₽'}
@@ -153,24 +207,23 @@ const UserForm = ({ cart }) => {
                     Ваши контактные данные:
                 </div>
 
+                {hiddenFields.map((item) => (
+                    <textarea
+                        key={item[0]}
+                        name={item[0]}
+                        value={item[1]}
+                        className='hidden'
+                        readOnly
+                    />
+                ))}
+
                 <textarea
-                    name='items'
-                    value={cartString}
+                    name='mailItems'
+                    value={mailItems}
                     className='hidden'
                     readOnly
                 />
-                <textarea
-                    name='itemsSumOnly'
-                    value={itemsSumOnly}
-                    className='hidden'
-                    readOnly
-                />
-                <textarea
-                    name='delivery'
-                    value={deliveryString}
-                    className='hidden'
-                    readOnly
-                />
+
                 <div className={classes.inputWrap}>
                     <TextField
                         onChange={handleChangeData}
@@ -189,11 +242,58 @@ const UserForm = ({ cart }) => {
                         placeholder='Ваш e-mail'
                     />
                 </div>
+                <RadioField
+                    mainLabel='По ссылке «Нас поддержали» можно увидеть список
+                поддержавших наш проект. Ваше имя мы тоже внесём в этот
+                список, если Вы не возражаете.'
+                    options={[
+                        {
+                            name: 'Я не возражаю',
+                            value: 'fullName'
+                        },
+                        {
+                            name: 'Я не возражаю, но пусть в списке будет только имя (без фамилии)',
+                            value: 'nameOnly'
+                        },
+                        {
+                            name: 'Я не хочу, чтоб мое имя было в списке',
+                            value: 'noPublic'
+                        }
+                    ]}
+                    onChange={handleChangeData}
+                    name='agreement'
+                    value={data.agreement}
+                />
+                {/*<CheckBoxField*/}
+                {/*    name='agreement'*/}
+                {/*    value={data.agreement}*/}
+                {/*    onChange={handleChangeData}*/}
+                {/*>*/}
+                {/*    Я не возражаю, если моё имя будет в списке поддержавших этот*/}
+                {/*    проект.*/}
+                {/*</CheckBoxField>*/}
+                {isPublicName && !isDelivery && (
+                    <div className={classes.selectWrap}>
+                        <div className={classes.selectLabel}>
+                            Укажите, пожалуйста, откуда вы:
+                        </div>
+                        <SelectField
+                            name='region'
+                            value={data.region.name}
+                            onChange={handleChangeRegion}
+                            defaultOption='Выберите город или регион'
+                            label='Выберите город или регион'
+                            options={regions}
+                        />
+                    </div>
+                )}
                 <Captcha rerender={rerender} />
                 <CaptchaInput
                     name='captcha'
                     value={data.captcha}
                     onChange={handleChangeData}
+                    error={captchaError}
+                    isCorrectCaptcha={isCorrectCaptcha}
                 />
                 <button
                     className={
@@ -201,7 +301,7 @@ const UserForm = ({ cart }) => {
                     }
                     disabled={!isValid}
                 >
-                    Оформить заявку
+                    Подтвердить данные
                 </button>
             </form>
             <button

@@ -117,6 +117,35 @@
     font-weight: 500;
 }
 
+.aboutDonation {
+    position: absolute;
+    width: 320px;
+    height: 150px;
+    top: 115%;
+    left: -10px;
+    z-index: 7777;
+    color: var(--base);
+    font-weight: 400;
+    line-height: 1.4em;
+    background-color: var(--base-white);
+    padding: 30px 20px;
+    box-shadow: 0 0 10px 2px var(--ex-light-grey);
+    font-size: 1.1em;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.aboutDonationVisible {
+    opacity: 1;
+}
+
+.crossWrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: scale(0.6, 0.6);
+}
+
 @media screen and (max-width: 991px) {
     .gratisWrap {
         margin-top: 90px;
@@ -130,6 +159,7 @@
     .gratisWrap {
         row-gap: 10px;
         column-gap: 0;
+        margin-top: 110px;
     }
     .gratisWrap img {
         grid-row: 1/2;
@@ -137,10 +167,5 @@
     }
     .donationsWrap {
         grid-column: 1/3;
-    }
-}
-@media screen and (max-width: 480px) {
-    .gratisWrap {
-        margin-top: 110px;
     }
 }

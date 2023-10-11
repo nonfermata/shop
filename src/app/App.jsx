@@ -6,7 +6,7 @@ import Footer from './components/footer/footer';
 import ForeignUsersStart from './components/payment/foreignUsersStart/foreignUsersStart';
 import Confirmation from './components/payment/_paymentPage/confirmation';
 import Main from './components/main/main';
-import FinalPayment from './components/payment/_paymentPage/finalPayment';
+import FinalStage from './components/payment/_paymentPage/finalStage';
 
 const App = () => {
     const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const App = () => {
                 <Routes>
                     <Route path='/*' element={<Main />} />
                     <Route path='confirmation' element={<Confirmation />} />
-                    <Route path='payment' element={<FinalPayment />} />
+                    <Route path='payment' element={<FinalStage />} />
                 </Routes>
                 <Footer />
                 <ForeignUsersStart />

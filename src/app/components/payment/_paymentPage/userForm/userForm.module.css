@@ -14,6 +14,7 @@
     margin: 20px auto 10px;
     font-weight: 500;
     text-align: center;
+    font-size: 1.1em;
 }
 
 .inputWrap {
@@ -23,6 +24,7 @@
     height: fit-content;
     justify-content: center;
     margin-bottom: 20px;
+    font-size: 1.1em;
 }
 
 .error {
@@ -40,8 +42,9 @@
     max-width: 500px;
     text-align: center;
     padding: 10px;
-    /*border-top: 1px solid var(--light-grey);*/
+    font-size: 1.1em;
 }
+
 .selectLabel {
     font-weight: 500;
     margin-bottom: 10px;
@@ -61,12 +64,12 @@
 .select {
     width: 100%;
     font-weight: 400;
-    font-size: 1em;
+    font-size: 1.1em;
     padding: 5px;
 }
 
 .deliveryResult {
-    font-size: .9em;
+    font-size: 0.85em;
 }
 
 .input:focus,
@@ -89,15 +92,20 @@
     color: var(--base);
 }
 
-.finalSum {
-    padding: 15px 0 0;
-    font-size: 1.05em;
+.totalSum {
+    text-align: center;
+    background-color: var(--ex-light-green2);
+    padding: 7px 15px;
+    width: fit-content;
+    margin: 20px auto 0;
+    min-width: 250px;
 }
 
 .btn {
     background-color: var(--submit-button);
     border-radius: 3px;
     opacity: 0.85;
+    font-size: 1.2em;
     padding: 7px 12px;
     color: var(--base-white);
     transition: 0.15s all ease;
@@ -127,17 +135,99 @@
     border-bottom: 1px solid var(--light-grey);
 }
 
+.checkboxWrap {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.form__checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.form__checkbox + label {
+    display: block;
+    user-select: none;
+}
+
+.form__checkbox + label::before {
+    content: '';
+    display: block;
+    float: left;
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--blue);
+    border-radius: 3px;
+    margin-right: 8px;
+    top: 0;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 75% 75%;
+    transition: 0.1s all linear;
+    cursor: pointer;
+}
+
+.form__checkbox:checked + label::before {
+    box-shadow: 0 0 3px 1px var(--semi-blue);
+    border-color: var(--success-button-border);
+    background-color: var(--success-button-border);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.form__checkboxLabel {
+    font-size: 0.8rem;
+    line-height: 1.5em;
+    text-align: left;
+}
+
+.radioWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px 0 20px;
+}
+
+.radioMainLabel {
+    font-weight: 500;
+    max-width: 570px;
+}
+
+.radioLabel {
+    cursor: pointer;
+}
+
+.radioInput {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    appearance: none;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--blue);
+    margin-right: 5px;
+    top: 1px;
+    position: relative;
+    transition: 0.1s all linear;
+}
+
+.radioInput:checked {
+    border: 5px solid var(--blue);
+    box-shadow: 0 0 0 3px #9ce3ee;
+}
+
 .renewCaptchaBtn {
     position: absolute;
     left: calc(50% + 100px);
-    bottom: 115px;
+    bottom: 125px;
     cursor: pointer;
     width: 30px;
     height: 30px;
     color: var(--base);
     border: 1px solid var(--base);
     background-color: var(--base-white);
-    /*padding: 3px 4px 0;*/
     padding: 3px;
     border-radius: 50%;
     opacity: 0.8;

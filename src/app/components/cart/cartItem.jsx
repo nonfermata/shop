@@ -30,7 +30,6 @@ const CartItem = ({
         dispatch(modifyItem(id, method, price));
     };
     const navigate = useNavigate();
-    const addedWrapStyle = id === 'gratis' ? classes.itemWrapGratis : '';
     const subtractTitle = amount === 1 ? 'Убрать из корзины' : 'Убрать 1 шт';
     const handleImageClick = () => {
         if (id !== 'gratis') {
@@ -39,7 +38,7 @@ const CartItem = ({
         }
     };
     return (
-        <div className={classes.itemWrap + ' ' + addedWrapStyle}>
+        <div className={classes.itemWrap}>
             <img
                 src={image}
                 alt={name}

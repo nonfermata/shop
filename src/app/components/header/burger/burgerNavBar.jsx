@@ -5,6 +5,7 @@ import menu from '../../../data/menu';
 import { NavLink } from 'react-router-dom';
 import SiteLink from '../../common/siteLink/siteLink';
 import scrollToTop from '../../../utils/scrollToTop';
+import SupportLink from '../supportLink/supportLink';
 
 const BurgerNavBar = ({ addedMenuStyle }) => {
     return (
@@ -27,6 +28,7 @@ const BurgerNavBar = ({ addedMenuStyle }) => {
                     {name}
                 </NavLink>
             ))}
+            <SupportLink isMobile={true} />
             <SiteLink className={classes.burgerLink + ' ' + classes.siteLink} />
         </nav>
     );

@@ -8,7 +8,7 @@ const YoumoneyBlock = () => {
             <div className={classes.info}>
                 Оплата через систему{' '}
                 <span className='youmoneyWord'>ЮMoney</span>.<br />
-                Комиссия составит 0.5% при переводе из кошелька и 2% при
+                Комиссия составит 0.5% при переводе из кошелька. Или 2% при
                 переводе с карты.
                 <NoCommission />
             </div>

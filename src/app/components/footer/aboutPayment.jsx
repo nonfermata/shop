@@ -7,7 +7,7 @@ const AboutPayment = () => {
         <div className={classes.aboutPaymentWrap}>
             Оплата через систему <span className='youmoneyWord'>ЮMoney</span>.
             <br />
-            Комиссия составит 0.5% при переводе из кошелька и 2% при переводе с
+            Комиссия составит 0.5% при переводе из кошелька. Или 2% при переводе с
             карты.
             <NoCommission />
         </div>

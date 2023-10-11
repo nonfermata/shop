@@ -215,7 +215,7 @@ export const flac = [
     new FlacItem(
         'flac_propis',
         'Прописью на стене',
-        400,
+        300,
         2023,
         flacPropis,
         true
@@ -283,7 +283,7 @@ export const flac = [
 ];
 
 export const wav = [
-    new WavItem('wav_propis', 'Прописью на стене', 400, 2023, wavPropis, true),
+    new WavItem('wav_propis', 'Прописью на стене', 300, 2023, wavPropis, true),
     new WavItem('wav_derevia', 'Деревья', 300, 2020, wavDerevia, true),
     new WavItem('wav_pisma', 'Письма из прошлого', 300, 2019, wavPisma, true),
     new WavItem('wav_varenie', 'Вишневое варенье', 300, 2018, wavVarenie, true),

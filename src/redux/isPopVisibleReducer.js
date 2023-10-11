@@ -1,13 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-    burger: false,
-    alboms: false,
-    books: false,
-    foreignMessage: false,
-    noCommission: false,
-    darkWindow: false
-};
+const popWindows = [
+    'burger',
+    'alboms',
+    'books',
+    'foreignMessage',
+    'noCommission',
+    'darkWindow',
+    'veryTopDetailed',
+    'donationInfo',
+    'veryTopDetailed2'
+];
+
+const initialState = {};
+popWindows.forEach((item) => {
+    initialState[item] = false;
+});
 
 const isPopVisibleSlice = createSlice({
     name: 'popWindows',

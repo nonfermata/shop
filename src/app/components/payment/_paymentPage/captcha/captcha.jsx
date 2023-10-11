@@ -5,12 +5,12 @@ import { modifyCaptcha } from '../../../../../redux/captchaReducer';
 
 const Captcha = React.memo(({ rerender }) => {
     const dispatch = useDispatch();
-    const arr = 'aedfgnqtu12345789'.split('');
+    const arr = 'bdfghmnqstu12345789'.split('');
     const randArr = [];
     for (let i = 1; i <= 5; i++) {
-        let index = Math.round(Math.random() * 16);
+        let index = Math.round(Math.random() * 18);
         while (randArr.find((item) => item === arr[index])) {
-            index = Math.round(Math.random() * 16);
+            index = Math.round(Math.random() * 18);
         }
         randArr.push(arr[index]);
     }

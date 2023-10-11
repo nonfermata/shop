@@ -83,9 +83,6 @@
     .footerSubMenuWrap {
         width: 148px;
     }
-    .footerMobile {
-        /*justify-content: space-between;*/
-    }
 }
 
 @media screen and (max-width: 480px) {

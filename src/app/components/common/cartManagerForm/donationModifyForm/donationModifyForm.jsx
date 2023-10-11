@@ -4,10 +4,16 @@ import PriceField from '../priceField/priceField';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAmountById, modifyItem } from '../../../../../redux/cartReducer';
 import ModifyButton from '../modifyButton/modifyButton';
+import {
+    getAllPopsStatus,
+    togglePopStatus
+} from '../../../../../redux/isPopVisibleReducer';
+import AboutDonation from '../../../gratis/aboutDonation';
 
 const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
     const amount = useSelector(getAmountById('gratis')) || 0;
     const dispatch = useDispatch();
+    const isPopDonationInfo = useSelector(getAllPopsStatus()).donationInfo;
     const [donation, setDonation] = useState('');
     const [buttonText, setButtonText] = useState(initialButtonText);
     const [addedButtonStyle, setAddedButtonStyle] = useState(
@@ -16,6 +22,10 @@ const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
     const [error, setError] = useState('');
     const modifyCartGratis = () => {
         if (!error && donation) {
+            if (!localStorage.getItem('donationInfo')) {
+                dispatch(togglePopStatus('donationInfo'));
+                localStorage.setItem('donationInfo', 'ok');
+            }
             setAddedButtonStyle(classes.successButton);
             setButtonText('Спасибо! Добавлено');
             setTimeout(() => {
@@ -50,6 +60,7 @@ const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
     return (
         <>
             <div className={classes.donationFormWrap}>
+                {isPopDonationInfo && <AboutDonation />}
                 {isCart && 'Добавить ещё'}
                 <div className={classes.donationInputWrap}>
                     <div className={classes.inputError}>{error}</div>

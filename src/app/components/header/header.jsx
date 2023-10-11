@@ -4,13 +4,19 @@ import Burger from './burger/burger';
 import Navbar from './navbar/navbar';
 import SiteLink from '../common/siteLink/siteLink';
 import HeaderCartIconLink from './headerCartIconLink/headerCartIconLink';
-import TopNotice from './topNotice/topNotice';
+import VeryTopNotice from './veryTopBlock/veryTopNotice';
+import Capital from './veryTopBlock/capital/capital';
+import SupportLink from './supportLink/supportLink';
 
 const Header = () => {
     return (
         <header className={classes.header}>
-            <TopNotice />
+            <VeryTopNotice />
+            <Capital />
             <SiteLink className={classes.siteLink} />
+            <div className={classes.supportLinkWrap}>
+                <SupportLink />
+            </div>
             <div className={classes.rightMobileBlock}>
                 <HeaderCartIconLink />
                 <Burger />

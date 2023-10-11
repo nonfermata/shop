@@ -5,6 +5,7 @@
     --darkWindow: #000000dd;
     --base-bg: #fffff5;
     --base-white: #fffffc;
+    --base-white-2-cart: #fffffa;
     --blue: #00758c;
     --semi-blue: #2492a6;
     --ex-light-grey: #e5e2cf;
@@ -92,6 +93,9 @@ a {
 .fw700 {
     font-weight: 700;
 }
+.fz09em {
+    font-size: 0.9em;
+}
 .center {
     text-align: center;
 }
@@ -104,6 +108,10 @@ a {
 
 .strongOrange {
     color: var(--strong-orange);
+}
+
+.green {
+    color: var(--green);
 }
 
 .container {
@@ -169,7 +177,7 @@ a {
         padding-bottom: 100px;
     }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 640px) {
     .container {
         min-height: calc(100vh - 110px);
     }

@@ -9,7 +9,7 @@ import CartItem from './cartItem';
 import formatSum from '../../utils/formatSum';
 import { Link } from 'react-router-dom';
 import scrollToTop from '../../utils/scrollToTop';
-import WarningMessage from './warningMessage';
+import WarningPopWindow from './warningPopWindow';
 import {
     getAllPopsStatus,
     togglePopStatus
@@ -19,10 +19,10 @@ import withInnerWindow from '../hoc/withInnerWindow';
 const Cart = () => {
     const dispatch = useDispatch();
     const isDarkWindow = useSelector(getAllPopsStatus()).darkWindow;
+    const HOCWarning = withInnerWindow(WarningPopWindow);
     const cart = getAllCart(useSelector(getCart()));
     const itemsSum = getItemsSum(cart);
-    const title = itemsSum === 0 ? 'Ваша корзина пуста :(' : 'Ваша корзина';
-    const HOCWarning = withInnerWindow(WarningMessage);
+    const title = itemsSum === 0 ? 'Ваша корзина пуста :(' : 'У вас в корзине:';
     useEffect(() => {
         if (
             cart.filter((item) => !item.isDigital).length > 1 &&
@@ -46,7 +46,7 @@ const Cart = () => {
                     <div className={classes.itemsSumWrap}>
                         <div className={classes.itemsSum}>
                             <div>
-                                Всего на сумму&nbsp;&nbsp;
+                                Всего на сумму:&nbsp;&nbsp;
                                 <span className='fw500'>
                                     {formatSum(itemsSum)} ₽
                                 </span>

@@ -1,9 +1,10 @@
 import React from 'react';
 import classes from './card.module.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ItemModifyForm from '../common/cartManagerForm/itemModifyForm/itemModifyForm';
 import Crowdfunding from '../common/crowdfunding/crowdfunding';
 import scrollToTop from '../../utils/scrollToTop';
+import EVersionsGroup from '../common/eVersionsGroup/eVersionsGroup';
 
 const Card = ({
     id,
@@ -77,31 +78,21 @@ const Card = ({
                         ))}
                     </div>
                 )}
-                <p className={classes.itemPrice}>{price} ₽</p>
+                <div className={classes.itemPriceWrap}>
+                    <p> {price} ₽</p>
+                    {/*<p>|</p>*/}
+                    {/*<p>*/}
+                    {/*    $ {price / 100}{' '}*/}
+                    {/*    <span className='fw400 fz09em'>(paypal)</span>*/}
+                    {/*</p>*/}
+                </div>
                 <ItemModifyForm
                     id={id}
                     price={price}
                     isAvailable={isAvailable}
                     isDigital={isDigital}
                 />
-                {!isAvailable && (
-                    <div className={classes.getEVersion}>
-                        Вы можете приобрести электронную версию:
-                        <div className={classes.eVersionsGroup}>
-                            <Link to='../mp3' title='MP3-версия'>
-                                MP3
-                            </Link>
-                            |
-                            <Link to='../flac' title='FLAC-версия'>
-                                FLAC
-                            </Link>
-                            |
-                            <Link to='../wav' title='WAV-версия'>
-                                WAV
-                            </Link>
-                        </div>
-                    </div>
-                )}
+                {!isAvailable && <EVersionsGroup />}
             </div>
         </div>
     );
