@@ -1,0 +1,67 @@
+.basketInfoWrap {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.basketInfo {
+    margin-top: 0;
+    padding: 10px 10px 7px;
+    min-width: 310px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ex-light-yellow);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid var(--light-beige);
+    opacity: 1;
+    transition: 1s all ease;
+}
+
+.basketInfoMovedUp {
+    margin-top: -45px;
+    opacity: 0;
+}
+
+.positions {
+    font-weight: 600;
+    color: var(--orange);
+}
+
+.capitalSumBox {
+    width: max-content;
+    background-color: var(--orange);
+    padding: 1px 7px;
+    border-radius: 10px;
+    color: var(--base-white);
+}
+
+.inCartIcon {
+    color: var(--orange);
+    display: none;
+}
+
+@media screen and (max-width: 640px) {
+    .basketInfoWrap {
+        justify-content: flex-start;
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .basketInfo {
+        min-width: 220px;
+    }
+    .inCartText {
+        display: none;
+    }
+    .inCartIcon {
+        display: inline;
+    }
+    .onSum {
+        display: none;
+    }
+}

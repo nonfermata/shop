@@ -166,7 +166,7 @@ export const cd = [
     new CdItem('pisma', 'Письма из прошлого', 500, 2019, pisma, true),
     new CdItem('varenie', 'Вишневое варенье', 600, 2018, varenie, true),
     new CdItem('venice', 'Венеция', 600, 2017, venice, true),
-    new CdItem('retro', 'Ретроспектива', 800, 2016, retro, true),
+    new CdItem('retro', 'Ретроспектива', 800, 2016, retro, false),
     new CdItem('zazerkalie', 'Зазеркалье', 500, 2015, zazerkalie, false),
     new CdItem('luna', 'Так восходит луна', 500, 2013, luna, false),
     new CdItem('skazki', 'Сказки Метерлинка', 500, 2011, skazki, false),

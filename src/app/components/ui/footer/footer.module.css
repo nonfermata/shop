@@ -1,0 +1,117 @@
+.footerWrap {
+    font-size: 0.95em;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.footerDesktopNav {
+    display: none;
+}
+
+.footerMobileNav {
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.otherItems {
+    width: 100%;
+    background-color: var(--blue);
+    color: var(--base-white);
+    padding: 7px 10px;
+    font-size: 1.1em;
+    user-select: none;
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.footerSubMenuWrap {
+    background-color: var(--blue);
+    color: var(--base-white);
+    width: 180px;
+    padding: 7px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    user-select: none;
+}
+
+.footerSubMenuTitle {
+    font-size: 1.1em;
+}
+
+.aboutPaymentWrap {
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin: 0 auto 15px;
+    text-align: center;
+}
+
+.developer {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid var(--light-grey);
+    color: var(--semi-dark-grey);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.developer a {
+    text-decoration: underline;
+    color: var(--dark-grey);
+    white-space: nowrap;
+}
+
+.developer a:hover {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .footerWrap {
+        width: calc(100% - 60px);
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .footerWrap {
+        width: calc(100% - 30px);
+    }
+    .footerDesktopNav {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .footerDesktopNav {
+        display: none;
+    }
+    .footerMobileNav {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .footerSubMenuWrap {
+        width: 148px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footerNewBookLink {
+        display: none;
+    }
+
+    .footerSubMenuWrap {
+        width: 150px;
+    }
+}

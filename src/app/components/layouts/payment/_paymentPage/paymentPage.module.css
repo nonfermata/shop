@@ -1,0 +1,18 @@
+.paymentWrap {
+    margin-top: 50px;
+    min-height: calc(
+        100vh - 170px
+    ); /* minus container padding-bottom minus this margin-top */
+}
+
+@media screen and (max-width: 991px) {
+    .paymentWrap {
+        min-height: calc(100vh - 210px);
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .paymentWrap {
+        min-height: calc(100vh - 220px);
+    }
+}

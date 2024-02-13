@@ -1,0 +1,20 @@
+.getEVersion {
+    font-size: 0.8em;
+    margin-left: 10px;
+    position: relative;
+    width: fit-content;
+}
+
+.eVersionsGroup {
+    position: absolute;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--blue);
+    left: 0;
+    top: 90%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}

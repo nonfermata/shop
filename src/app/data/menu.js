@@ -1,8 +1,9 @@
 const menu = [
+    { link: '/', name: 'ГЛАВНАЯ' },
     {
         link: 'items/new_book',
-        name: 'Новая книга! Идет сбор',
-        title: 'Поддержите выпуск новой книги!'
+        name: 'Новая книга!',
+        title: 'Книга готовится к изданию'
     },
     { link: 'cd', name: 'Альбомы на CD' },
     { link: 'books', name: 'Книги' },

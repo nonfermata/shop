@@ -16,10 +16,26 @@ import fiveStories3 from '../assets/spreads/five_stories_70_71.png';
 import fiveStories4 from '../assets/spreads/five_stories_114_115.png';
 
 const devochki = [
-    { id: 'spr01', image: devochki1, title: 'фрагмент из сказки "Все девочки мечтают о бальных платьях"' },
-    { id: 'spr02', image: devochki2, title: 'фрагмент из сказки "Василёк и Серафима"' },
-    { id: 'spr03', image: devochki3, title: 'фрагмент из сказки "Куколка для Сесиль"' },
-    { id: 'spr04', image: devochki4, title: 'фрагмент из сказки "Жёлтая машина"' }
+    {
+        id: 'spr01',
+        image: devochki1,
+        title: 'фрагмент из сказки "Все девочки мечтают о бальных платьях"'
+    },
+    {
+        id: 'spr02',
+        image: devochki2,
+        title: 'фрагмент из сказки "Василёк и Серафима"'
+    },
+    {
+        id: 'spr03',
+        image: devochki3,
+        title: 'фрагмент из сказки "Куколка для Сесиль"'
+    },
+    {
+        id: 'spr04',
+        image: devochki4,
+        title: 'фрагмент из сказки "Жёлтая машина"'
+    }
 ];
 const vsePesni = [
     { id: 'spr05', image: vsePesni1, title: '' },
@@ -35,9 +51,21 @@ const interview = [
 ];
 const fiveStories = [
     { id: 'spr13', image: fiveStories1, title: '' },
-    { id: 'spr14', image: fiveStories2, title: 'фрагмент из рассказа "Английская чашка"' },
-    { id: 'spr15', image: fiveStories3, title: 'фрагмент из рассказа "Двадцать минут четвертого"' },
-    { id: 'spr16', image: fiveStories4, title: 'фрагмент из рассказа "Тоннель"' }
+    {
+        id: 'spr14',
+        image: fiveStories2,
+        title: 'фрагмент из рассказа "Английская чашка"'
+    },
+    {
+        id: 'spr15',
+        image: fiveStories3,
+        title: 'фрагмент из рассказа "Двадцать минут четвертого"'
+    },
+    {
+        id: 'spr16',
+        image: fiveStories4,
+        title: 'фрагмент из рассказа "Тоннель"'
+    }
 ];
 
 const spreads = [

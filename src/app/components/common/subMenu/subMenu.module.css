@@ -12,7 +12,7 @@
     background-color: var(--semi-blue);
     height: auto;
     opacity: 0;
-    transition: .3s all ease;
+    transition: 0.3s all ease;
 }
 
 .subMenuVisible {
@@ -30,7 +30,6 @@
 .subMenuLink:hover {
     font-weight: 500;
 }
-
 
 @media screen and (max-width: 640px) {
     .sumMenuWrap {

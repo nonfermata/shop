@@ -1,0 +1,52 @@
+.capitalWrap {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+}
+
+.capital {
+    position: relative;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--base);
+    margin: 0 auto 20px;
+    padding: 0 10px;
+    width: fit-content;
+    min-width: 180px;
+    height: 35px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ex-light-yellow);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid var(--light-beige);
+}
+
+.capitalInvisible {
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+.capitalSumBox {
+    width: max-content;
+    background-color: var(--orange);
+    padding: 1px 7px;
+    border-radius: 10px;
+    color: var(--base-white);
+}
+
+@media screen and (max-width: 991px) {
+    .capital, .capitalInvisible {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .capital, .capitalInvisible {
+        margin: 0 0 0 15px;
+    }
+}
+

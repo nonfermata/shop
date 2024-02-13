@@ -1,0 +1,49 @@
+.message {
+    width: 100%;
+    max-width: 500px;
+    line-height: 1.5em;
+    position: relative;
+    margin: 0 auto;
+}
+
+.notFromRussia {
+    color: var(--blue);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.messageDetailed {
+    display: none;
+    min-width: 300px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    background-color: var(--base-white);
+    padding: 15px 10px;
+    box-shadow: 0 0 10px 2px var(--ex-light-grey);
+}
+
+.notFromRussia:hover {
+    text-decoration: none;
+}
+
+.messageDetailed a {
+    text-decoration: underline;
+}
+
+.messageDetailed a:hover {
+    text-decoration: none;
+    color: var(--orange);
+}
+
+.messageVisible {
+    display: block;
+}
+
+.crossWrap {
+    position: absolute;
+    top: -27px;
+    right: -5px;
+    transform: scale(0.6, 0.6);
+}

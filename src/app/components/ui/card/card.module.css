@@ -1,0 +1,141 @@
+.cardWrap {
+    width: 23%;
+    background-color: var(--base-white);
+    border: 1px solid var(--semi-beige);
+    border-radius: 3px;
+    line-height: 1.2em;
+    padding: 10px 10px 15px;
+    position: relative;
+}
+
+.bookCardWrap {
+    width: 70%;
+    display: flex;
+    gap: 30px;
+    margin: 0 auto;
+}
+
+.cardWrap img {
+    width: 100%;
+    display: block;
+}
+
+.ordinaryImage {
+    user-select: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.smallBookImage {
+    width: 180px;
+}
+.eBookImage {
+    width: 200px;
+}
+.middleBookImage {
+    width: 225px;
+}
+.largeBookImage {
+    width: 315px;
+    margin-bottom: 0;
+}
+
+.toLookDetails {
+    margin: 0 auto 5px;
+    padding: 2px;
+    font-size: 0.8em;
+    text-align: right;
+    margin-right: 5%;
+}
+
+.bookItemInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-bottom: 26px;
+}
+
+.shotDescr {
+    line-height: 1.2em;
+    margin: 5px 0;
+}
+
+.itemPriceWrap {
+    font-weight: 600;
+    margin-top: 7px;
+    font-size: 1.15em;
+    display: flex;
+    gap: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .cardWrap {
+        width: 31%;
+    }
+    .bookCardWrap {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .cardWrap {
+        width: 40%;
+        max-width: 280px;
+    }
+    .bookCardWrap {
+        width: 90%;
+        max-width: 1000px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cardWrap {
+        min-width: 340px;
+    }
+    .bookCardWrap {
+        width: 100%;
+        max-width: 1000px;
+    }
+    .getEVersion {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .bookCardWrap {
+        width: 40%;
+        min-width: 340px;
+        display: block;
+        margin: 0 auto;
+    }
+    .bookItemInfo {
+        display: block;
+        margin-bottom: 0;
+    }
+    .ordinaryImage {
+        margin: 0 auto;
+        display: block;
+    }
+    .smallBookImage {
+        width: 70%;
+    }
+    .eBookImage {
+        width: 80%;
+    }
+    .middleBookImage {
+        width: 80%;
+    }
+    .largeBookImage {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .bookCardWrap,
+    .cardWrap {
+        width: 100%;
+        min-width: 1px;
+        max-width: fit-content;
+    }
+}

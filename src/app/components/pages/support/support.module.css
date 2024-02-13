@@ -1,0 +1,24 @@
+.supportWrap {
+    margin: 125px auto 0;
+    width: 100%;
+    max-width: 550px;
+}
+
+.supportProlog {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.3em;
+}
+
+@media screen and (max-width: 991px) {
+    .supportWrap {
+        margin-top: 90px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .supportWrap {
+        margin-top: 110px;
+    }
+}

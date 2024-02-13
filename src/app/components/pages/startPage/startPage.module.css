@@ -1,0 +1,39 @@
+.startPageWrap {
+    margin: 125px auto 0;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.startTitle {
+    font-size: 1.2rem;
+    line-height: 1.2em;
+    margin: 5px 0;
+}
+
+.link {
+    color: var(--blue);
+    transition: all ease .2s;
+}
+
+.link:hover {
+    color: var(--orange);
+}
+
+@media screen and (max-width: 991px) {
+    .startPageWrap {
+        margin-top: 90px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .startPageWrap {
+        margin-top: 110px;
+    }
+}

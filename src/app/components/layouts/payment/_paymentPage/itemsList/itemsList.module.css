@@ -1,0 +1,139 @@
+.listTitle {
+    font-weight: 500;
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.listWrap {
+    margin: 0 auto;
+    width: fit-content;
+    border-bottom: 1px solid var(--light-beige2);
+    border-top: 1px solid var(--light-beige2);
+    font-size: 0.9em;
+}
+
+.listItem {
+    padding: 7px 10px;
+    background-color: var(--ex-light-green2);
+}
+
+.listItem:nth-child(even) {
+    background-color: var(--ex-light-green3);
+}
+
+.listItemDelivery {
+    padding: 7px 10px;
+    background-color: var(--ex-light-yellow);
+}
+
+.listItemsSum {
+    padding: 10px 0 15px;
+}
+
+.totalSum {
+    text-align: center;
+    background-color: var(--ex-light-green2);
+    padding: 7px 15px;
+    width: fit-content;
+    margin: 0 auto;
+    min-width: 250px;
+    font-size: 1.1em;
+}
+
+.aboutDelivery {
+    margin: 0 auto;
+    color: var(--dark-grey);
+    max-width: 500px;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid var(--light-grey);
+    border-bottom: 1px solid var(--light-grey);
+    background-color: var(--disabled);
+}
+
+.finalStageWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.toPayWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.thankYouDataOk,
+.personData,
+.inCart,
+.nowJustPay,
+.payOnCardPlease,
+.confirmPleaseByEmail,
+.listItemsSum {
+    font-size: 1.1em;
+    line-height: 1.3em;
+    width: 100%;
+    text-align: center;
+}
+
+.thankYouDataOk {
+    color: var(--green);
+    font-weight: 500;
+}
+
+.nowJustPay {
+    color: var(--green);
+    font-weight: 500;
+}
+
+.cardGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+
+.payingCardNumber {
+    font-size: 1.3em;
+    font-weight: 500;
+    width: 100%;
+}
+
+.payingCardOwner {
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.confirmPleaseByEmail a {
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+.confirmPleaseByEmail a:hover {
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.otherPayingModesInWork {
+    margin-top: 10px;
+    font-size: 1em;
+    width: 100%;
+    color: var(--semi-grey);
+}
+
+@media screen and (max-width: 640px) {
+    .listWrap {
+        width: 100%;
+    }
+}

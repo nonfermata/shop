@@ -2,11 +2,11 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { closePop, getAllPopsStatus } from '../redux/isPopVisibleReducer';
 import { useDispatch, useSelector } from 'react-redux';
-import Footer from './components/footer/footer';
-import ForeignUsersStart from './components/payment/foreignUsersStart/foreignUsersStart';
-import Confirmation from './components/payment/_paymentPage/confirmation';
-import Main from './components/main/main';
-import FinalStage from './components/payment/_paymentPage/finalStage';
+import Footer from './components/ui/footer/footer';
+import ForeignUsersStart from './components/ui/foreignUsersStart/foreignUsersStart';
+import Confirmation from './components/layouts/payment/_paymentPage/confirmation';
+import Main from './components/layouts/main/main';
+import FinalStage from './components/layouts/payment/_paymentPage/finalStage';
 
 const App = () => {
     const dispatch = useDispatch();

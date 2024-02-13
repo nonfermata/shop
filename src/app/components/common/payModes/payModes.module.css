@@ -1,0 +1,18 @@
+.payModesWrap {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.thankU {
+    color: var(--semi-green);
+    font-size: 19px;
+    white-space: nowrap;
+    margin: 25px auto;
+    text-align: center;
+}

@@ -1,0 +1,28 @@
+.comingSoonWrap {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comingSoon {
+    padding: 2px 5px;
+    color: var(--base-white);
+    background-color: var(--orange);
+    width: max-content;
+}
+
+@media screen and (max-width: 768px) {
+    .comingSoonWrap {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .comingSoonWrap {
+        position: relative;
+        right: 0;
+        margin: -10px 0 10px;
+    }
+}

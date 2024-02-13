@@ -1,7 +1,7 @@
-import devochki from "../assets/covers/books/book_devochki.png";
-import accords from "../assets/covers/books/book_vse_akkordy.jpg";
-import interview from "../assets/covers/books/book_do_nachala.jpg";
-import fiveStories from "../assets/covers/books/book_five_stories.jpg";
+import devochki from '../assets/covers/books/book_devochki.png';
+import accords from '../assets/covers/books/book_vse_akkordy.jpg';
+import interview from '../assets/covers/books/book_do_nachala.jpg';
+import fiveStories from '../assets/covers/books/book_five_stories.jpg';
 
 export const epubBooks = [
     new EpubItem(

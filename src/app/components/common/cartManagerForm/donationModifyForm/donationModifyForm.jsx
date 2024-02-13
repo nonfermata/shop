@@ -8,9 +8,11 @@ import {
     getAllPopsStatus,
     togglePopStatus
 } from '../../../../../redux/isPopVisibleReducer';
-import AboutDonation from '../../../gratis/aboutDonation';
+import AboutDonation from '../../../ui/gratis/aboutDonation';
+import { useLocation } from 'react-router-dom';
 
 const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
+    const location = useLocation();
     const amount = useSelector(getAmountById('gratis')) || 0;
     const dispatch = useDispatch();
     const isPopDonationInfo = useSelector(getAllPopsStatus()).donationInfo;
@@ -60,7 +62,9 @@ const DonationModifyForm = ({ initialButtonText, isCart = false }) => {
     return (
         <>
             <div className={classes.donationFormWrap}>
-                {isPopDonationInfo && <AboutDonation />}
+                {isPopDonationInfo && location.pathname !== '/cart' && (
+                    <AboutDonation />
+                )}
                 {isCart && 'Добавить ещё'}
                 <div className={classes.donationInputWrap}>
                     <div className={classes.inputError}>{error}</div>
