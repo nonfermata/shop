@@ -419,7 +419,7 @@ export const epub = [
     new EpubItem(
         'epub_fiveStories',
         'Зоя Ященко. 25 песен и 5 рассказов',
-        300,
+        200,
         2006,
         epubFiveStories,
         true,
