@@ -148,12 +148,9 @@ const ItemPage = () => {
                         </div>
                     </>
                 )}
-
-                {itemId !== 'new_book' && (
-                    <p className={classes.copyright}>
-                        ©&nbsp;&nbsp;{year}&nbsp;&nbsp;{copyright}
-                    </p>
-                )}
+                <p className={classes.copyright}>
+                    ©&nbsp;&nbsp;{year}&nbsp;&nbsp;{copyright}
+                </p>
                 <button
                     onClick={() => {
                         navigate(-1);
