@@ -14,7 +14,7 @@
 .siteLink {
     position: absolute;
     top: 40px;
-    left: 25px;
+    left: 50px;
     font-size: 1.1em;
     color: var(--semi-dark-grey);
     display: flex;
@@ -25,28 +25,10 @@
     color: var(--orange);
 }
 
-.cartLinkActive {
-    color: var(--orange);
-    font-weight: 500;
-    display: flex;
-    gap: 10px;
-}
-
-.cartLink {
-    display: flex;
-    gap: 10px;
-    color: var(--blue);
-    transition: 0.1s all ease;
-}
-
-.cartLink:hover {
-    color: var(--orange);
-}
-
 .cartLinkWrap {
     position: absolute;
     top: 40px;
-    right: 25px;
+    right: 50px;
     font-size: 1.1em;
     color: var(--semi-dark-grey);
     display: flex;
@@ -57,6 +39,26 @@
 
 .cartLinkWrap:hover {
     color: var(--orange);
+}
+
+.cartLink {
+    display: flex;
+    gap: 5px;
+    color: var(--blue);
+    transition: 0.1s all ease;
+    position: relative;
+}
+
+.cartLink:hover {
+    color: var(--orange);
+}
+
+.cartLinkActive {
+    color: var(--orange);
+    font-weight: 500;
+    display: flex;
+    gap: 5px;
+    position: relative;
 }
 
 .supportListDarkScreen {
@@ -101,12 +103,32 @@
 
 .cartIcon {
     transform: scale(1.8, 1.8);
-    color: var(--semi-dark-grey);
+    color: var(--blue);
+    position: relative;
 }
 
 .cartIconActive {
     transform: scale(1.8, 1.8);
     color: var(--orange);
+    position: relative;
+}
+
+.quantityWrap {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    color: var(--base-white);
+    background-color: var(--strong-orange);
+    position: absolute;
+    padding: 1px 0 0 1px;
+    bottom: 50%;
+    left: 80%;
+    font-size: .6rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(.6, .6);
 }
 
 @media screen and (max-width: 1200px) {
@@ -121,6 +143,10 @@
         width: 100%;
         left: 0;
         padding-bottom: 10px;
+    }
+
+    .siteLink {
+        left: 15px;
     }
 
     .cartLinkWrap {
@@ -147,6 +173,5 @@
 
     .siteLink {
         top: 60px;
-        left: 15px;
     }
 }

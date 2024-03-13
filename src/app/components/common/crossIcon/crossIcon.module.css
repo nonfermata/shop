@@ -1,12 +1,7 @@
 .crossWrap {
     width: 30px;
     height: 30px;
-    opacity: 0.8;
     cursor: pointer;
-}
-
-.crossWrap:hover {
-    opacity: 1;
 }
 
 .inclinedLineOne,
