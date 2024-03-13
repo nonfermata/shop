@@ -316,7 +316,7 @@ export const books = [
         'new_book',
         'Зоя Ященко. "Поля и снеговик"',
         1000,
-        2023,
+        2024,
         polya,
         true,
         [
