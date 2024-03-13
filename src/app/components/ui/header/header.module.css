@@ -14,7 +14,7 @@
 .siteLink {
     position: absolute;
     top: 40px;
-    left: 15px;
+    left: 25px;
     font-size: 1.1em;
     color: var(--semi-dark-grey);
     display: flex;
@@ -25,10 +25,28 @@
     color: var(--orange);
 }
 
-.supportLink {
+.cartLinkActive {
+    color: var(--orange);
+    font-weight: 500;
+    display: flex;
+    gap: 10px;
+}
+
+.cartLink {
+    display: flex;
+    gap: 10px;
+    color: var(--blue);
+    transition: 0.1s all ease;
+}
+
+.cartLink:hover {
+    color: var(--orange);
+}
+
+.cartLinkWrap {
     position: absolute;
     top: 40px;
-    right: 15px;
+    right: 25px;
     font-size: 1.1em;
     color: var(--semi-dark-grey);
     display: flex;
@@ -37,7 +55,7 @@
     cursor: pointer;
 }
 
-.supportLink:hover {
+.cartLinkWrap:hover {
     color: var(--orange);
 }
 
@@ -104,24 +122,31 @@
         left: 0;
         padding-bottom: 10px;
     }
-    .supportLinkWrap {
+
+    .cartLinkWrap {
         display: none;
     }
+
     .supportLink {
         position: relative;
     }
+
     .rightMobileBlock {
         display: flex;
     }
+
     .navbarWrap {
         display: none;
     }
 }
+
 @media screen and (max-width: 640px) {
     .rightMobileBlock {
         top: 60px;
     }
+
     .siteLink {
         top: 60px;
+        left: 15px;
     }
 }

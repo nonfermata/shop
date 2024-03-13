@@ -3,7 +3,6 @@ import React from 'react';
 import classes from './navbar.module.css';
 import { NavLink } from 'react-router-dom';
 import menu from '../../../../data/menu';
-import CartLink from '../../../common/cartLink/cartLink';
 import scrollToTop from '../../../../utils/scrollToTop';
 
 const Navbar = () => {
@@ -36,16 +35,6 @@ const Navbar = () => {
                     </NavLink>
                 </div>
             ))}
-            <span className={classes.navbarCartLink}>|</span>
-            <CartLink
-                className={(link) =>
-                    link.isActive
-                        ? classes.navbarItemActive +
-                          ' ' +
-                          classes.navbarCartLink
-                        : classes.navbarItem + ' ' + classes.navbarCartLink
-                }
-            />
         </nav>
     );
 };
