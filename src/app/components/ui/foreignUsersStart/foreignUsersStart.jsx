@@ -34,7 +34,7 @@ const ForeignUsersStart = () => {
                     </span>
                     <br />
                     Напишите нам на:{' '}
-                    <a href='mailto:paypal@bgvmusic.ru'>paypal@bgvmusic.ru</a>
+                    <a href='mailto:bgv@bgvmusic.ru'>bgv@bgvmusic.ru</a>
                     <br />
                     <span className='noHyph'>
                         Мы всё обсудим индивидуально.
