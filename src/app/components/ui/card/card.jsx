@@ -33,18 +33,20 @@ const Card = ({
             bookImageWidth = 'eBookImage';
             break;
         case 'fiveStories':
-        case 'new_book':
+        case 'polya':
             bookImageWidth = 'smallBookImage';
             break;
         default:
             bookImageWidth = '';
     }
+
     class Styles {
         constructor(cardWrap, itemInfo) {
             this.cardWrap = cardWrap;
             this.itemInfo = itemInfo;
         }
     }
+
     const addedStyles =
         type === 'book'
             ? new Styles(classes.bookCardWrap, classes.bookItemInfo)
@@ -57,7 +59,7 @@ const Card = ({
     };
     return (
         <div className={classes.cardWrap + ' ' + cardWrap}>
-            {id === 'new_book' && <ItemComingSoonMsg />}
+            {id === 'polya' && <ItemComingSoonMsg />}
             <div
                 onClick={handleImageClick}
                 className={
@@ -80,11 +82,6 @@ const Card = ({
                 )}
                 <div className={classes.itemPriceWrap}>
                     <p> {price} ₽</p>
-                    {/*<p>|</p>*/}
-                    {/*<p>*/}
-                    {/*    $ {price / 100}{' '}*/}
-                    {/*    <span className='fw400 fz09em'>(paypal)</span>*/}
-                    {/*</p>*/}
                 </div>
                 <ItemModifyForm
                     id={id}

@@ -29,7 +29,7 @@ const Cart = () => {
     // useEffect(() => {
     //     if (
     //         cart.filter((item) => !item.isDigital).length > 1 &&
-    //         cart.find((item) => item.id === 'new_book')
+    //         cart.find((item) => item.id === 'polya')
     //     ) {
     //         dispatch(togglePopStatus('darkWindow'));
     //     }

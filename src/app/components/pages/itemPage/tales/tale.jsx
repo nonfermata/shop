@@ -10,7 +10,7 @@ const Tale = () => {
     const { taleId } = params;
     const tale = polyaTales.find((item) => item.id === taleId);
     if (!tale) {
-        return <Navigate to='items/new_book' />;
+        return <Navigate to='items/polya' />;
     }
     return (
         <>

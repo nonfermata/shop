@@ -18,7 +18,7 @@ const ItemPage = () => {
     const { itemId } = useParams();
     const _item = getItemById(itemId);
     if (!_item) {
-        return <Navigate to='items/new_book' />;
+        return <Navigate to='items/polya' />;
     }
     const {
         name,
@@ -39,7 +39,7 @@ const ItemPage = () => {
             break;
         case 'fiveStories':
         case 'epub_fiveStories':
-        case 'new_book':
+        case 'polya':
             imageWidth = 'smallImage';
             break;
         default:
@@ -61,11 +61,11 @@ const ItemPage = () => {
     return (
         <>
             <Gratis />
-            {/*{itemId === 'new_book' && <NewBookPrologue />}*/}
+            {/*{itemId === 'polya' && <NewBookPrologue />}*/}
             <div className={classes.allItemContentWrap}>
                 <div className={classes.itemWrap}>
                     <div className={classes.rightColumn}>
-                        {itemId === 'new_book' && (
+                        {itemId === 'polya' && (
                             <div className={classes.itemMsgWrap}>
                                 <ItemComingSoonMsg />
                             </div>
@@ -87,7 +87,7 @@ const ItemPage = () => {
                     <div className={classes.leftColumn}>
                         <div className={classes.itemTitleWrap}>
                             <h1 className={classes.itemName}>{name}</h1>
-                            {itemId !== 'new_book' && (
+                            {itemId !== 'polya' && (
                                 <p className='itemYear'>{year}</p>
                             )}
                         </div>
@@ -101,10 +101,10 @@ const ItemPage = () => {
                                 <li key={track}>{track}</li>
                             ))}
                         </ItemTrackList>
-                        {type === 'book' && itemId !== 'new_book' && (
+                        {type === 'book' && itemId !== 'polya' && (
                             <Spreads name={name} />
                         )}
-                        {itemId === 'new_book' && <Tales />}
+                        {itemId === 'polya' && <Tales />}
                     </div>
 
                     <ul className={classes.descriptionList}>

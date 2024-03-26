@@ -1,7 +1,7 @@
 const menu = [
     { link: '/', name: 'ГЛАВНАЯ' },
     {
-        link: 'items/new_book',
+        link: 'items/polya',
         name: 'Новая книга!',
         title: 'Книга готовится к изданию'
     },

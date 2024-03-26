@@ -8,7 +8,7 @@ const VeryTopNotice = () => {
         <div className={classes.topBlockWrap}>
             <Link
                 className={classes.topNoticeWrap}
-                to='items/new_book'
+                to='items/polya'
                 title='Подробней про новую книгу'
                 onClick={scrollToTop}
             >

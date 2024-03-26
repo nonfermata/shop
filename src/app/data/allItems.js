@@ -313,7 +313,7 @@ export const wav = [
 
 export const books = [
     new BookItem(
-        'new_book',
+        'polya',
         'Зоя Ященко. "Поля и снеговик"',
         1000,
         2024,
