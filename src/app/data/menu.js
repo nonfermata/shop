@@ -3,13 +3,13 @@ const menu = [
     {
         link: 'items/polya',
         name: 'Новая книга!',
-        title: 'Книга готовится к изданию'
+        title: 'Новая книга «Поля и снеговик»'
     },
+    { link: 'books', name: 'Все книги' },
     { link: 'cd', name: 'Альбомы на CD' },
     { link: 'mp3', name: 'Альбомы MP3' },
     { link: 'flac', name: 'Альбомы FLAC' },
-    { link: 'wav', name: 'Альбомы WAV' },
-    { link: 'books', name: 'Книги' }
+    { link: 'wav', name: 'Альбомы WAV' }
     // { link: 'epub', name: 'Электронные книги EPUB' }
 ];
 

@@ -87,9 +87,7 @@ const ItemPage = () => {
                     <div className={classes.leftColumn}>
                         <div className={classes.itemTitleWrap}>
                             <h1 className={classes.itemName}>{name}</h1>
-                            {itemId !== 'polya' && (
-                                <p className='itemYear'>{year}</p>
-                            )}
+                            <p className='itemYear'>{year}</p>
                         </div>
 
                         <p className={classes.subtitle}>{subtitle}</p>
