@@ -2,22 +2,19 @@ import React from 'react';
 import classes from './categories.module.css';
 import Gratis from '../../ui/gratis/gratis';
 import CategoryHeader from '../../common/categoryHeader/categoryHeader';
-import { epub } from '../../../data/allItems';
+import { ebooks } from '../../../data/allItems';
 import Card from '../../ui/card/card';
 
-const Epub = () => {
+const Ebooks = () => {
     const info = [
-        'Выбирая цифровую версию книги, вы получаете уникальную ссылку для скачивания.'
+        'Выбирая цифровую версию книги, вы получаете уникальные ссылки для скачивания в разных форматах.'
     ];
     return (
         <>
             <Gratis />
-            <CategoryHeader
-                title='Электронные книги в EPUB-формате'
-                info={info}
-            />
+            <CategoryHeader title='Электронные книги' info={info} />
             <div className={classes.cardsWrap + ' ' + classes.booksCardsWrap}>
-                {epub.map((item) => (
+                {ebooks.map((item) => (
                     <Card key={item.id} {...item} />
                 ))}
             </div>
@@ -25,4 +22,4 @@ const Epub = () => {
     );
 };
 
-export default Epub;
+export default Ebooks;

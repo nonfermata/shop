@@ -11,7 +11,7 @@ import ItemTrackList from './itemTrackList';
 import Spreads from './spreads/spreads';
 import Tales from './tales/tales';
 import EVersionsGroup from '../../ui/card/eVersionsGroup/eVersionsGroup';
-import ItemComingSoonMsg from '../../common/itemComingSoonMsg/itemComingSoonMsg';
+import ItemNewMsg from '../../common/itemNewMsg/itemNewMsg';
 
 const ItemPage = () => {
     const navigate = useNavigate();
@@ -40,6 +40,7 @@ const ItemPage = () => {
         case 'fiveStories':
         case 'epub_fiveStories':
         case 'polya':
+        case 'epolya':
             imageWidth = 'smallImage';
             break;
         default:
@@ -65,11 +66,12 @@ const ItemPage = () => {
             <div className={classes.allItemContentWrap}>
                 <div className={classes.itemWrap}>
                     <div className={classes.rightColumn}>
-                        {itemId === 'polya' && (
-                            <div className={classes.itemMsgWrap}>
-                                <ItemComingSoonMsg />
-                            </div>
-                        )}
+                        {itemId === 'polya' ||
+                            (itemId === 'epolya' && (
+                                <div className={classes.itemMsgWrap}>
+                                    <ItemNewMsg />
+                                </div>
+                            ))}
                         <img
                             src={image}
                             alt={name}
@@ -99,10 +101,12 @@ const ItemPage = () => {
                                 <li key={track}>{track}</li>
                             ))}
                         </ItemTrackList>
-                        {type === 'book' && itemId !== 'polya' && (
-                            <Spreads name={name} />
+                        {type === 'book' &&
+                            itemId !== 'polya' &&
+                            itemId !== 'epolya' && <Spreads name={name} />}
+                        {(itemId === 'polya' || itemId === 'epolya') && (
+                            <Tales />
                         )}
-                        {itemId === 'polya' && <Tales />}
                     </div>
 
                     <ul className={classes.descriptionList}>

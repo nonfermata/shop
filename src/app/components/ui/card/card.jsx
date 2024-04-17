@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './card.module.css';
 import { useNavigate } from 'react-router-dom';
 import ItemModifyForm from '../../common/cartManagerForm/itemModifyForm/itemModifyForm';
-import ItemComingSoonMsg from '../../common/itemComingSoonMsg/itemComingSoonMsg';
+import ItemNewMsg from '../../common/itemNewMsg/itemNewMsg';
 import scrollToTop from '../../../utils/scrollToTop';
 import EVersionsGroup from './eVersionsGroup/eVersionsGroup';
 
@@ -34,6 +34,7 @@ const Card = ({
             break;
         case 'fiveStories':
         case 'polya':
+        case 'epolya':
             bookImageWidth = 'smallBookImage';
             break;
         default:
@@ -59,7 +60,7 @@ const Card = ({
     };
     return (
         <div className={classes.cardWrap + ' ' + cardWrap}>
-            {id === 'polya' && <ItemComingSoonMsg />}
+            {(id === 'polya' || id === 'epolya') && <ItemNewMsg />}
             <div
                 onClick={handleImageClick}
                 className={

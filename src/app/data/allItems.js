@@ -84,10 +84,7 @@ import interview from '../assets/covers/books/book_do_nachala.png';
 import fiveStories from '../assets/covers/books/book_five_stories.png';
 import polya from '../assets/covers/books/polya.png';
 
-import epubDevochki from '../assets/covers/epub/book_devochki_epub.png';
-import epubAccords from '../assets/covers/epub/book_vse_akkordy_epub.png';
-import epubInterview from '../assets/covers/epub/book_do_nachala_epub.png';
-import epubFiveStories from '../assets/covers/epub/book_five_stories_epub.png';
+import ebookPolya from '../assets/covers/ebooks/ebook_polya.png';
 
 import lotos from '../assets/images/lotos.png';
 
@@ -143,10 +140,10 @@ class BookItem extends Item {
     }
 }
 
-class EpubItem extends Item {
+class EbookItem extends Item {
     constructor(id, name, price, year, image, isAvailable, shotDescr) {
         super(id, name, price, year, image, isAvailable, shotDescr);
-        this.subtitle = 'электронная книга в EPUB-формате';
+        this.subtitle = 'электронная книга, форматы EPUB / PDF';
         this.type = 'book';
     }
 }
@@ -311,6 +308,21 @@ export const wav = [
     new WavItem('wav_amulet', 'Амулет', 300, 1996, wavAmulet, true)
 ];
 
+export const ebooks = [
+    new EbookItem(
+        'epolya',
+        'Зоя Ященко. "Поля и снеговик"',
+        500,
+        2024,
+        ebookPolya,
+        true,
+        [
+            'Электронная книга, форматы EPUB / PDF',
+            'Ч/б печать, 100 авторских иллюстраций'
+        ]
+    )
+];
+
 export const books = [
     new BookItem(
         'polya',
@@ -379,62 +391,10 @@ export const books = [
     )
 ];
 
-export const epub = [
-    new EpubItem(
-        'epub_devochki',
-        'Зоя Ященко. "Все девочки мечтают о бальных платьях"',
-        500,
-        2023,
-        epubDevochki,
-        true,
-        [
-            'Электронная книга, 112 страниц',
-            'Полноцветная печать, 65 авторских иллюстраций'
-        ]
-    ),
-    new EpubItem(
-        'epub_accords',
-        'Группа "Белая Гвардия". Все песни, все аккорды',
-        500,
-        2018,
-        epubAccords,
-        true,
-        [
-            'Электронная книга, 366 страниц',
-            'Ч/б печать, 77 фотографий и иллюстраций'
-        ]
-    ),
-    new EpubItem(
-        'epub_interview',
-        'Зоя Ященко. "За два часа до начала лета"',
-        500,
-        2017,
-        epubInterview,
-        true,
-        [
-            'Электронная книга, 318 страниц',
-            'Ч/б печать, 140 фотографий и иллюстраций'
-        ]
-    ),
-    new EpubItem(
-        'epub_fiveStories',
-        'Зоя Ященко. 25 песен и 5 рассказов',
-        200,
-        2006,
-        epubFiveStories,
-        true,
-        [
-            'Электронная книга, 152 страницы',
-            'Ч/б печать, с авторскими иллюстрациями'
-        ]
-    )
-];
-
 cd[0].subtitle = 'альбом на CD, с буклетом';
 cd[1].subtitle = 'альбом на CD, с буклетом';
 cd[3].subtitle = 'альбом на CD, с буклетом';
 cd[4].subtitle = 'альбом на CD, с буклетом';
-cd[5].subtitle = 'двойной альбом на CD';
 cd[0].weight = 100;
 cd[1].weight = 100;
 cd[2].weight = 100;
@@ -450,11 +410,12 @@ books[1].weight = 750;
 books[2].weight = 500;
 books[3].weight = 450;
 books[4].weight = 150;
+cd[5].subtitle = 'двойной альбом на CD';
 mp3[5].subtitle = 'двойной альбом в MP3-формате';
 flac[5].subtitle = 'двойной альбом в FLAC-формате';
 wav[5].subtitle = 'двойной альбом в WAV-формате';
 
 export const getItemById = (id) =>
-    [...cd, ...mp3, ...flac, ...wav, ...books, ...epub].find(
+    [...cd, ...mp3, ...flac, ...wav, ...books, ...ebooks].find(
         (item) => item.id === id
     );

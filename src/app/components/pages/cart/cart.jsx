@@ -25,7 +25,7 @@ const Cart = () => {
     const HOCWarning = withInnerWindow(WarningPopWindow);
     const cart = getAllCart(useSelector(getCart()));
     const itemsSum = getItemsSum(cart);
-    const title = itemsSum === 0 ? 'Ваша корзина пуста :(' : 'У вас в корзине:';
+    const title = itemsSum === 0 ? 'Ваша корзина пуста :(' : 'Ваша корзина:';
     // useEffect(() => {
     //     if (
     //         cart.filter((item) => !item.isDigital).length > 1 &&

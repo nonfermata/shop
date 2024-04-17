@@ -1,8 +1,8 @@
 /* eslint-disable indent */
-import { gratis, cd, mp3, flac, wav, books, epub } from '../data/allItems';
+import { gratis, cd, mp3, flac, wav, books, ebooks } from '../data/allItems';
 import areas from '../data/areas';
 
-const allItems = [gratis, ...cd, ...mp3, ...flac, ...wav, ...books, ...epub];
+const allItems = [gratis, ...cd, ...mp3, ...flac, ...wav, ...books, ...ebooks];
 
 export const getAllCart = (cart) =>
     cart.length === 0

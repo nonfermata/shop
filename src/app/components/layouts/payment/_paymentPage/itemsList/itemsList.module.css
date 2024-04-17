@@ -85,6 +85,10 @@
     text-align: center;
 }
 
+.confirmPleaseByEmail {
+    max-width: 768px;
+}
+
 .thankYouDataOk {
     color: var(--green);
     font-weight: 500;

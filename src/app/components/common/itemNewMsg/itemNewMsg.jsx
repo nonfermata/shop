@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './itemComingSoonMsg.module.css';
+import classes from './itemNewMsg.module.css';
 
-const ItemComingSoonMsg = () => {
+const ItemNewMsg = () => {
     return (
         <div className={classes.comingSoonWrap}>
             <div className={classes.comingSoon}>новинка</div>
@@ -9,4 +9,4 @@ const ItemComingSoonMsg = () => {
     );
 };
 
-export default ItemComingSoonMsg;
+export default ItemNewMsg;
