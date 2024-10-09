@@ -78,6 +78,14 @@
 
 .trackList li {
     white-space: pre-wrap;
+    margin-bottom: 4px;
+}
+
+.realiseTime {
+    margin-top: 12px;
+    font-size: 1.05em;
+    line-height: 1.4em;
+    color: var(--dark-blue);
 }
 
 .descriptionList {

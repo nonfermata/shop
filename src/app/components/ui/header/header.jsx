@@ -4,19 +4,19 @@ import Burger from './burger/burger';
 import Navbar from './navbar/navbar';
 import SiteLink from '../../common/siteLink/siteLink';
 import HeaderCartIconLink from './headerCartIconLink/headerCartIconLink';
-import VeryTopNotice from './veryTopBlock/veryTopNotice';
-// import SupportLink from './supportLink/supportLink';
-import CapitalInvisible from './veryTopBlock/capital/capitalInvisible';
+import VeryTopInfo from './veryTopBlock/veryTopInfo';
 import CartLink from '../../common/cartLink/cartLink';
-// import Capital from './veryTopBlock/capital/capital';
+import Capital from './veryTopBlock/capital/capital';
+// import CapitalInvisible from './veryTopBlock/capital/capitalInvisible';
+// import SupportLink from './supportLink/supportLink';
 
 const Header = () => {
     return (
         <header className={classes.header}>
-            <VeryTopNotice />
-            <CapitalInvisible />
-            {/*<Capital />*/}
             <SiteLink className={classes.siteLink} />
+            <VeryTopInfo />
+            {/*<CapitalInvisible />*/}
+            <Capital />
             <div className={classes.cartLinkWrap}>
                 <CartLink
                     className={(link) =>

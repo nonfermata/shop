@@ -39,12 +39,12 @@
     width: max-content;
     font-size: 1.2em;
     gap: 25px;
-    transition: 0.7s all ease;
+    transition: 0.5s all ease;
     box-shadow: 0 0 15px 1px var(--semi-beige);
 }
 
 .hiddenMenu {
-    right: -300px;
+    right: -250px;
     opacity: 0;
 }
 
@@ -62,7 +62,7 @@
     display: none;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 640px) {
     .siteLink {
         display: flex;
     }

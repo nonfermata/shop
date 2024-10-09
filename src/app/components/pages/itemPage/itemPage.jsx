@@ -7,18 +7,18 @@ import { getItemInfoByName } from '../../../data/itemsInfo';
 import ItemModifyForm from '../../common/cartManagerForm/itemModifyForm/itemModifyForm';
 import EmptyBlock from '../../common/emptyBlock/emptyBlock';
 import ItemTrackList from './itemTrackList';
-// import NewBookPrologue from './newBookPrologue/newBookPrologue';
 import Spreads from './spreads/spreads';
 import Tales from './tales/tales';
 import EVersionsGroup from '../../ui/card/eVersionsGroup/eVersionsGroup';
 import ItemNewMsg from '../../common/itemNewMsg/itemNewMsg';
+import NewBookPrologue from './newBookPrologue/newBookPrologue';
 
 const ItemPage = () => {
     const navigate = useNavigate();
     const { itemId } = useParams();
     const _item = getItemById(itemId);
     if (!_item) {
-        return <Navigate to='items/polya' />;
+        return <Navigate to='items/rim' />;
     }
     const {
         name,
@@ -62,16 +62,15 @@ const ItemPage = () => {
     return (
         <>
             <Gratis />
-            {/*{itemId === 'polya' && <NewBookPrologue />}*/}
+            {itemId === 'rim' && <NewBookPrologue />}
             <div className={classes.allItemContentWrap}>
                 <div className={classes.itemWrap}>
                     <div className={classes.rightColumn}>
-                        {itemId === 'polya' ||
-                            (itemId === 'epolya' && (
-                                <div className={classes.itemMsgWrap}>
-                                    <ItemNewMsg />
-                                </div>
-                            ))}
+                        {(itemId === 'rim' || itemId === 'erim') && (
+                            <div className={classes.itemMsgWrap}>
+                                <ItemNewMsg />
+                            </div>
+                        )}
                         <img
                             src={image}
                             alt={name}
@@ -102,10 +101,25 @@ const ItemPage = () => {
                             ))}
                         </ItemTrackList>
                         {type === 'book' &&
+                            itemId !== 'rim' &&
+                            itemId !== 'erim' &&
                             itemId !== 'polya' &&
                             itemId !== 'epolya' && <Spreads name={name} />}
                         {(itemId === 'polya' || itemId === 'epolya') && (
                             <Tales />
+                        )}
+                        {(itemId === 'rim' || itemId === 'erim') && (
+                            <>
+                                <div className={classes.realiseTime}>
+                                    Предположительная дата выхода{' '}
+                                    <span className='noHyph'>книги –</span>
+                                    <span className='fw600 noHyph'>
+                                        лето 2025 года.
+                                    </span>
+                                    <br />
+                                    Но заказать вы её можете уже сейчас.
+                                </div>
+                            </>
                         )}
                     </div>
 

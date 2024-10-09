@@ -29,6 +29,13 @@ const StartPage = () => {
                     <span className='noHyph'>Мы сейчас</span> живем благодаря
                     вашей поддержке.
                 </p>
+                <p>
+                    Сейчас ваши донаты идут{' '}
+                    <span className='fw600'>на издание новой книги.</span>{' '}
+                    <Link className='link noHyph' to='items/rim'>
+                        Подробней о книге »
+                    </Link>
+                </p>
                 <PayModes />
             </div>
         </>

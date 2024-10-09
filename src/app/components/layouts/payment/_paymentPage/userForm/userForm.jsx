@@ -178,7 +178,7 @@ const UserForm = ({ cart }) => {
                 {isDelivery && (
                     <div className={classes.selectWrap}>
                         <div className={classes.selectLabel}>
-                            Выберите, пожалуйста, регион доставки{' '}
+                            Выберите, пожалуйста, свой регион{' '}
                             <span className='noHyph'>или его столицу:</span>
                         </div>
                         <SelectField
@@ -186,19 +186,19 @@ const UserForm = ({ cart }) => {
                             value={data.region.name}
                             onChange={handleChangeRegion}
                             defaultOption='Выберите город или регион'
-                            label='Выберите, пожалуйста, регион доставки или его столицу'
+                            label='Выберите, пожалуйста, свой регион или его столицу'
                             options={regions}
                         />
                         {deliverySum && (
                             <>
                                 <div className={classes.deliveryResult}>
-                                    Вес: {weight} г. Стоимость доставки:{' '}
+                                    Вес: {weight} г. Стоимость пересылки:{' '}
                                     <span className='fw500'>
                                         {deliverySum + ' ₽'}
-                                    </span>
+                                    </span> (пересылка&nbsp;Почтой&nbsp;России)
                                 </div>
                                 <div className={classes.totalSum}>
-                                    Итого с доставкой:{' '}
+                                    Итого с пересылкой:{' '}
                                     <span className='fw600'>
                                         {formatSum(totalSum) + ' ₽'}
                                     </span>

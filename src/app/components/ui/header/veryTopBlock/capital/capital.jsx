@@ -9,7 +9,7 @@ const Capital = () => {
     return (
         <>
             <Link
-                to='items/polya'
+                to='items/rim'
                 title='Подробней про новую книгу'
                 className={classes.capital}
                 onClick={scrollToTop}

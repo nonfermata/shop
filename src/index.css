@@ -6,8 +6,11 @@
     --base-bg: #fffff5;
     --base-white: #fffffc;
     --base-white-2-cart: #fffffa;
-    --blue: #00758c;
+    --dark-blue: #005066;
+    --blue: #008bb3;
+    /*--blue: #00758c;*/
     --semi-blue: #2492a6;
+    --bgv-blue: #008bb3;
     --ex-light-grey: #e5e2cf;
     --light-grey: #bfbfbf;
     --semi-grey: #999;
@@ -64,6 +67,10 @@ select {
     font-size: inherit;
     border: none;
     outline: none;
+}
+
+img {
+    display: block;
 }
 
 .hidden {
@@ -126,7 +133,7 @@ a {
 .container {
     padding: 0 0 120px;
     max-width: 1200px;
-    min-height: calc(100vh - 125px);
+    min-height: calc(100vh - 135px);
     margin: 0 auto;
     position: relative;
 }
@@ -155,6 +162,15 @@ a {
     color: var(--blue);
 }
 
+.link {
+    color: var(--blue);
+    transition: all ease .15s;
+}
+
+.link:hover {
+    color: var(--orange);
+}
+
 .noHyph {
     white-space: nowrap;
 }
@@ -178,7 +194,7 @@ a {
 @media screen and (max-width: 991px) {
     .container {
         padding: 0 15px 160px; /* depends on footer */
-        min-height: calc(100vh - 90px); /* depends on header */
+        min-height: calc(100vh - 100px); /* depends on header */
     }
 }
 

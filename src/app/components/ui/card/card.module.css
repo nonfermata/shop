@@ -26,17 +26,19 @@
     width: 100%;
 }
 
-.smallBookImage {
+.smallImage {
     width: 180px;
+    max-width: 100%;
 }
-.eBookImage {
-    width: 200px;
-}
-.middleBookImage {
+
+.middleImage {
     width: 225px;
+    max-width: 100%;
 }
-.largeBookImage {
+
+.largeImage {
     width: 315px;
+    max-width: 100%;
     margin-bottom: 0;
 }
 
@@ -73,6 +75,7 @@
     .cardWrap {
         width: 31%;
     }
+
     .bookCardWrap {
         width: 85%;
     }
@@ -83,6 +86,7 @@
         width: 40%;
         max-width: 280px;
     }
+
     .bookCardWrap {
         width: 90%;
         max-width: 1000px;
@@ -93,10 +97,12 @@
     .cardWrap {
         min-width: 340px;
     }
+
     .bookCardWrap {
         width: 100%;
         max-width: 1000px;
     }
+
     .getEVersion {
         font-size: 0.9em;
     }
@@ -109,23 +115,29 @@
         display: block;
         margin: 0 auto;
     }
+
     .bookItemInfo {
         display: block;
         margin-bottom: 0;
     }
+
     .ordinaryImage {
         margin: 0 auto;
         display: block;
     }
+
     .smallBookImage {
         width: 70%;
     }
+
     .eBookImage {
         width: 80%;
     }
+
     .middleBookImage {
         width: 80%;
     }
+
     .largeBookImage {
         width: 100%;
     }
@@ -136,6 +148,5 @@
     .cardWrap {
         width: 100%;
         min-width: 1px;
-        max-width: fit-content;
     }
 }

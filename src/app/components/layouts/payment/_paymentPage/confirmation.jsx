@@ -13,9 +13,6 @@ const Confirmation = () => {
         localStorage.removeItem('totalSum');
         localStorage.removeItem('region');
         localStorage.removeItem('deliverySum');
-        // if (localStorage.getItem('deliverySum')) {
-        //     localStorage.removeItem('deliverySum');
-        // }
     }, []);
     const cart = getAllCart(useSelector(getCart()));
     return (

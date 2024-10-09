@@ -1,11 +1,24 @@
 .newBookPrologueWrap {
     margin: 0 auto;
-    width: 70%;
+    max-width: 650px;
     border-bottom: 1px solid var(--light-orange);
     padding: 20px 15px;
-    font-size: 1.1em;
-    line-height: 1.5em;
+    font-size: 1.05em;
+    line-height: 1.3em;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.link {
+    color: var(--dark-blue);
+    opacity: 1;
+    transition: all .1s ease;
+}
+
+.link:hover {
+    color: var(--blue);
 }
 
 @media screen and (max-width: 1200px) {

@@ -1,8 +1,5 @@
-import React from 'react';
-import {
-    useSelector
-    // , useDispatch
-} from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { getAllCart, getItemsSum } from '../../../utils/cartUtil';
 import { getCart } from '../../../../redux/cartReducer';
 import Gratis from '../../ui/gratis/gratis';
@@ -14,26 +11,26 @@ import { Link } from 'react-router-dom';
 import scrollToTop from '../../../utils/scrollToTop';
 import WarningPopWindow from './warningPopWindow';
 import {
-    getAllPopsStatus
-    // , togglePopStatus
+    getAllPopsStatus,
+    togglePopStatus
 } from '../../../../redux/isPopVisibleReducer';
 import withInnerWindow from '../../ui/hoc/withInnerWindow';
 
 const Cart = () => {
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const isDarkWindow = useSelector(getAllPopsStatus()).darkWindow;
     const HOCWarning = withInnerWindow(WarningPopWindow);
     const cart = getAllCart(useSelector(getCart()));
     const itemsSum = getItemsSum(cart);
     const title = itemsSum === 0 ? 'Ваша корзина пуста :(' : 'Ваша корзина:';
-    // useEffect(() => {
-    //     if (
-    //         cart.filter((item) => !item.isDigital).length > 1 &&
-    //         cart.find((item) => item.id === 'polya')
-    //     ) {
-    //         dispatch(togglePopStatus('darkWindow'));
-    //     }
-    // }, []);
+    useEffect(() => {
+        if (
+            cart.filter((item) => !item.isDigital).length > 1 &&
+            cart.find((item) => item.id === 'rim')
+        ) {
+            dispatch(togglePopStatus('darkWindow'));
+        }
+    }, []);
     return (
         <>
             {isDarkWindow && <HOCWarning />}

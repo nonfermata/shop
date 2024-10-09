@@ -19,7 +19,7 @@ const Navbar = () => {
                         title={title || name}
                         onClick={scrollToTop}
                         style={
-                            link === 'items/polya'
+                            link === 'items/rim'
                                 ? {
                                       fontWeight: '600'
                                   }

@@ -15,31 +15,30 @@ const Card = ({
     isAvailable,
     shotDescr,
     type,
-    isDigital = true
+    isDigital = true,
+    bookSize = ''
 }) => {
-    let bookImageWidth;
-    switch (id) {
-        case 'devochki':
-            bookImageWidth = 'largeBookImage';
-            break;
-        case 'accords':
-        case 'interview':
-            bookImageWidth = 'middleBookImage';
-            break;
-        case 'epub_devochki':
-        case 'epub_accords':
-        case 'epub_interview':
-        case 'epub_fiveStories':
-            bookImageWidth = 'eBookImage';
-            break;
-        case 'fiveStories':
-        case 'polya':
-        case 'epolya':
-            bookImageWidth = 'smallBookImage';
-            break;
-        default:
-            bookImageWidth = '';
-    }
+    // let bookSize;
+    // switch (id) {
+    //     case 'devochki':
+    //     case 'edevochki':
+    //         bookSize = 'largeBookImage';
+    //         break;
+    //     case 'accords':
+    //     case 'eaccords':
+    //     case 'interview':
+    //     case 'einterview':
+    //         bookSize = 'middleBookImage';
+    //         break;
+    //     case 'fiveStories':
+    //     case 'efiveStories':
+    //     case 'polya':
+    //     case 'epolya':
+    //         bookSize = 'smallBookImage';
+    //         break;
+    //     default:
+    //         bookSize = '';
+    // }
 
     class Styles {
         constructor(cardWrap, itemInfo) {
@@ -60,11 +59,11 @@ const Card = ({
     };
     return (
         <div className={classes.cardWrap + ' ' + cardWrap}>
-            {(id === 'polya' || id === 'epolya') && <ItemNewMsg />}
+            {(id === 'rim' || id === 'erim') && <ItemNewMsg />}
             <div
                 onClick={handleImageClick}
                 className={
-                    classes.ordinaryImage + ' ' + classes[bookImageWidth]
+                    classes.ordinaryImage + ' ' + classes[bookSize]
                 }
             >
                 <img src={image} alt={name} />

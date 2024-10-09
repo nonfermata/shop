@@ -10,16 +10,16 @@ import Cart from '../../pages/cart/cart';
 import ItemPage from '../../pages/itemPage/itemPage';
 import Tale from '../../pages/itemPage/tales/tale';
 import SupportersList from '../../ui/supportersList/supportersList';
-import StartPage from '../../pages/startPage/startPage';
 import Support from '../../pages/support/support';
 import Ebooks from '../../pages/categories/ebooks';
+// import StartPage from '../../pages/startPage/startPage';
 
 const Main = () => {
     return (
         <>
             <Header />
             <Routes>
-                <Route path='/' element={<StartPage />} />
+                {/*<Route path='/' element={<StartPage />} />*/}
                 <Route path='books' element={<Books />} />
                 <Route path='ebooks' element={<Ebooks />} />
                 <Route path='cd' element={<Cd />} />
@@ -34,7 +34,7 @@ const Main = () => {
                     path='support-list'
                     element={<SupportersList isMobile={true} />}
                 />
-                <Route path='*' element={<Navigate to='/' />} />
+                <Route path='*' element={<Navigate to='/items/rim' />} />
             </Routes>
         </>
     );
